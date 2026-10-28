@@ -188,11 +188,14 @@ select.chip, #fcat, .place select, .field select {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--card);
+  color: var(--text);
   box-shadow: var(--shadow-lift);
 }
 .sync-dialog::backdrop { background: rgba(0, 0, 0, 0.4); }
 .sync-dialog h2 { margin: 0 0 8px; font-size: 1.1rem; }
 .sync-dialog .sync-row { flex-wrap: wrap; }
+.sync-dialog .sync-row button { color: var(--text); font-weight: 600; }
+.sync-dialog .sync-row button:hover { background: var(--accent-soft); }
 
 /* ---- Lists and cards: one column on phone ---- */
 main { padding: 14px 16px 40px; }

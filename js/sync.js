@@ -125,6 +125,12 @@
       if (hasLast && localChanged && !remoteChanged) {
         return push(gistId, local).then(function () { finish(local); });
       }
+      // This device has never saved anything (new browser, cleared storage): just take the Gist, nothing to lose.
+      if (!local.updatedAt && remote.updatedAt) {
+        PokopiaStorage.replace(remote);
+        document.dispatchEvent(new Event("pokopia-synced"));
+        return finish(remote);
+      }
       if (hasLast && remoteChanged && !localChanged) {
         PokopiaStorage.replace(remote);
         document.dispatchEvent(new Event("pokopia-synced"));
