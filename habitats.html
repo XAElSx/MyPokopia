@@ -3,36 +3,40 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pokopia Habitats</title>
+  <title>Pokopia Habitat Dex</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="top">
     <div class="top-row">
       <h1>Pokopia</h1>
-      <span id="counter" class="counter"></span>
+      <div class="top-actions" id="top-actions"><div id="sync-mount"></div></div>
     </div>
     <nav class="nav" id="nav"></nav>
-    <div id="sync-mount"></div>
-    <input id="search" type="search" placeholder="Search habitat, item, Pokémon" autocomplete="off">
-    <div class="filters">
-      <button type="button" class="chip active" data-filter="all">All</button>
-      <button type="button" class="chip" data-filter="built">Built</button>
-      <button type="button" class="chip" data-filter="todo">Not built</button>
-      <button type="button" class="chip" data-filter="wish">★ Wishlist</button>
-      <select id="area" class="chip" aria-label="Area"></select>
-      <select id="dex" class="chip" aria-label="Habitat dex">
-        <option value="all">All dexes</option>
-        <option value="main">Main</option>
-        <option value="basin">Bubbly Basin</option>
-        <option value="event">Event</option>
-      </select>
-    </div>
   </header>
 
   <main>
+    <div class="toolbar">
+      <div class="page-head"><h2 class="page-title">Habitat Dex</h2><span id="counter" class="counter"></span></div>
+      <input id="search" type="search" placeholder="Search habitat, item, Pokémon" autocomplete="off">
+      <div class="filters">
+        <div class="seg" role="group" aria-label="Show">
+          <button type="button" class="chip active" data-filter="all">All</button>
+          <button type="button" class="chip" data-filter="built">Created</button>
+          <button type="button" class="chip" data-filter="todo">Not created</button>
+          <button type="button" class="chip" data-filter="wish" aria-label="Wishlist" title="Wishlist">★</button>
+        </div>
+        <select id="area" class="chip" aria-label="Area"></select>
+        <select id="dex" class="chip" aria-label="Habitat dex">
+          <option value="all">All dexes</option>
+          <option value="main">Main</option>
+          <option value="basin">Bubbly Basin</option>
+          <option value="event">Event</option>
+        </select>
+      </div>
+    </div>
     <ul id="list" class="list"></ul>
-    <p class="note">Habitat data from Serebii. Built marks are saved with your progress.</p>
+    <p class="note">Habitat data from Serebii. Created marks are saved with your progress.</p>
   </main>
 
   <div id="backdrop" class="backdrop" hidden></div>
@@ -43,7 +47,7 @@
     </div>
     <label class="field row">
       <input type="checkbox" id="f-built">
-      <span>Built</span>
+      <span>Created</span>
       <button type="button" id="f-star" class="star" aria-label="Wishlist" title="Wishlist">☆</button>
     </label>
     <button type="button" id="f-cart" class="cart">Add to shopping list</button>

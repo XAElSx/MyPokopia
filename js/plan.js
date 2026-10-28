@@ -169,12 +169,12 @@
       table.appendChild(tr);
     });
 
-    // Quick assignment: pick an area for everyone who moved in but has none yet.
+    // Quick assignment: pick an area for everyone registered who has none yet.
     var ul = document.getElementById("unplaced");
     ul.textContent = "";
     var loose = mons.filter(function (p) { return areaOf(p) === NO_AREA; });
     document.getElementById("unplaced-count").textContent = loose.length ? "(" + loose.length + ")" : "";
-    if (!loose.length) { ul.appendChild(el("li", "empty", mons.length ? "Everyone has an area." : "No one has moved in yet.")); return; }
+    if (!loose.length) { ul.appendChild(el("li", "empty", mons.length ? "Everyone has an area." : "No one is registered yet.")); return; }
     loose.forEach(function (p) {
       var li = el("li", "card");
       var body = el("div", "shop-body");
@@ -297,7 +297,7 @@
     var list = document.getElementById("next");
     list.textContent = "";
     var all = S.suggestions(progress);
-    if (!all.length) { list.appendChild(el("li", "empty", "Every habitat with Pokémon you still need is built. Nice.")); return; }
+    if (!all.length) { list.appendChild(el("li", "empty", "Every habitat with Pokémon you still need is created. Nice.")); return; }
     all.slice(0, showAllNext ? all.length : NEXT_SHOWN).forEach(function (s) {
       var li = el("li", "card");
       var body = el("div", "shop-body");
@@ -305,7 +305,7 @@
       head.appendChild(link(s.habitat.name, "habitats.html#" + encodeURIComponent(s.habitat.slug)));
       var bits = [s.fresh.length + " new Pokémon"];
       if (s.wished) bits.push(s.wished + " on your wishlist");
-      if (s.exclusive) bits.push(s.exclusive + " with no built habitat yet");
+      if (s.exclusive) bits.push(s.exclusive + " with no created habitat yet");
       body.appendChild(head);
       body.appendChild(el("div", "sub strong", bits.join(" · ")));
       var names = s.fresh.slice(0, 6).map(function (u) { return u.pokemon.name; }).join(", ");
@@ -353,7 +353,7 @@
       var pic = D.pokemonPic(p, 36);
       if (pic) head.appendChild(pic);
       head.appendChild(link(D.dexLabel(p) + " " + p.name, "index.html#" + encodeURIComponent(p.id)));
-      if (done) head.appendChild(el("span", "sub", " · moved in ✓"));
+      if (done) head.appendChild(el("span", "sub", " · registered ✓"));
       body.appendChild(head);
       if (!done) {
         var where = p.habitats.map(function (h) {
@@ -371,7 +371,7 @@
       var body = el("div", "shop-body");
       var head = el("div", "shop-head");
       head.appendChild(link(h.name, "habitats.html#" + encodeURIComponent(h.slug)));
-      head.appendChild(el("span", "sub", built ? " · built ✓" : " · habitat"));
+      head.appendChild(el("span", "sub", built ? " · created ✓" : " · habitat"));
       body.appendChild(head);
       li.appendChild(body);
       list.appendChild(li);

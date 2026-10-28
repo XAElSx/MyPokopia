@@ -62,7 +62,7 @@
       var box = el("input");
       box.type = "checkbox";
       box.checked = p.movedIn;
-      box.setAttribute("aria-label", "Moved in: " + p.name);
+      box.setAttribute("aria-label", "Registered: " + p.name);
       box.addEventListener("change", function () {
         handlers.onToggle(p.id, box.checked);
       });

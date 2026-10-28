@@ -171,7 +171,7 @@
     if (!host) return;
     host.innerHTML =
       '<details id="sync-panel" class="sync">' +
-      '<summary>Sync <span id="sync-status"></span></summary>' +
+      '<summary><span class="sync-dot"></span><span id="sync-status"></span></summary>' +
       '<div class="sync-body">' +
       '<div class="sync-row"><input id="gist-token" type="password" autocomplete="off" aria-label="GitHub token">' +
       '<button type="button" id="gist-save">Connect</button></div>' +

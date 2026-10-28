@@ -1,4 +1,4 @@
-// Habitat guide: search/filter habitats, show requirements and which Pokémon can appear, mark built.
+// Habitat Dex: search/filter habitats, show requirements and which Pokémon can appear, mark created.
 (function () {
   var D = window.PokopiaData;
   var progress = PokopiaStorage.load();
@@ -82,7 +82,7 @@
 
   function refresh() {
     var builtCount = D.habitats.filter(function (h) { return isBuilt(h.slug); }).length;
-    counterEl.textContent = builtCount + " / " + D.habitats.length + " built";
+    counterEl.textContent = builtCount + " / " + D.habitats.length + " created";
     var shown = D.habitats.filter(matches);
     listEl.textContent = "";
     if (!shown.length) { listEl.appendChild(el("li", "empty", "No habitats match.")); return; }
@@ -93,7 +93,7 @@
       var box = el("input");
       box.type = "checkbox";
       box.checked = isBuilt(h.slug);
-      box.setAttribute("aria-label", "Built: " + h.name);
+      box.setAttribute("aria-label", "Created: " + h.name);
       box.addEventListener("change", function () { setBuilt(h.slug, box.checked); });
       check.appendChild(box);
 
@@ -103,7 +103,7 @@
       main.appendChild(el("span", "name", h.name));
       var users = D.pokemonByHabitat[h.slug] || [];
       var inCount = users.filter(function (u) { return movedIn(u.pokemon.id); }).length;
-      var meta = [reqText(h), users.length + " Pokémon" + (users.length ? " (" + inCount + " moved in)" : "")]
+      var meta = [reqText(h), users.length + " Pokémon" + (users.length ? " (" + inCount + " registered)" : "")]
         .filter(Boolean).join(" · ");
       main.appendChild(el("span", "meta", meta));
       main.addEventListener("click", function () { openPanel(h.slug); });

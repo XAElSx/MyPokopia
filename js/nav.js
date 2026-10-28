@@ -2,21 +2,45 @@
 // Also: the global search button (Ctrl+K), the "/" shortcut, the shopping-list count and the offline worker.
 (function () {
   var PAGES = [
-    ["index.html", "Collection"],
-    ["habitats.html", "Habitats"],
-    ["recipes.html", "Recipes"],
-    ["pairings.html", "Pairings"],
-    ["town.html", "Town"],
-    ["plan.html", "Plan"]
+    // [file, label, short label for the phone tab bar]
+    ["index.html", "Pokédex", "Pokédex"],
+    ["habitats.html", "Habitat Dex", "Habitats"],
+    ["recipes.html", "Crafting", "Crafting"],
+    ["pairings.html", "Roommates", "Roommates"],
+    ["town.html", "Town", "Town"],
+    ["plan.html", "Plan", "Plan"]
   ];
   var nav = document.getElementById("nav");
   if (!nav) return;
   var here = location.pathname.split("/").pop() || "index.html";
+
+  // Clean addresses on the web: ".../MyPokopia/" instead of ".../MyPokopia/index.html". Opened straight from the
+  // folder (file://) the links keep "index.html", because a bare folder link would only show a file list there.
+  var web = location.protocol.indexOf("http") === 0;
+  if (web && /\/index\.html$/.test(location.pathname)) {
+    history.replaceState(null, "", location.pathname.replace(/index\.html$/, "") + location.search + location.hash);
+  }
+  function clean(href) { return web && /^index\.html/.test(href) ? "./" + href.slice("index.html".length) : href; }
+  if (web) {
+    // Links built later by the pages (e.g. "index.html#pokemon-id") are fixed when clicked.
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest("a[href^='index.html']");
+      if (a) a.setAttribute("href", clean(a.getAttribute("href")));
+    }, true);
+  }
   var planLink = null;
   PAGES.forEach(function (p) {
     var a = document.createElement("a");
-    a.href = p[0];
-    a.textContent = p[1];
+    a.href = clean(p[0]);
+    var long = document.createElement("span");
+    long.className = "long";
+    long.textContent = p[1];
+    var short = document.createElement("span");
+    short.className = "short";
+    short.textContent = p[2];
+    a.appendChild(long);
+    a.appendChild(short);
+    a.setAttribute("aria-label", p[1]);
     if (p[0] === here) a.className = "active";
     if (p[0] === "plan.html") planLink = a;
     nav.appendChild(a);
@@ -25,17 +49,18 @@
   var find = document.createElement("button");
   find.type = "button";
   find.className = "nav-find";
-  find.textContent = "Search all";
+  find.textContent = "Search";
   find.title = "Search everything (Ctrl+K)";
   // In the top row next to the title, so it is always in reach on a phone.
-  var row = document.querySelector(".top-row");
-  if (row) row.insertBefore(find, row.querySelector(".counter")); else nav.appendChild(find);
+  var row = document.getElementById("top-actions");
+  if (row) row.insertBefore(find, row.firstChild); else nav.appendChild(find);
 
   function updateBadge() {
     if (!planLink || !window.PokopiaStorage) return;
     var s = PokopiaStorage.load().shop || {};
     var n = Object.keys(s.habitats || {}).length + Object.keys(s.recipes || {}).length;
-    planLink.textContent = n ? "Plan (" + n + ")" : "Plan";
+    planLink.querySelector(".long").textContent = n ? "Plan (" + n + ")" : "Plan";
+    planLink.querySelector(".short").textContent = n ? "Plan · " + n : "Plan";
   }
   updateBadge();
   document.addEventListener("pokopia-saved", updateBadge);

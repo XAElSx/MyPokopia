@@ -10,24 +10,30 @@
   <header class="top">
     <div class="top-row">
       <h1>Pokopia</h1>
-      <span id="counter" class="counter"></span>
+      <div class="top-actions" id="top-actions"><div id="sync-mount"></div></div>
     </div>
     <nav class="nav" id="nav"></nav>
-    <div id="sync-mount"></div>
-    <div class="filters">
-      <select id="area" class="chip" aria-label="Area"></select>
-    </div>
   </header>
 
   <main class="town">
+    <div class="toolbar">
+      <div class="page-head"><h2 class="page-title">Town</h2><span id="counter" class="counter"></span></div>
+      <div class="filters">
+        <select id="area" class="chip" aria-label="Area"></select>
+      </div>
+    </div>
     <div class="tools" id="tools">
-      <button type="button" class="chip small active" data-tool="select">Select</button>
-      <button type="button" class="chip small" data-tool="place">Place</button>
-      <button type="button" class="chip small" data-tool="erase">Erase</button>
-      <button type="button" class="chip small" id="clear-area">Clear area</button>
-      <button type="button" class="chip small" id="undo" disabled>Undo</button>
-      <button type="button" class="chip small" id="redo" disabled>Redo</button>
-      <button type="button" class="chip small" id="png">Save picture</button>
+      <div class="seg" role="group" aria-label="Tool">
+        <button type="button" class="chip small active" data-tool="select">Select</button>
+        <button type="button" class="chip small" data-tool="place">Place</button>
+        <button type="button" class="chip small" data-tool="erase">Erase</button>
+      </div>
+      <div class="tool-actions">
+        <button type="button" class="chip small" id="undo" disabled title="Undo (Ctrl+Z)">↶ Undo</button>
+        <button type="button" class="chip small" id="redo" disabled title="Redo (Ctrl+Y)">↷ Redo</button>
+        <button type="button" class="chip small" id="png">Save picture</button>
+        <button type="button" class="chip small" id="clear-area">Clear area</button>
+      </div>
     </div>
     <div class="place" id="place" hidden>
       <select id="place-kind" aria-label="What to place">

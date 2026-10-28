@@ -3,27 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pokopia Pairings</title>
+  <title>Pokopia Roommates</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="top">
     <div class="top-row">
       <h1>Pokopia</h1>
-      <span id="counter" class="counter"></span>
+      <div class="top-actions" id="top-actions"><div id="sync-mount"></div></div>
     </div>
     <nav class="nav" id="nav"></nav>
-    <div id="sync-mount"></div>
-    <div class="filters">
-      <button type="button" class="chip active" data-mode="matches">Best matches</button>
-      <button type="button" class="chip" data-mode="houses">House builder</button>
-      <button type="button" class="chip" data-mode="blocks">Blocks</button>
-      <button type="button" class="chip" id="moved-only" aria-pressed="false">Only moved in</button>
-    </div>
-    <input id="search" type="search" placeholder="Search Pokémon" autocomplete="off">
   </header>
 
   <main>
+    <div class="toolbar">
+      <div class="page-head"><h2 class="page-title">Roommates</h2><span id="counter" class="counter"></span></div>
+      <div class="filters">
+        <div class="seg" role="group" aria-label="Mode">
+          <button type="button" class="chip active" data-mode="matches">Best roommates</button>
+          <button type="button" class="chip" data-mode="houses">Houses</button>
+          <button type="button" class="chip" data-mode="blocks">Blocks</button>
+        </div>
+        <button type="button" class="chip" id="moved-only" aria-pressed="false">Only registered</button>
+      </div>
+      <input id="search" type="search" placeholder="Search Pokémon" autocomplete="off">
+    </div>
     <section id="matches-view">
       <ul id="list" class="list"></ul>
     </section>

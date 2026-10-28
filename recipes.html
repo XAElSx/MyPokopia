@@ -3,30 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pokopia Recipes</title>
+  <title>Pokopia Crafting</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="top">
     <div class="top-row">
       <h1>Pokopia</h1>
-      <span id="counter" class="counter"></span>
+      <div class="top-actions" id="top-actions"><div id="sync-mount"></div></div>
     </div>
     <nav class="nav" id="nav"></nav>
-    <div id="sync-mount"></div>
-    <input id="search" type="search" placeholder="Search recipe or material" autocomplete="off">
-    <div class="filters">
-      <button type="button" class="chip active" data-mode="craft">Crafting</button>
-      <button type="button" class="chip" data-mode="cook">Cooking</button>
-      <select id="category" class="chip" aria-label="Category"></select>
-      <select id="cook-type" class="chip" aria-label="Meal type" hidden></select>
-      <select id="cook-flavor" class="chip" aria-label="Flavor" hidden></select>
-      <button type="button" id="habitat-only" class="chip">Habitat items only</button>
-      <button type="button" id="list-only" class="chip">On my list</button>
-    </div>
   </header>
 
   <main>
+    <div class="toolbar">
+      <div class="page-head"><h2 class="page-title">Crafting</h2><span id="counter" class="counter"></span></div>
+      <input id="search" type="search" placeholder="Search recipe or material" autocomplete="off">
+      <div class="filters">
+        <div class="seg" role="group" aria-label="Mode">
+          <button type="button" class="chip active" data-mode="craft">Recipes</button>
+          <button type="button" class="chip" data-mode="cook">Cooking</button>
+        </div>
+        <select id="category" class="chip" aria-label="Category"></select>
+        <select id="cook-type" class="chip" aria-label="Meal type" hidden></select>
+        <select id="cook-flavor" class="chip" aria-label="Flavor" hidden></select>
+        <button type="button" id="habitat-only" class="chip">For habitats</button>
+        <button type="button" id="list-only" class="chip">On shopping list</button>
+      </div>
+    </div>
     <ul id="list" class="list"></ul>
     <p class="note">Recipes and item sources from Serebii.</p>
   </main>

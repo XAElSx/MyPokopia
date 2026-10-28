@@ -178,7 +178,7 @@
       helper.appendChild(el("b", null, m.specialty));
       var yours = D.pokemon.filter(function (p) { return movedIn(p.id) && p.specialties.indexOf(m.specialty) !== -1; });
       helper.appendChild(el("div", "sub", yours.length ? "You have: " + yours.map(function (p) { return p.name; }).join(", ")
-        : "None of your moved-in Pokémon has it yet."));
+        : "None of your registered Pokémon has it yet."));
     }
 
     var likers = document.getElementById("m-likers");
@@ -187,7 +187,7 @@
     document.getElementById("sec-m-likers").hidden = !m.flavor;
     if (m.flavor) {
       var mine = all.filter(function (p) { return movedIn(p.id); });
-      likers.appendChild(el("div", null, mine.length ? "In your town: " + mine.map(function (p) { return p.name; }).join(", ") : "None of your moved-in Pokémon."));
+      likers.appendChild(el("div", null, mine.length ? "In your town: " + mine.map(function (p) { return p.name; }).join(", ") : "None of your registered Pokémon."));
       likers.appendChild(el("div", "sub", all.length + " Pokémon in total like " + m.flavor.toLowerCase() + " food."));
     }
 

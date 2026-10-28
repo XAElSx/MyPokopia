@@ -61,7 +61,7 @@
   function refresh() {
     var all = merged().filter(function (p) { return dex === "all" || p.dex === dex; });
     var movedCount = all.filter(function (p) { return p.movedIn; }).length;
-    counterEl.textContent = movedCount + " / " + all.length + " moved in";
+    counterEl.textContent = movedCount + " / " + all.length + " registered";
 
     var q = query.trim().toLowerCase();
     shown = all.filter(function (p) {
@@ -142,7 +142,7 @@
   var moreToggle = document.getElementById("more-toggle");
   function showMore() {
     var n = MORE.filter(function (k) { return more[k]; }).length;
-    moreToggle.textContent = n ? "More filters (" + n + ")" : "More filters";
+    moreToggle.textContent = n ? "Filters (" + n + ")" : "Filters";
     moreToggle.classList.toggle("active", moreOpen || n > 0);
     moreToggle.setAttribute("aria-pressed", String(moreOpen));
     document.getElementById("more").hidden = !moreOpen;
@@ -201,11 +201,11 @@
       if (part.length) grid.appendChild(bar(d[1], count(part), part.length));
     });
     var built = D.habitats.filter(function (h) { return progress.habitats[h.slug] && progress.habitats[h.slug].built; }).length;
-    if (D.habitats.length) grid.appendChild(bar("Habitats built", built, D.habitats.length));
+    if (D.habitats.length) grid.appendChild(bar("Habitats created", built, D.habitats.length));
     var wished = every.filter(function (p) { return p.wish && !p.movedIn; }).length;
     body.appendChild(grid);
 
-    // Where your moved-in Pokémon live (the Area field), with how many specialties each area has.
+    // Where your registered Pokémon live (the Area field), with how many specialties each area has.
     var moved = every.filter(function (p) { return p.movedIn; });
     if (moved.length) {
       var h = document.createElement("h3");
@@ -496,7 +496,7 @@
           pokemon.forEach(function (p) { known[p.id] = true; });
           var ids = Object.keys(data.entries).filter(function (id) { return known[id]; });
           var added = ids.filter(function (id) { return data.entries[id].movedIn && !(progress.entries[id] && progress.entries[id].movedIn); });
-          if (!confirm("Add " + added.length + " moved-in marks from this file (" + ids.length + " Pokémon in it)? Nothing is removed.")) return;
+          if (!confirm("Add " + added.length + " registered marks from this file (" + ids.length + " Pokémon in it)? Nothing is removed.")) return;
           ids.forEach(function (id) {
             var src = data.entries[id];
             var e = entryFor(id);
@@ -541,7 +541,7 @@
     list.forEach(function (s) {
       var li = document.createElement("li");
       var when = s.label || new Date(s.t).toLocaleString();
-      li.appendChild(document.createTextNode(when + " · " + s.moved + " moved in "));
+      li.appendChild(document.createTextNode(when + " · " + s.moved + " registered "));
       var b = document.createElement("button");
       b.type = "button";
       b.className = "chip small";

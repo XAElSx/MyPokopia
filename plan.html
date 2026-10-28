@@ -10,13 +10,15 @@
   <header class="top">
     <div class="top-row">
       <h1>Pokopia</h1>
-      <span id="counter" class="counter"></span>
+      <div class="top-actions" id="top-actions"><div id="sync-mount"></div></div>
     </div>
     <nav class="nav" id="nav"></nav>
-    <div id="sync-mount"></div>
   </header>
 
   <main class="plan">
+    <div class="toolbar">
+      <div class="page-head"><h2 class="page-title">Plan</h2><span id="counter" class="counter"></span></div>
+    </div>
     <section>
       <h2>Today <span class="sub" id="today-count"></span></h2>
       <ul id="today" class="checks"></ul>
@@ -29,7 +31,7 @@
 
     <section>
       <h2>Shopping list</h2>
-      <p class="note" id="shop-empty">Nothing on the list yet. Add habitats or recipes from the guide, the recipes page or the suggestions below.</p>
+      <p class="note" id="shop-empty">Nothing on the list yet. Add habitats or recipes from the Habitat Dex, the Crafting page or the suggestions below.</p>
       <div id="shop" hidden>
         <ul id="shop-sources" class="chips"></ul>
         <label class="field row">
@@ -43,16 +45,16 @@
 
     <section>
       <h2>Build next</h2>
-      <p class="note">Habitats you have not built, ranked by how many Pokémon you still need that appear there (wishlisted ones count double).</p>
+      <p class="note">Habitats you have not created, ranked by how many Pokémon you still need that appear there (wishlisted ones count double).</p>
       <ul id="next" class="list"></ul>
     </section>
 
     <section>
       <h2>Specialty coverage</h2>
-      <p class="note">What your moved-in Pokémon can do in each area, using the Area you set on each Pokémon. Empty squares are gaps. Tap a number to see who.</p>
+      <p class="note">What your registered Pokémon can do in each area, using the Area you set on each Pokémon. Empty squares are gaps. Tap a number to see who.</p>
       <div class="cov-wrap"><table id="coverage" class="cov"></table></div>
       <p class="sub" id="cov-detail"></p>
-      <h3 class="sub-h">Moved in without an area <span class="sub" id="unplaced-count"></span></h3>
+      <h3 class="sub-h">Registered without an area <span class="sub" id="unplaced-count"></span></h3>
       <ul id="unplaced" class="list"></ul>
     </section>
 

@@ -114,7 +114,7 @@
       var link = el("a", null, d.label);
       link.href = d.kind === "house" ? "pairings.html" : "habitats.html#" + encodeURIComponent(counts[id].cell.ref);
       li.appendChild(link);
-      li.appendChild(el("span", "sub", " · " + d.kind + (counts[id].n > 1 ? " ×" + counts[id].n : "") + (d.built ? " · built" : "") +
+      li.appendChild(el("span", "sub", " · " + d.kind + (counts[id].n > 1 ? " ×" + counts[id].n : "") + (d.built ? " · created" : "") +
         (d.mixed ? " · mixed ideal habitats" : "")));
       ul.appendChild(li);
     });
@@ -144,7 +144,7 @@
       var ul2 = el("ul", "habitats");
       h.requirements.forEach(function (r) { ul2.appendChild(el("li", null, r.item + (r.amount ? " ×" + r.amount : ""))); });
       box.appendChild(ul2);
-      var a = el("a", null, "Open in habitat guide");
+      var a = el("a", null, "Open in Habitat Dex");
       a.href = "habitats.html#" + encodeURIComponent(h.slug);
       box.appendChild(a);
     }

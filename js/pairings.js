@@ -69,7 +69,7 @@
     });
     counterEl.textContent = shown.length + " Pokémon";
     listEl.textContent = "";
-    if (!shown.length) { listEl.appendChild(el("li", "empty", movedOnly ? "No moved-in Pokémon match." : "No Pokémon match.")); return; }
+    if (!shown.length) { listEl.appendChild(el("li", "empty", movedOnly ? "No registered Pokémon match." : "No Pokémon match.")); return; }
     shown.forEach(function (p) {
       var li = el("li", "card" + (movedIn(p.id) ? " moved-in" : ""));
       var main = el("button", "card-main wide");

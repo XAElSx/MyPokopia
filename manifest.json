@@ -2,7 +2,7 @@
   "name": "Pokopia",
   "short_name": "Pokopia",
   "description": "Personal Pokémon Pokopia tracker",
-  "start_url": "index.html",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f3f6f4",
