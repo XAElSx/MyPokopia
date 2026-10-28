@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokopia Town</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-row">
+      <h1>Pokopia</h1>
+      <span id="counter" class="counter"></span>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div id="sync-mount"></div>
+    <div class="filters">
+      <select id="area" class="chip" aria-label="Area"></select>
+    </div>
+  </header>
+
+  <main class="town">
+    <div class="tools" id="tools">
+      <button type="button" class="chip small active" data-tool="select">Select</button>
+      <button type="button" class="chip small" data-tool="place">Place</button>
+      <button type="button" class="chip small" data-tool="erase">Erase</button>
+      <button type="button" class="chip small" id="clear-area">Clear area</button>
+    </div>
+    <div class="place" id="place" hidden>
+      <select id="place-kind" aria-label="What to place">
+        <option value="house">House</option>
+        <option value="habitat">Habitat</option>
+      </select>
+      <select id="place-ref" aria-label="Which one"></select>
+    </div>
+
+    <div id="grid" class="grid" role="grid" aria-label="Town grid"></div>
+
+    <section class="info">
+      <h2 id="info-title">Tap a square</h2>
+      <div id="info"></div>
+    </section>
+    <section class="info">
+      <h2>In this area</h2>
+      <ul id="legend" class="habitats"></ul>
+    </section>
+    <p class="note">The grid is a simple sketch board, 12 × 12 squares per area. It is saved with your progress.</p>
+  </main>
+
+  <script src="data/pokopia-pokemon.js"></script>
+  <script src="data/pokopia-habitats.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/sync.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/town.js"></script>
+</body>
+</html>

@@ -38,3 +38,9 @@ Personal website for Pokémon Pokopia. Only I use it.
 - [x] Phase 4: Crafting/recipes. `data/pokopia-recipes.json/.js` (884 recipes, 1710 items with where to find them), `recipes.html`. Habitat requirements link to their recipe. Rebuild: `python tools/build.py recipes`.
 - [x] Phase 5: Pairings (`pairings.html`). Best matches per Pokémon (same ideal habitat + shared favorites), house builder (max 4, score, best additions), "only moved in" option. Houses saved in progress and synced.
 - [x] Phase 6: Building blocks. `data/pokopia-favorites.json/.js` (43 favorites, 2367 item entries) and a "Blocks" mode on the pairings page: favorite -> matching items (grouped, Blocks first, linked to recipes). Rebuild: `python tools/build.py favorites`.
+- [x] Phase 7: Town planner (`town.html`). 12 x 12 grid per area (7 areas), place houses (Pairings) and habitats (guide), select/erase/clear, saved in progress (`town`) and synced.
+
+## Structure
+- Pages: `index.html` (tracker), `habitats.html`, `recipes.html`, `pairings.html` (matches, house builder, blocks), `town.html`. Each loads `js/storage.js`, `js/nav.js`, `js/sync.js`, then its own script. All plain scripts, no modules, so everything opens from file:// and works on GitHub Pages.
+- Game data: `data/pokopia-{pokemon,habitats,recipes,favorites}.json` is the source, the `.js` next to it is generated (`window.POKOPIA_DB`, `POKOPIA_HABITATS`, `POKOPIA_RECIPES`, `POKOPIA_FAVORITES`). Rebuild with `python tools/build.py <target>` (needs `pip install beautifulsoup4`; raw pages are cached in `../pokopia-raw`). Source disagreements: `data/verify-list.txt`.
+- Progress (localStorage `pokopia.collection`, version 2): `entries` by Pokémon id, `habitats` by slug, `houses` by id, `town` by area. Sync token: `pokopia.token` (never in the progress object or the repo).
