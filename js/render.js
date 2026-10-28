@@ -41,6 +41,7 @@
       movedIn: !!entry.movedIn,
       wish: !!entry.wish,
       area: entry.area || "",
+      region: entry.region || "",
       notes: entry.notes || ""
     };
   }
@@ -72,7 +73,9 @@
       main.appendChild(el("span", "name", p.name));
       var where = p.area || (p.habitats[0] && p.habitats[0].name) || "";
       var meta = [p.specialties.join(" / "), where].filter(Boolean).join(" · ");
-      main.appendChild(el("span", "meta", meta));
+      var metaEl = el("span", "meta", meta);
+      if (misplaced(p)) metaEl.appendChild(el("span", "warn", " · should be in " + p.region));
+      main.appendChild(metaEl);
       main.addEventListener("click", function () {
         handlers.onOpen(p.id);
       });
@@ -115,8 +118,25 @@
     }
 
     document.getElementById("f-area").value = p.area;
+    document.getElementById("f-region").value = p.region;
+    showRegionWarning(p);
     document.getElementById("f-notes").value = p.notes;
   }
 
-  window.PokopiaRender = { merge: merge, renderList: renderList, fillPanel: fillPanel };
+  // Lives somewhere other than where it should (like the Notion "Correct Region" check).
+  function misplaced(p) {
+    if (!p.area || !p.region || /^any/i.test(p.region)) return false;
+    var area = p.area.toLowerCase();
+    return !p.region.split(",").some(function (r) { return r.trim() && area.indexOf(r.trim().toLowerCase()) !== -1; });
+  }
+
+  function showRegionWarning(p) {
+    var w = document.getElementById("f-region-warn");
+    w.hidden = !misplaced(p);
+    w.textContent = w.hidden ? "" : "Lives in " + p.area + ", not where it should be.";
+  }
+
+  window.PokopiaRender = {
+    misplaced: misplaced, showRegionWarning: showRegionWarning,
+    merge: merge, renderList: renderList, fillPanel: fillPanel };
 })();

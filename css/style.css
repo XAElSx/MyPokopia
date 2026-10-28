@@ -617,3 +617,7 @@ input[type="checkbox"]:checked { background-color: var(--accent); background-ima
 .sub.strong { font-weight: 600; }
 .top-row .nav-find { margin: 0 8px 0 auto; padding: 4px 12px; font-size: 0.85rem; }
 @media (min-width: 700px) { .top-row .nav-find { margin: 0; } }
+
+.warn { color: #c0662a; font-weight: 600; }
+@media (prefers-color-scheme: dark) { .warn { color: #f0a060; } }
+.field .warn { display: block; margin-top: 6px; font-size: 0.85rem; }

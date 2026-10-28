@@ -92,6 +92,16 @@
       <input type="text" id="f-area" placeholder="Where do they live in your town?">
     </label>
     <label class="field">
+      <span class="label">Should live in</span>
+      <input type="text" id="f-region" placeholder="The area you want them in" list="area-names">
+      <span id="f-region-warn" class="warn" hidden></span>
+    </label>
+    <datalist id="area-names">
+      <option value="Withered Wastelands"></option><option value="Bleak Beach"></option><option value="Rocky Ridges"></option>
+      <option value="Sparkling Skylands"></option><option value="Palette Town"></option><option value="Cloud Island"></option>
+      <option value="Bubbly Basin"></option><option value="Any area"></option>
+    </datalist>
+    <label class="field">
       <span class="label">Notes</span>
       <textarea id="f-notes" rows="4"></textarea>
     </label>

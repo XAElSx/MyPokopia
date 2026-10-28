@@ -67,7 +67,7 @@
       if (now.on && (p.movedIn || !appearsNow(p))) return false;
       if (!q) return true;
       var habitats = p.habitats.map(function (h) { return h.name; });
-      return [p.label, p.name, p.specialties.join(" "), habitats.join(" "), p.area, p.notes]
+      return [p.label, p.name, p.specialties.join(" "), habitats.join(" "), p.area, p.region, p.notes]
         .join(" ").toLowerCase().indexOf(q) !== -1;
     });
     PokopiaRender.renderList(listEl, shown, {
@@ -215,6 +215,11 @@
     document.body.classList.add("panel-open");
   }
 
+  function regionWarning() {
+    var p = merged().filter(function (x) { return x.id === openId; })[0];
+    if (p) PokopiaRender.showRegionWarning(p);
+  }
+
   function closePanel() {
     openId = null;
     panel.hidden = true;
@@ -230,8 +235,11 @@
   document.getElementById("f-star").addEventListener("click", function () {
     if (openId) wish(openId, !entryFor(openId).wish);
   });
+  document.getElementById("f-region").addEventListener("input", function (e) {
+    if (openId) { entryFor(openId).region = e.target.value; persist(); refresh(); regionWarning(); }
+  });
   document.getElementById("f-area").addEventListener("input", function (e) {
-    if (openId) { entryFor(openId).area = e.target.value; persist(); refresh(); }
+    if (openId) { entryFor(openId).area = e.target.value; persist(); refresh(); regionWarning(); }
   });
   document.getElementById("f-notes").addEventListener("input", function (e) {
     if (openId) { entryFor(openId).notes = e.target.value; persist(); }
@@ -311,6 +319,25 @@
         var data = JSON.parse(reader.result);
         if (!data || typeof data.entries !== "object" || data.entries === null) {
           throw new Error("bad format");
+        }
+        // A merge file (e.g. from the Notion tracker) only adds: it sets moved in, and area / should-live-in where empty.
+        if (data.merge === true) {
+          var known = {};
+          pokemon.forEach(function (p) { known[p.id] = true; });
+          var ids = Object.keys(data.entries).filter(function (id) { return known[id]; });
+          var added = ids.filter(function (id) { return data.entries[id].movedIn && !(progress.entries[id] && progress.entries[id].movedIn); });
+          if (!confirm("Add " + added.length + " moved-in marks from this file (" + ids.length + " Pokémon in it)? Nothing is removed.")) return;
+          ids.forEach(function (id) {
+            var src = data.entries[id];
+            var e = entryFor(id);
+            if (src.movedIn) e.movedIn = true;
+            if (src.area && !e.area) e.area = src.area;
+            if (src.region && !e.region) e.region = src.region;
+          });
+          persist();
+          closePanel();
+          refresh();
+          return;
         }
         if (!confirm("Replace your current progress with this file?")) return;
         progress = PokopiaStorage.replace(data) || progress;

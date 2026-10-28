@@ -1,6 +1,6 @@
 // Reads and writes progress in localStorage. Never touches game data.
 // Shape (version 3): { version, updatedAt, entries, habitats, houses, town, shop }
-//   entries  - by Pokémon id   { movedIn, area, notes, wish }
+//   entries  - by Pokémon id   { movedIn, area, region (should live in), notes, wish }
 //   habitats - by habitat slug { built, wish }
 //   houses   - by house id     { name, members: [pokémon ids] }
 //   town     - by area name    { w, h, cells: { "x,y": { kind, ref } } }
