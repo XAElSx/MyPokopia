@@ -24,3 +24,20 @@ Dragapult | Rarity at Office storeroom: Serebii 2, Pocket Tactics 3
 Tinkatuff | Rarity at Sewer hole inspection unknown
 Jumpluff | Rarity at Yellow carpet: Serebii 3, Pocket Tactics 2
 Jumpluff | Rarity at Dandelion lunchtime: Serebii 2, Pocket Tactics 1
+[habitat] Tall Grass | Pokémon list differs from pokopia-pokemon.json; only in Pokémon data: charizard, oddish
+[habitat] Tree-shaded  tall grass | Pokémon list differs from pokopia-pokemon.json; only in Pokémon data: heracross, skwovet
+[habitat] Hydrated tall grass | Pokémon list differs from pokopia-pokemon.json; only in Pokémon data: wartortle
+[habitat] Pretty flower bed | Pokémon list differs from pokopia-pokemon.json; only in Pokémon data: magby, pidgeotto
+[habitat] Red tall grass | Pokémon list differs from pokopia-pokemon.json; only in Pokémon data: kricketune
+[habitat] Graceful flower bed | Pokémon list differs from pokopia-pokemon.json; only in Pokémon data: dachsbun
+[habitat] Pink tall grass | Pokémon list differs from pokopia-pokemon.json; only in Pokémon data: flygon
+[habitat] Fluffy flower bed | Pokémon list differs from pokopia-pokemon.json; only in Pokémon data: ninetales
+[recipe] Luxury chair | Material Linestone (linestone) is not in the items list
+[recipe] Fan | Material Iron ignot (ironignot) is not in the items list
+[recipe] Decorative Poké Ball | Material Poké (poké) is not in the items list
+[recipe] Stepping stones | Material Stones (stones) is not in the items list
+[recipe] Gold wall | No materials parsed
+[recipe] Confectionery wall (lower) | No materials parsed
+[recipe] Carved light-brown rock | Material Light-brown rock (light-brownrock) is not in the items list
+[recipe] Overlapping waves print | Listed twice (Blocks and Other); both kept
+[recipe] C | No materials parsed

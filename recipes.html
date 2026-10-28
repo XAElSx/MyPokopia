@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokopia Recipes</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-row">
+      <h1>Pokopia</h1>
+      <span id="counter" class="counter"></span>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div id="sync-mount"></div>
+    <input id="search" type="search" placeholder="Search recipe or material" autocomplete="off">
+    <div class="filters">
+      <select id="category" class="chip" aria-label="Category"></select>
+      <button type="button" id="habitat-only" class="chip">Habitat items only</button>
+    </div>
+  </header>
+
+  <main>
+    <ul id="list" class="list"></ul>
+    <p class="note">Recipes and item sources from Serebii.</p>
+  </main>
+
+  <div id="backdrop" class="backdrop" hidden></div>
+  <aside id="panel" class="panel" hidden>
+    <div class="panel-head">
+      <h2 id="panel-title"></h2>
+      <button type="button" id="panel-close" class="close" aria-label="Close">&times;</button>
+    </div>
+    <div class="field" id="sec-category">
+      <span class="label">Category</span>
+      <span id="f-category"></span>
+    </div>
+    <div class="field" id="sec-obtain">
+      <span class="label">How to get the recipe</span>
+      <ul id="f-obtain" class="habitats"></ul>
+    </div>
+    <div class="field" id="sec-reqs">
+      <span class="label">Needs</span>
+      <ul id="f-reqs" class="habitats"></ul>
+    </div>
+    <div class="field" id="sec-where">
+      <span class="label">Where to find it</span>
+      <ul id="f-where" class="habitats"></ul>
+    </div>
+    <div class="field" id="sec-used">
+      <span class="label">Used in</span>
+      <ul id="f-used" class="habitats"></ul>
+    </div>
+  </aside>
+
+  <script src="data/pokopia-pokemon.js"></script>
+  <script src="data/pokopia-habitats.js"></script>
+  <script src="data/pokopia-recipes.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/sync.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/recipes.js"></script>
+</body>
+</html>

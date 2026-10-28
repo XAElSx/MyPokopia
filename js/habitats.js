@@ -110,7 +110,16 @@
     reqs.textContent = "";
     if (!h.requirements.length) reqs.appendChild(el("li", null, "None listed"));
     h.requirements.forEach(function (r) {
-      var li = el("li", null, r.item + (r.amount ? " ×" + r.amount : ""));
+      var li = el("li");
+      // A requirement links to its recipe (or item page) in the crafting list.
+      if (r.itemSlug && (D.recipeBySlug[r.itemSlug] || D.itemBySlug[r.itemSlug])) {
+        var a = el("a", null, r.item);
+        a.href = "recipes.html#" + encodeURIComponent(r.itemSlug);
+        li.appendChild(a);
+      } else {
+        li.appendChild(el("span", null, r.item));
+      }
+      if (r.amount) li.appendChild(el("span", null, " ×" + r.amount));
       reqs.appendChild(li);
     });
 

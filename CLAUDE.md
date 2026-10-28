@@ -35,3 +35,4 @@ Personal website for Pokémon Pokopia. Only I use it.
 - [x] Phase 1: Sync. Private Gist `pokopia-progress.json`, token in localStorage `pokopia.token`. Progress shape v2 in `js/storage.js`. Live Gist test pending (needs token), tested with a stubbed API.
 - [x] Phase 2: Habitat database. `data/pokopia-habitats.json/.js` (254 habitats, requirements with item slugs, areas). Slug check: all 254 slugs used by the Pokémon data match, 0 missing (`docs/habitat-slug-report.md`). Rebuild: `python tools/build.py habitats`.
 - [x] Phase 3: Habitat guide (`habitats.html`). Search, area/dex/built filters, requirements, Pokémon with rarity/time/weather, built marks in progress. Links both ways with the tracker (`habitats.html#slug`, `index.html#pokemon-id`).
+- [x] Phase 4: Crafting/recipes. `data/pokopia-recipes.json/.js` (884 recipes, 1710 items with where to find them), `recipes.html`. Habitat requirements link to their recipe. Rebuild: `python tools/build.py recipes`.
