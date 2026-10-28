@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokopia Collection</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-row">
+      <h1>Pokopia</h1>
+      <span id="counter" class="counter"></span>
+    </div>
+    <input id="search" type="search" placeholder="Search name, specialty, habitat, notes" autocomplete="off">
+    <div class="filters">
+      <button type="button" class="chip active" data-filter="all">All</button>
+      <button type="button" class="chip" data-filter="in">Moved in</button>
+      <button type="button" class="chip" data-filter="out">Not yet</button>
+      <select id="dex" class="chip" aria-label="Pokédex">
+        <option value="all">All dexes</option>
+        <option value="main">Main</option>
+        <option value="event">Event</option>
+        <option value="basin">Bubbly Basin</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <ul id="list" class="list"></ul>
+    <div class="backup">
+      <button type="button" id="export" class="link-btn">Export progress</button>
+      <button type="button" id="import" class="link-btn">Import progress</button>
+      <input type="file" id="import-file" accept="application/json,.json" hidden>
+    </div>
+  </main>
+
+  <div id="backdrop" class="backdrop" hidden></div>
+  <aside id="panel" class="panel" hidden>
+    <div class="panel-head">
+      <h2 id="panel-title"></h2>
+      <button type="button" id="panel-close" class="close" aria-label="Close">&times;</button>
+    </div>
+    <label class="field row">
+      <input type="checkbox" id="f-moved">
+      <span>Moved in</span>
+    </label>
+    <div class="field">
+      <span class="label">Specialty (from game data)</span>
+      <span id="f-specialty"></span>
+    </div>
+    <div class="field">
+      <span class="label">Habitats (from game data)</span>
+      <ul id="f-habitat" class="habitats"></ul>
+    </div>
+    <label class="field">
+      <span class="label">Area</span>
+      <input type="text" id="f-area" placeholder="Where do they live in your town?">
+    </label>
+    <label class="field">
+      <span class="label">Notes</span>
+      <textarea id="f-notes" rows="4"></textarea>
+    </label>
+  </aside>
+
+  <!-- Plain scripts (not modules) so this works when opened straight from the folder. -->
+  <script src="data/pokopia-pokemon.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
