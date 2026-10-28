@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokopia Pairings</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-row">
+      <h1>Pokopia</h1>
+      <span id="counter" class="counter"></span>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div id="sync-mount"></div>
+    <div class="filters">
+      <button type="button" class="chip active" data-mode="matches">Best matches</button>
+      <button type="button" class="chip" data-mode="houses">House builder</button>
+      <button type="button" class="chip" id="moved-only" aria-pressed="false">Only moved in</button>
+    </div>
+    <input id="search" type="search" placeholder="Search Pokémon" autocomplete="off">
+  </header>
+
+  <main>
+    <section id="matches-view">
+      <ul id="list" class="list"></ul>
+    </section>
+    <section id="houses-view" hidden>
+      <div class="backup"><button type="button" id="new-house" class="link-btn">+ New house</button></div>
+      <div id="houses" class="houses"></div>
+    </section>
+    <p class="note">Rule used: housemates need the same ideal habitat; every shared favorite adds a point. A house holds at most 4.</p>
+  </main>
+
+  <div id="backdrop" class="backdrop" hidden></div>
+  <aside id="panel" class="panel" hidden>
+    <div class="panel-head">
+      <h2 id="panel-title"></h2>
+      <button type="button" id="panel-close" class="close" aria-label="Close">&times;</button>
+    </div>
+    <div class="field"><span class="label">Ideal habitat</span><span id="f-ideal"></span></div>
+    <div class="field"><span class="label">Favorites</span><span id="f-favs"></span></div>
+    <div class="field">
+      <span class="label">Best housemates</span>
+      <ul id="f-matches" class="habitats"></ul>
+    </div>
+    <div class="field"><button type="button" id="start-house" class="sync-btn">Start a house with this Pokémon</button></div>
+  </aside>
+
+  <script src="data/pokopia-pokemon.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/sync.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/pairings.js"></script>
+</body>
+</html>
