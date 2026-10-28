@@ -220,3 +220,49 @@ select.chip { flex-basis: 100%; appearance: none; text-align: center; }
 .sync-dialog { max-width: 420px; border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
 .sync-dialog h2 { margin: 0 0 8px; font-size: 1.1rem; }
 .sync-dialog .sync-row { flex-wrap: wrap; }
+
+/* ---- Guide pages ---- */
+.note { color: var(--muted); font-size: 0.85rem; margin-top: 20px; }
+.flavor { margin: 0 0 14px; color: var(--muted); font-size: 0.95rem; }
+.habitats { margin: 0; padding-left: 18px; }
+.habitats .sub { color: var(--muted); font-size: 0.85rem; }
+.habitats a { color: var(--accent); text-decoration: none; }
+.tick { color: var(--accent); }
+.filters { flex-wrap: wrap; }
+.card-main.wide { padding-left: 14px; }
+.card-main.wide .num { grid-column: 2; grid-row: 1; justify-self: end; }
+.card-main.wide { grid-template-columns: 1fr auto; }
+.card-main.wide .meta { grid-column: 1 / -1; }
+
+/* ---- Pairings ---- */
+.houses { display: grid; gap: 12px; }
+.house { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px; }
+.house-head { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+.house-name { flex: 1; min-width: 0; padding: 8px 10px; font: inherit; font-weight: 600; border: 1px solid var(--line); border-radius: 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
+.member { display: inline-flex; align-items: center; gap: 4px; padding: 4px 4px 4px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: 0.9rem; }
+.member.in { background: var(--accent-soft); border-color: var(--accent); }
+.member .x { width: 28px; height: 28px; border: 0; background: none; font-size: 1.1rem; color: var(--muted); cursor: pointer; }
+.score { margin: 6px 0; }
+.sub { color: var(--muted); font-size: 0.85rem; }
+.weak { color: var(--muted); }
+.chip.small { flex: none; padding: 6px 10px; font-size: 0.85rem; cursor: pointer; }
+.adder { margin-top: 8px; }
+.adder .sync-row input { flex: 1; min-width: 0; }
+.sync-btn { padding: 10px 14px; font: inherit; border: 1px solid var(--accent); border-radius: 8px; background: var(--accent-soft); color: var(--accent); cursor: pointer; }
+#houses-view .backup { margin: 0 0 8px; }
+
+/* ---- Town ---- */
+.tools { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.place { display: flex; gap: 8px; margin-bottom: 10px; }
+.place select { flex: 1; min-width: 0; padding: 8px; font: inherit; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+.grid { --cols: 12; display: grid; grid-template-columns: repeat(var(--cols), 1fr); gap: 2px; width: 100%; max-width: 560px; }
+.sq { aspect-ratio: 1; min-width: 0; padding: 0; font: inherit; font-size: 0.7rem; font-weight: 600; border: 1px solid var(--line); border-radius: 4px; background: var(--card); color: var(--text); cursor: pointer; overflow: hidden; }
+.sq.house { background: #dbe8ff; border-color: #6b93e6; }
+.sq.habitat { background: var(--accent-soft); border-color: var(--accent); }
+.sq.habitat.built { border-width: 2px; }
+.sq.missing { background: #fde4e4; border-color: #d66; }
+.sq.sel { outline: 2px solid var(--text); outline-offset: 1px; }
+.info { margin-top: 16px; }
+.info h2 { margin: 0 0 6px; font-size: 1rem; }
+.filters select.chip { flex: 1 1 45%; }

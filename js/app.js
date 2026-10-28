@@ -66,6 +66,7 @@
     panel.hidden = true;
     backdrop.hidden = true;
     document.body.classList.remove("panel-open");
+    if (location.hash) history.replaceState(null, "", location.pathname + location.search);
   }
 
   // Panel fields save as you edit.
@@ -152,5 +153,13 @@
     refresh();
   });
 
+  // index.html#pokemon-id opens that Pokémon (links from the habitat guide).
+  function fromHash() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    if (id && pokemon.some(function (p) { return p.id === id; })) openPanel(id);
+  }
+  window.addEventListener("hashchange", fromHash);
+
   refresh();
+  fromHash();
 })();

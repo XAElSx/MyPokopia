@@ -33,3 +33,5 @@ Personal website for Pokémon Pokopia. Only I use it.
 (Updated at the end of each phase. Details in docs/PLAN.md, docs/DECISIONS.md, docs/QUESTIONS.md. The phased run was authorised in one go, which overrides the "stop and show me" and "ask before new file structure" rules above for that run.)
 - [x] Collection tracker (data from Serebii, 369 Pokémon in data/pokopia-pokemon.json/.js)
 - [x] Phase 1: Sync. Private Gist `pokopia-progress.json`, token in localStorage `pokopia.token`. Progress shape v2 in `js/storage.js`. Live Gist test pending (needs token), tested with a stubbed API.
+- [x] Phase 2: Habitat database. `data/pokopia-habitats.json/.js` (254 habitats, requirements with item slugs, areas). Slug check: all 254 slugs used by the Pokémon data match, 0 missing (`docs/habitat-slug-report.md`). Rebuild: `python tools/build.py habitats`.
+- [x] Phase 3: Habitat guide (`habitats.html`). Search, area/dex/built filters, requirements, Pokémon with rarity/time/weather, built marks in progress. Links both ways with the tracker (`habitats.html#slug`, `index.html#pokemon-id`).

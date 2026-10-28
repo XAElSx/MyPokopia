@@ -12,3 +12,7 @@ Format: what, why, alternative.
 - **One global per data type** (`POKOPIA_DB`, `POKOPIA_HABITATS`, ...). `build_js.py` takes the global name as an argument so a second data file can't overwrite the first.
 - **`build.py` takes targets** (`python tools/build.py habitats`). Default behaviour for the Pokémon target is unchanged. The raw cache `../pokopia-raw` doesn't exist on this machine, so I don't re-run the Pokémon pipeline.
 - **Test tooling lives outside the repo** (scratchpad): headless Chrome driven over CDP with a fresh profile, never the real one.
+- **Habitat areas = union of the Location lists of the Pokémon on the habitat page.** The habitat pages have no area field of their own. 194 habitats are in all six base areas, 39 also in Bubbly Basin, the rest are limited (e.g. Palette Town + Cloud Island). Alternative: take areas from `pokopia-pokemon.json` (rejected: same source, and the habitat page is the one being scraped).
+- **Habitat requirements without an item link keep `itemSlug: null`** (Water, Tree, Lighting, Seat, ...). They are generic objects, not items with a page, so they can't link to a recipe. Not an error.
+- **8 habitats list different Pokémon on Serebii's habitat page and on the Pokémon pages** (e.g. Charizard at Tall Grass). The guide uses the Pokémon pages (`pokopia-pokemon.json`) since they carry rarity, time and weather; the differences are in the verify list.
+- **`itemSlug` for Phase 4 is captured now** (from the item link href) so a requirement can link to its recipe without matching on names.

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokopia Habitats</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-row">
+      <h1>Pokopia</h1>
+      <span id="counter" class="counter"></span>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div id="sync-mount"></div>
+    <input id="search" type="search" placeholder="Search habitat, item, Pokémon" autocomplete="off">
+    <div class="filters">
+      <button type="button" class="chip active" data-filter="all">All</button>
+      <button type="button" class="chip" data-filter="built">Built</button>
+      <button type="button" class="chip" data-filter="todo">Not built</button>
+      <select id="area" class="chip" aria-label="Area"></select>
+      <select id="dex" class="chip" aria-label="Habitat dex">
+        <option value="all">All dexes</option>
+        <option value="main">Main</option>
+        <option value="basin">Bubbly Basin</option>
+        <option value="event">Event</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <ul id="list" class="list"></ul>
+    <p class="note">Habitat data from Serebii. Built marks are saved with your progress.</p>
+  </main>
+
+  <div id="backdrop" class="backdrop" hidden></div>
+  <aside id="panel" class="panel" hidden>
+    <div class="panel-head">
+      <h2 id="panel-title"></h2>
+      <button type="button" id="panel-close" class="close" aria-label="Close">&times;</button>
+    </div>
+    <label class="field row">
+      <input type="checkbox" id="f-built">
+      <span>Built</span>
+    </label>
+    <p id="f-flavor" class="flavor"></p>
+    <div class="field">
+      <span class="label">Where</span>
+      <span id="f-areas"></span>
+    </div>
+    <div class="field">
+      <span class="label">Requirements</span>
+      <ul id="f-reqs" class="habitats"></ul>
+    </div>
+    <div class="field">
+      <span class="label">Pokémon that can appear</span>
+      <ul id="f-pokemon" class="habitats"></ul>
+    </div>
+  </aside>
+
+  <script src="data/pokopia-pokemon.js"></script>
+  <script src="data/pokopia-habitats.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/sync.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/habitats.js"></script>
+</body>
+</html>

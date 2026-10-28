@@ -89,7 +89,10 @@
     habitatEl.textContent = "";
     if (p.habitats.length) {
       p.habitats.forEach(function (h) {
-        var li = el("li", null, h.name);
+        var li = el("li");
+        var link = el("a", null, h.name);
+        link.href = "habitats.html#" + encodeURIComponent(h.slug);
+        li.appendChild(link);
         var extra = [RARITY[h.rarity], when(h)].filter(Boolean).join(", ");
         if (extra) li.appendChild(el("span", "sub", " · " + extra));
         habitatEl.appendChild(li);
