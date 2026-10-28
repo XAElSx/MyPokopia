@@ -12,6 +12,7 @@
   var MORE = ["ideal", "spec", "fav", "flavor", "where", "lives"];
   var more = prefs.more || {};
   var moreOpen = !!prefs.moreOpen;
+  var wrongOnly = !!prefs.wrongOnly; // only Pokémon living outside their "Should live in" area
   var openId = null;
   var selecting = false;
   var selected = {};
@@ -28,7 +29,7 @@
   function savePrefs() {
     PokopiaStorage.pref("index", Object.assign(PokopiaStorage.pref("index"), {
       filter: filter, dex: dex, query: query,
-      nowOn: now.on, nowTime: now.time, nowWeather: now.weather, more: more, moreOpen: moreOpen
+      nowOn: now.on, nowTime: now.time, nowWeather: now.weather, more: more, moreOpen: moreOpen, wrongOnly: wrongOnly
     }));
   }
 
@@ -70,11 +71,13 @@
       if (filter === "wish" && !p.wish) return false;
       if (now.on && (p.movedIn || !appearsNow(p))) return false;
       if (!passesMore(p)) return false;
+      if (wrongOnly && !PokopiaRender.misplaced(p)) return false;
       if (!q) return true;
       var habitats = p.habitats.map(function (h) { return h.name; });
       return [p.label, p.name, p.specialties.join(" "), habitats.join(" "), p.area, p.region, p.notes]
         .join(" ").toLowerCase().indexOf(q) !== -1;
     });
+    showWrong(all.filter(PokopiaRender.misplaced).length);
     PokopiaRender.renderList(listEl, shown, {
       onToggle: toggle, onWish: wish, selected: selecting ? selected : null,
       onOpen: function (id) { if (selecting) toggleSelected(id); else openPanel(id); }
@@ -138,6 +141,16 @@
       list.appendChild(o);
     });
   })();
+
+  // "Wrong area" chip: shown only when something is in the wrong area (or the filter is still on).
+  var wrongToggle = document.getElementById("wrong-toggle");
+  function showWrong(n) {
+    wrongToggle.hidden = !n && !wrongOnly;
+    wrongToggle.textContent = "Wrong area" + (n ? " (" + n + ")" : "");
+    wrongToggle.classList.toggle("active", wrongOnly);
+    wrongToggle.setAttribute("aria-pressed", String(wrongOnly));
+  }
+  wrongToggle.addEventListener("click", function () { wrongOnly = !wrongOnly; savePrefs(); refresh(); });
 
   var moreToggle = document.getElementById("more-toggle");
   function showMore() {

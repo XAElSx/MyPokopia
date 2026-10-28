@@ -74,11 +74,20 @@
       if (pic) { main.classList.add("has-pic"); main.appendChild(pic); }
       main.appendChild(el("span", "num", p.label));
       main.appendChild(el("span", "name", p.name));
-      var where = p.area || (p.habitats[0] && p.habitats[0].name) || "";
-      var meta = [p.specialties.join(" / "), where].filter(Boolean).join(" · ");
-      var metaEl = el("span", "meta", meta);
-      if (misplaced(p)) metaEl.appendChild(el("span", "warn", " · should be in " + p.region));
-      main.appendChild(metaEl);
+      // Line 2: specialty. Line 3: where it lives (your Area, else its first habitat), plus a small tag when it
+      // should live somewhere else. Both lines stay one line high so the cards line up.
+      main.appendChild(el("span", "meta", p.specialties.join(" / ") || "No specialty"));
+      var whereEl = el("span", "where");
+      var placeText = p.area || (p.habitats[0] && p.habitats[0].name) || "";
+      if (misplaced(p)) {
+        // Wrong area: the card only says where to move it; the panel shows both.
+        var move = el("span", "move", "Move to " + p.region);
+        move.title = "Lives in " + p.area + ", should live in " + p.region;
+        whereEl.appendChild(move);
+      } else if (placeText) {
+        whereEl.appendChild(el("span", "place", placeText));
+      }
+      if (whereEl.childNodes.length) main.appendChild(whereEl);
       main.addEventListener("click", function () {
         handlers.onOpen(p.id);
       });

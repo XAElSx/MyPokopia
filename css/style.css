@@ -748,3 +748,32 @@ input[type="checkbox"]:checked { background-color: var(--accent); background-ima
   .toolbar .chip { padding: 6px 12px; font-size: 0.85rem; }
   .toolbar .seg .chip { padding: 5px 11px; }
 }
+
+/* ---- Pokédex card lines: specialty, then where it lives (one line each) ---- */
+.card-main .meta, .card-main .where { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.where { grid-column: 2; display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 0.85rem; }
+.where .place { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.move {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--warn-line);
+  background: var(--warn-bg);
+  border-radius: 999px;
+}
+.card-main.has-pic { grid-template-rows: auto auto auto; }
+.card-main.has-pic .pic { grid-row: 1 / span 3; }
+.card-main.has-pic .where { grid-column: 2 / -1; grid-row: 3; }
+.card-main .name { overflow-wrap: normal; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+@media (min-width: 700px) {
+  #list.list { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+}
+.warn-chip { color: var(--warn-line); border-color: var(--warn-line); }
+.warn-chip.active { background: var(--warn-line); border-color: var(--warn-line); color: #fff; }
+.backup { flex-wrap: wrap; gap: 4px 16px; }
+.backup .link-btn { white-space: nowrap; }
