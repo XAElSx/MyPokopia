@@ -1,6 +1,6 @@
 // Offline support. Pages, scripts, data and pictures are saved as you use the site.
 // Network first (so a new deploy shows up), saved copy when offline. Bump VERSION to drop old copies.
-var VERSION = "pokopia-v1";
+var VERSION = "pokopia-v2";
 
 self.addEventListener("install", function () { self.skipWaiting(); });
 
@@ -23,8 +23,10 @@ self.addEventListener("fetch", function (e) {
   );
 });
 
+// "no-cache" asks GitHub Pages whether the file changed (a quick 304 if not), so a new deploy shows on the next
+// load instead of after the browser's 10-minute cache runs out.
 function networkFirst(req) {
-  return fetch(req).then(function (res) {
+  return fetch(req.url, { cache: "no-cache", credentials: "same-origin" }).then(function (res) {
     if (res.ok) { var copy = res.clone(); caches.open(VERSION).then(function (c) { c.put(req, copy); }); }
     return res;
   }).catch(function () {
