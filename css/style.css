@@ -195,3 +195,28 @@ select.chip { flex-basis: 100%; appearance: none; text-align: center; }
   body.panel-open main,
   body.panel-open .top { margin-right: 340px; }
 }
+
+/* ---- Shared: nav and sync ---- */
+.nav { display: flex; gap: 6px; margin-top: 8px; overflow-x: auto; }
+.nav a {
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.nav a.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+
+.sync { margin-top: 6px; font-size: 0.9rem; }
+.sync summary { cursor: pointer; color: var(--muted); padding: 4px 0; }
+.sync-body { padding: 4px 0 6px; }
+.sync-row { display: flex; gap: 8px; margin-bottom: 8px; }
+.sync-row input { flex: 1; min-width: 0; padding: 8px 10px; font: inherit; border: 1px solid var(--line); border-radius: 8px; }
+.sync-row button {
+  padding: 8px 12px; font: inherit; border: 1px solid var(--line);
+  border-radius: 8px; background: var(--card); color: var(--text); cursor: pointer;
+}
+.sync-dialog { max-width: 420px; border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.sync-dialog h2 { margin: 0 0 8px; font-size: 1.1rem; }
+.sync-dialog .sync-row { flex-wrap: wrap; }

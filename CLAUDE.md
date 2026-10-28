@@ -28,3 +28,8 @@ Personal website for Pokémon Pokopia. Only I use it.
 - Build one feature at a time. Stop and show me before starting the next one.
 - Explain what you changed and why.
 - Ask before adding any library or new file structure.
+
+## Progress
+(Updated at the end of each phase. Details in docs/PLAN.md, docs/DECISIONS.md, docs/QUESTIONS.md. The phased run was authorised in one go, which overrides the "stop and show me" and "ask before new file structure" rules above for that run.)
+- [x] Collection tracker (data from Serebii, 369 Pokémon in data/pokopia-pokemon.json/.js)
+- [x] Phase 1: Sync. Private Gist `pokopia-progress.json`, token in localStorage `pokopia.token`. Progress shape v2 in `js/storage.js`. Live Gist test pending (needs token), tested with a stubbed API.

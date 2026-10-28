@@ -135,8 +135,7 @@
           throw new Error("bad format");
         }
         if (!confirm("Replace your current progress with this file?")) return;
-        progress = data;
-        persist();
+        progress = PokopiaStorage.replace(data) || progress;
         closePanel();
         refresh();
       } catch (e) {
@@ -144,6 +143,13 @@
       }
     };
     reader.readAsText(file);
+  });
+
+  // A sync pulled newer progress from the Gist.
+  document.addEventListener("pokopia-synced", function () {
+    progress = PokopiaStorage.load();
+    closePanel();
+    refresh();
   });
 
   refresh();
