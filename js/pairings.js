@@ -72,6 +72,8 @@
       var li = el("li", "card" + (movedIn(p.id) ? " moved-in" : ""));
       var main = el("button", "card-main wide");
       main.type = "button";
+      var pic = D.pokemonPic(p, 48);
+      if (pic) { main.classList.add("has-pic"); main.appendChild(pic); }
       main.appendChild(el("span", "name", p.name));
       main.appendChild(el("span", "num", D.dexLabel(p)));
       main.appendChild(el("span", "meta", [p.idealHabitat || "no ideal habitat", p.favorites.join(", ")].filter(Boolean).join(" · ")));
@@ -85,7 +87,7 @@
     var p = D.pokemonById[id];
     if (!p) return;
     openId = id;
-    document.getElementById("panel-title").textContent = D.dexLabel(p) + " " + p.name;
+    D.setTitle(document.getElementById("panel-title"), D.dexLabel(p) + " " + p.name, D.pokemonPic(p, 56));
     document.getElementById("f-ideal").textContent = p.idealHabitat || "Unknown";
     var favBox = document.getElementById("f-favs");
     favBox.textContent = "";
@@ -107,6 +109,8 @@
     if (!list.length) ul.appendChild(el("li", null, p.idealHabitat ? "No one shares a favorite." : "No ideal habitat in the data."));
     list.slice(0, 15).forEach(function (c) {
       var li = el("li");
+      var cpic = D.pokemonPic(c.pokemon, 32);
+      if (cpic) li.appendChild(cpic);
       var a = el("a", null, c.pokemon.name);
       a.href = "index.html#" + c.pokemon.id;
       li.appendChild(a);
@@ -179,6 +183,8 @@
     var chips = el("div", "chips");
     members.forEach(function (m) {
       var chip = el("span", "member" + (movedIn(m.id) ? " in" : ""));
+      var mpic = D.pokemonPic(m, 28);
+      if (mpic) chip.appendChild(mpic);
       chip.appendChild(el("span", null, m.name + (m.idealHabitat ? " (" + m.idealHabitat + ")" : "")));
       var x = el("button", "x", "×");
       x.type = "button";
@@ -339,6 +345,8 @@
       ul.appendChild(el("li", "grp", c + " (" + groups[c].length + ")"));
       groups[c].forEach(function (it) {
         var li = el("li");
+        var ipic = D.itemPic(it.slug, 28);
+        if (ipic) li.appendChild(ipic);
         var a = el("a", null, it.name);
         a.href = "recipes.html#" + encodeURIComponent(it.slug);
         li.appendChild(a);

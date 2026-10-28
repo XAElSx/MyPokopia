@@ -54,6 +54,8 @@
       var li = el("li", "card");
       var main = el("button", "card-main wide");
       main.type = "button";
+      var pic = D.itemPic(r.slug, 48);
+      if (pic) { main.classList.add("has-pic"); main.appendChild(pic); }
       main.appendChild(el("span", "name", r.name));
       main.appendChild(el("span", "num", r.category));
       var needs = r.requirements.map(function (m) { return m.item + " ×" + m.amount; }).join(", ");
@@ -81,7 +83,7 @@
     var item = D.itemBySlug[slug];
     if (!recipe && !item) return;
     openSlug = slug;
-    document.getElementById("panel-title").textContent = (recipe || item).name;
+    D.setTitle(document.getElementById("panel-title"), (recipe || item).name, D.itemPic(slug, 56));
     var cat = recipe ? recipe.category : item.categories.join(", ");
     document.getElementById("f-category").textContent = cat;
 
@@ -89,6 +91,8 @@
 
     fillList("f-reqs", recipe ? recipe.requirements.map(function (m) {
       var li = el("li");
+      var mpic = D.itemPic(m.itemSlug, 28);
+      if (mpic) li.appendChild(mpic);
       li.appendChild(link(m.item, itemHref(m.itemSlug)));
       li.appendChild(el("span", null, " ×" + m.amount));
       var src = D.recipeBySlug[m.itemSlug] ? "craftable" : sourceText(D.itemBySlug[m.itemSlug]);
@@ -102,6 +106,8 @@
     var used = [];
     (D.recipesUsing[slug] || []).forEach(function (r) {
       var li = el("li");
+      var upic = D.itemPic(r.slug, 28);
+      if (upic) li.appendChild(upic);
       li.appendChild(link(r.name, itemHref(r.slug)));
       li.appendChild(el("span", "sub", " · recipe"));
       used.push(li);

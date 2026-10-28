@@ -63,7 +63,40 @@
   var favoriteByName = {};
   fdb.favorites.forEach(function (f) { favoriteBySlug[f.slug] = f; favoriteByName[f.name.toLowerCase()] = f; });
 
+  // Pictures are loaded from Serebii (paths in the data are relative to this folder), lazily, and hidden if one fails.
+  var IMG_BASE = "https://serebii.net/pokemonpokopia/";
+
+  function picture(path, size) {
+    if (!path) return null;
+    var img = document.createElement("img");
+    img.className = "pic";
+    img.src = IMG_BASE + path;
+    img.alt = "";
+    img.width = size;
+    img.height = size;
+    img.loading = "lazy";
+    img.decoding = "async";
+    img.referrerPolicy = "no-referrer";
+    img.addEventListener("error", function () { img.style.visibility = "hidden"; });
+    return img;
+  }
+
+  function pokemonPic(p, size) { return p ? picture(p.image, size) : null; }
+
+  function itemPic(slug, size) {
+    var it = itemBySlug[slug] || recipeBySlug[slug];
+    return it ? picture(it.image, size) : null;
+  }
+
+  // Panel / list title: picture (if any) then text.
+  function setTitle(node, text, pic) {
+    node.textContent = "";
+    if (pic) node.appendChild(pic);
+    node.appendChild(document.createTextNode(text));
+  }
+
   window.PokopiaData = {
+    pokemonPic: pokemonPic, itemPic: itemPic, setTitle: setTitle,
     favorites: fdb.favorites, favoriteBySlug: favoriteBySlug, favoriteByName: favoriteByName,
     pokemon: db.pokemon, meta: db.meta, habitats: hdb.habitats,
     pokemonById: pokemonById, habitatBySlug: habitatBySlug, pokemonByHabitat: pokemonByHabitat,

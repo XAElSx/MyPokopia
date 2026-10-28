@@ -5,8 +5,8 @@ Cache: <raw_dir>/recipes/crafting.html and items.html. Pages already there are s
 
 Sources: https://serebii.net/pokemonpokopia/crafting.shtml  (recipe tables: name, how the recipe is unlocked, materials)
          https://serebii.net/pokemonpokopia/items.shtml     (every item: description, tag, where to find it)
-Output:  recipes[] = {slug, name, category, obtain[], requirements[{item,itemSlug,amount}], verify[]}
-         items[]   = {slug, name, categories[], description, tag, locations[]}   (where to get materials)
+Output:  recipes[] = {slug, name, category, image, obtain[], requirements[{item,itemSlug,amount}], verify[]}
+         items[]   = {slug, name, categories[], image, description, tag, locations[]}   (where to get materials)
 """
 import json, os, re, sys, urllib.request
 from datetime import date
@@ -29,6 +29,11 @@ def soup_of(path):
     for o in s.find_all("select"):
         o.decompose()
     return s
+
+
+def image_of(cell):
+    img = cell.find("img")
+    return img["src"].lstrip("/").replace("pokemonpokopia/", "", 1) if img and img.get("src") else None
 
 
 def slug_of(a):
@@ -63,7 +68,7 @@ def parse_recipes(path):
                 m = re.search(r"\*\s*(\d+)", cell.get_text(" "))
                 if link and link.get_text(strip=True) and m:
                     reqs.append({"item": link.get_text(strip=True), "itemSlug": slug_of(link), "amount": int(m.group(1))})
-            out.append({"slug": slug_of(a), "name": tds[1].get_text(strip=True), "category": cat,
+            out.append({"slug": slug_of(a), "name": tds[1].get_text(strip=True), "category": cat, "image": image_of(tds[0]),
                         "obtain": lines(tds[2]), "requirements": reqs, "verify": []})
     return out
 
@@ -78,6 +83,7 @@ def parse_items(path):
                 continue
             slug = slug_of(tds[1].find("a"))
             it = items.setdefault(slug, {"slug": slug, "name": tds[1].get_text(strip=True), "categories": [],
+                                         "image": image_of(tds[0]),
                                          "description": " ".join(lines(tds[2])), "tag": ", ".join(lines(tds[3])),
                                          "locations": lines(tds[4])})
             if cat not in it["categories"]:

@@ -111,6 +111,8 @@
     if (!h.requirements.length) reqs.appendChild(el("li", null, "None listed"));
     h.requirements.forEach(function (r) {
       var li = el("li");
+      var rpic = r.itemSlug && D.itemPic(r.itemSlug, 24);
+      if (rpic) li.appendChild(rpic);
       // A requirement links to its recipe (or item page) in the crafting list.
       if (r.itemSlug && (D.recipeBySlug[r.itemSlug] || D.itemBySlug[r.itemSlug])) {
         var a = el("a", null, r.item);
@@ -135,6 +137,8 @@
     if (!users.length) mons.appendChild(el("li", null, "None listed"));
     users.forEach(function (u) {
       var li = el("li");
+      var upic = D.pokemonPic(u.pokemon, 32);
+      if (upic) li.appendChild(upic);
       var a = el("a", null, D.dexLabel(u.pokemon) + " " + u.pokemon.name);
       a.href = "index.html#" + u.pokemon.id;
       li.appendChild(a);

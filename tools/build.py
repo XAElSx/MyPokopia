@@ -1,7 +1,7 @@
 """Rebuild game data.
 
 Usage (from the repo folder):  python tools/build.py [target ...]
-Targets: pokemon (default), habitats, recipes, favorites   e.g.  python tools/build.py habitats
+Targets: pokemon (default), habitats, recipes, favorites, images (add picture paths to the Pokémon data only)   e.g.  python tools/build.py habitats
 Needs: pip install beautifulsoup4
 
 pokemon : download pages -> list index -> parse -> compare with Pocket Tactics -> verify flags -> .js
@@ -30,7 +30,18 @@ def pokemon():
     parse.main(RAW, db)
     compare.main(RAW, db)
     finalize.main(db, os.path.join(RAW, "pt-diff.json"))
+    images_()
     build_js.main(db, os.path.join(DATA, "pokopia-pokemon.js"), "POKOPIA_DB")
+
+
+def images_():
+    import images as im
+    im.main(RAW, os.path.join(DATA, "pokopia-pokemon.json"))
+
+
+def images():
+    images_()
+    build_js.main(os.path.join(DATA, "pokopia-pokemon.json"), os.path.join(DATA, "pokopia-pokemon.js"), "POKOPIA_DB")
 
 
 def habitats():
@@ -54,7 +65,7 @@ def favorites():
     build_js.main(db, os.path.join(DATA, "pokopia-favorites.js"), "POKOPIA_FAVORITES")
 
 
-TARGETS = {"pokemon": pokemon, "habitats": habitats, "recipes": recipes, "favorites": favorites}
+TARGETS = {"pokemon": pokemon, "images": images, "habitats": habitats, "recipes": recipes, "favorites": favorites}
 # (file, list key, label shown before each flag)
 VERIFY_SOURCES = [("pokopia-pokemon.json", "pokemon", ""), ("pokopia-habitats.json", "habitats", "[habitat] "),
                   ("pokopia-recipes.json", "recipes", "[recipe] "), ("pokopia-favorites.json", "favorites", "[favorite] ")]

@@ -193,7 +193,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/bulbasaur.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/bulbasaur.shtml",
+   "image": "pokemon/small/001.png"
   },
   {
    "id": "main-002-ivysaur",
@@ -259,7 +260,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/ivysaur.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/ivysaur.shtml",
+   "image": "pokemon/small/002.png"
   },
   {
    "id": "main-003-venusaur",
@@ -328,7 +330,8 @@
    "verify": [
     "Rarity at Field of Flowers: Serebii 2, Pocket Tactics 3"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/venusaur.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/venusaur.shtml",
+   "image": "pokemon/small/003.png"
   },
   {
    "id": "main-004-charmander",
@@ -376,7 +379,8 @@
    "verify": [
     "Weather: Serebii says all, Insider Gaming says sun/cloud only"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/charmander.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/charmander.shtml",
+   "image": "pokemon/small/004.png"
   },
   {
    "id": "main-005-charmeleon",
@@ -425,7 +429,8 @@
     "Rarity at Campsite: Serebii 1, Pocket Tactics 2",
     "Weather: Serebii says all, Insider Gaming says sun/cloud only"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/charmeleon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/charmeleon.shtml",
+   "image": "pokemon/small/005.png"
   },
   {
    "id": "main-006-charizard",
@@ -492,7 +497,8 @@
    "verify": [
     "Weather: Serebii says all, Insider Gaming says sun/cloud only"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/charizard.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/charizard.shtml",
+   "image": "pokemon/small/006.png"
   },
   {
    "id": "main-007-squirtle",
@@ -557,7 +563,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/squirtle.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/squirtle.shtml",
+   "image": "pokemon/small/007.png"
   },
   {
    "id": "main-008-wartortle",
@@ -603,7 +610,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/wartortle.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/wartortle.shtml",
+   "image": "pokemon/small/008.png"
   },
   {
    "id": "main-009-blastoise",
@@ -669,7 +677,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/blastoise.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/blastoise.shtml",
+   "image": "pokemon/small/009.png"
   },
   {
    "id": "main-010-pidgey",
@@ -735,7 +744,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/pidgey.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/pidgey.shtml",
+   "image": "pokemon/small/016.png"
   },
   {
    "id": "main-011-pidgeotto",
@@ -800,7 +810,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/pidgeotto.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/pidgeotto.shtml",
+   "image": "pokemon/small/017.png"
   },
   {
    "id": "main-012-pidgeot",
@@ -847,7 +858,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/pidgeot.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/pidgeot.shtml",
+   "image": "pokemon/small/018.png"
   },
   {
    "id": "main-013-oddish",
@@ -891,7 +903,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/oddish.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/oddish.shtml",
+   "image": "pokemon/small/043.png"
   },
   {
    "id": "main-014-gloom",
@@ -938,7 +951,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/gloom.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/gloom.shtml",
+   "image": "pokemon/small/044.png"
   },
   {
    "id": "main-015-vileplume",
@@ -986,7 +1000,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/vileplume.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/vileplume.shtml",
+   "image": "pokemon/small/045.png"
   },
   {
    "id": "main-016-bellossom",
@@ -1033,7 +1048,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/bellossom.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/bellossom.shtml",
+   "image": "pokemon/small/182.png"
   },
   {
    "id": "main-017-paras",
@@ -1099,7 +1115,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/paras.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/paras.shtml",
+   "image": "pokemon/small/046.png"
   },
   {
    "id": "main-018-parasect",
@@ -1165,7 +1182,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/parasect.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/parasect.shtml",
+   "image": "pokemon/small/047.png"
   },
   {
    "id": "main-019-venonat",
@@ -1225,7 +1243,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/venonat.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/venonat.shtml",
+   "image": "pokemon/small/048.png"
   },
   {
    "id": "main-020-venomoth",
@@ -1285,7 +1304,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/venomoth.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/venomoth.shtml",
+   "image": "pokemon/small/049.png"
   },
   {
    "id": "main-021-bellsprout",
@@ -1333,7 +1353,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/bellsprout.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/bellsprout.shtml",
+   "image": "pokemon/small/069.png"
   },
   {
    "id": "main-022-weepinbell",
@@ -1400,7 +1421,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/weepinbell.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/weepinbell.shtml",
+   "image": "pokemon/small/070.png"
   },
   {
    "id": "main-023-victreebel",
@@ -1467,7 +1489,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/victreebel.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/victreebel.shtml",
+   "image": "pokemon/small/071.png"
   },
   {
    "id": "main-024-slowpoke",
@@ -1515,7 +1538,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/slowpoke.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/slowpoke.shtml",
+   "image": "pokemon/small/079.png"
   },
   {
    "id": "main-025-slowbro",
@@ -1601,7 +1625,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/slowbro.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/slowbro.shtml",
+   "image": "pokemon/small/080.png"
   },
   {
    "id": "main-026-slowking",
@@ -1687,7 +1712,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/slowking.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/slowking.shtml",
+   "image": "pokemon/small/199.png"
   },
   {
    "id": "main-027-magnemite",
@@ -1734,7 +1760,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/magnemite.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/magnemite.shtml",
+   "image": "pokemon/small/081.png"
   },
   {
    "id": "main-028-magneton",
@@ -1800,7 +1827,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/magneton.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/magneton.shtml",
+   "image": "pokemon/small/082.png"
   },
   {
    "id": "main-029-magnezone",
@@ -1867,7 +1895,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/magnezone.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/magnezone.shtml",
+   "image": "pokemon/small/462.png"
   },
   {
    "id": "main-030-onix",
@@ -1915,7 +1944,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/onix.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/onix.shtml",
+   "image": "pokemon/small/095.png"
   },
   {
    "id": "main-031-steelix",
@@ -1963,7 +1993,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/steelix.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/steelix.shtml",
+   "image": "pokemon/small/208.png"
   },
   {
    "id": "main-032-cubone",
@@ -2009,7 +2040,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/cubone.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/cubone.shtml",
+   "image": "pokemon/small/104.png"
   },
   {
    "id": "main-033-marowak",
@@ -2055,7 +2087,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/marowak.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/marowak.shtml",
+   "image": "pokemon/small/105.png"
   },
   {
    "id": "main-034-tyrogue",
@@ -2103,7 +2136,8 @@
    "verify": [
     "Rarity at Training waterfall taken from Pocket Tactics (Serebii blank)"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/tyrogue.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/tyrogue.shtml",
+   "image": "pokemon/small/236.png"
   },
   {
    "id": "main-035-hitmonlee",
@@ -2149,7 +2183,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/hitmonlee.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/hitmonlee.shtml",
+   "image": "pokemon/small/106.png"
   },
   {
    "id": "main-036-hitmonchan",
@@ -2195,7 +2230,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/hitmonchan.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/hitmonchan.shtml",
+   "image": "pokemon/small/107.png"
   },
   {
    "id": "main-037-hitmontop",
@@ -2241,7 +2277,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/hitmontop.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/hitmontop.shtml",
+   "image": "pokemon/small/237.png"
   },
   {
    "id": "main-038-koffing",
@@ -2288,7 +2325,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/koffing.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/koffing.shtml",
+   "image": "pokemon/small/109.png"
   },
   {
    "id": "main-039-weezing",
@@ -2355,7 +2393,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/weezing.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/weezing.shtml",
+   "image": "pokemon/small/110.png"
   },
   {
    "id": "main-040-tangela",
@@ -2403,7 +2442,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/tangela.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/tangela.shtml",
+   "image": "pokemon/small/114.png"
   },
   {
    "id": "main-041-professor-tangrowth",
@@ -2449,7 +2489,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/professortangrowth.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/professortangrowth.shtml",
+   "image": "pokemon/small/465.png"
   },
   {
    "id": "main-041-tangrowth",
@@ -2496,7 +2537,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/tangrowth.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/tangrowth.shtml",
+   "image": "pokemon/small/465.png"
   },
   {
    "id": "main-042-scyther",
@@ -2543,7 +2585,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/scyther.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/scyther.shtml",
+   "image": "pokemon/small/123.png"
   },
   {
    "id": "main-043-scizor",
@@ -2591,7 +2634,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/scizor.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/scizor.shtml",
+   "image": "pokemon/small/212.png"
   },
   {
    "id": "main-044-pinsir",
@@ -2638,7 +2682,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/pinsir.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/pinsir.shtml",
+   "image": "pokemon/small/127.png"
   },
   {
    "id": "main-045-magikarp",
@@ -2684,7 +2729,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/magikarp.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/magikarp.shtml",
+   "image": "pokemon/small/129.png"
   },
   {
    "id": "main-046-gyarados",
@@ -2732,7 +2778,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/gyarados.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/gyarados.shtml",
+   "image": "pokemon/small/130.png"
   },
   {
    "id": "main-047-ditto",
@@ -2752,7 +2799,8 @@
    "habitats": [],
    "obtain": "You (the player)",
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/ditto.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/ditto.shtml",
+   "image": "pokemon/small/132.png"
   },
   {
    "id": "main-048-hoothoot",
@@ -2829,7 +2877,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/hoothoot.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/hoothoot.shtml",
+   "image": "pokemon/small/163.png"
   },
   {
    "id": "main-049-noctowl",
@@ -2895,7 +2944,8 @@
    "verify": [
     "Rarity at Gently lit bed: Serebii 2, Pocket Tactics 1"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/noctowl.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/noctowl.shtml",
+   "image": "pokemon/small/164.png"
   },
   {
    "id": "main-050-heracross",
@@ -2943,7 +2993,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/heracross.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/heracross.shtml",
+   "image": "pokemon/small/214.png"
   },
   {
    "id": "main-051-volbeat",
@@ -2989,7 +3040,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/volbeat.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/volbeat.shtml",
+   "image": "pokemon/small/313.png"
   },
   {
    "id": "main-052-illumise",
@@ -3035,7 +3087,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/illumise.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/illumise.shtml",
+   "image": "pokemon/small/314.png"
   },
   {
    "id": "main-053-gulpin",
@@ -3084,7 +3137,8 @@
    "verify": [
     "Rarity at Tantalizing dining set taken from Pocket Tactics (Serebii blank)"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/gulpin.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/gulpin.shtml",
+   "image": "pokemon/small/316.png"
   },
   {
    "id": "main-054-swalot",
@@ -3130,7 +3184,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/swalot.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/swalot.shtml",
+   "image": "pokemon/small/317.png"
   },
   {
    "id": "main-055-cacnea",
@@ -3174,7 +3229,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/cacnea.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/cacnea.shtml",
+   "image": "pokemon/small/331.png"
   },
   {
    "id": "main-056-cacturne",
@@ -3219,7 +3275,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/cacturne.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/cacturne.shtml",
+   "image": "pokemon/small/332.png"
   },
   {
    "id": "main-057-combee",
@@ -3266,7 +3323,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/combee.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/combee.shtml",
+   "image": "pokemon/small/415.png"
   },
   {
    "id": "main-058-vespiquen",
@@ -3314,7 +3372,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/vespiquen.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/vespiquen.shtml",
+   "image": "pokemon/small/416.png"
   },
   {
    "id": "main-059-shellos",
@@ -3360,7 +3419,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/shellos.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/shellos.shtml",
+   "image": "pokemon/small/422-shelloseastsea.png"
   },
   {
    "id": "main-059-shellos-east-sea",
@@ -3406,7 +3466,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/shelloseastsea.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/shelloseastsea.shtml",
+   "image": "pokemon/small/422-shelloseastsea.png"
   },
   {
    "id": "main-060-gastrodon",
@@ -3454,7 +3515,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/gastrodon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/gastrodon.shtml",
+   "image": "pokemon/small/423-gastrodoneastsea.png"
   },
   {
    "id": "main-060-gastrodon-east-sea",
@@ -3502,7 +3564,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/gastrodoneastsea.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/gastrodoneastsea.shtml",
+   "image": "pokemon/small/423-gastrodoneastsea.png"
   },
   {
    "id": "main-061-drifloon",
@@ -3587,7 +3650,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/drifloon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/drifloon.shtml",
+   "image": "pokemon/small/425.png"
   },
   {
    "id": "main-062-drifblim",
@@ -3635,7 +3699,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/drifblim.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/drifblim.shtml",
+   "image": "pokemon/small/426.png"
   },
   {
    "id": "main-063-drilbur",
@@ -3681,7 +3746,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/drilbur.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/drilbur.shtml",
+   "image": "pokemon/small/529.png"
   },
   {
    "id": "main-064-excadrill",
@@ -3729,7 +3795,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/excadrill.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/excadrill.shtml",
+   "image": "pokemon/small/530.png"
   },
   {
    "id": "main-065-timburr",
@@ -3775,7 +3842,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/timburr.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/timburr.shtml",
+   "image": "pokemon/small/532.png"
   },
   {
    "id": "main-066-gurdurr",
@@ -3840,7 +3908,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/gurdurr.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/gurdurr.shtml",
+   "image": "pokemon/small/533.png"
   },
   {
    "id": "main-067-conkeldurr",
@@ -3887,7 +3956,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/conkeldurr.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/conkeldurr.shtml",
+   "image": "pokemon/small/534.png"
   },
   {
    "id": "main-068-litwick",
@@ -3953,7 +4023,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/litwick.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/litwick.shtml",
+   "image": "pokemon/small/607.png"
   },
   {
    "id": "main-069-lampent",
@@ -4019,7 +4090,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/lampent.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/lampent.shtml",
+   "image": "pokemon/small/608.png"
   },
   {
    "id": "main-070-chandelure",
@@ -4066,7 +4138,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/chandelure.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/chandelure.shtml",
+   "image": "pokemon/small/609.png"
   },
   {
    "id": "main-071-axew",
@@ -4131,7 +4204,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/axew.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/axew.shtml",
+   "image": "pokemon/small/610.png"
   },
   {
    "id": "main-072-fraxure",
@@ -4196,7 +4270,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/fraxure.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/fraxure.shtml",
+   "image": "pokemon/small/611.png"
   },
   {
    "id": "main-073-haxorus",
@@ -4262,7 +4337,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/haxorus.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/haxorus.shtml",
+   "image": "pokemon/small/612.png"
   },
   {
    "id": "main-074-goomy",
@@ -4325,7 +4401,8 @@
    "verify": [
     "Rarity at Rain Dance site taken from Pocket Tactics (Serebii blank)"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/goomy.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/goomy.shtml",
+   "image": "pokemon/small/704.png"
   },
   {
    "id": "main-075-sliggoo",
@@ -4369,7 +4446,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/sliggoo.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/sliggoo.shtml",
+   "image": "pokemon/small/705.png"
   },
   {
    "id": "main-076-goodra",
@@ -4414,7 +4492,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/goodra.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/goodra.shtml",
+   "image": "pokemon/small/706.png"
   },
   {
    "id": "main-077-cramorant",
@@ -4463,7 +4542,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/cramorant.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/cramorant.shtml",
+   "image": "pokemon/small/845.png"
   },
   {
    "id": "main-078-pichu",
@@ -4510,7 +4590,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/pichu.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/pichu.shtml",
+   "image": "pokemon/small/172.png"
   },
   {
    "id": "main-079-peakychu",
@@ -4556,7 +4637,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/peakychu.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/peakychu.shtml",
+   "image": "pokemon/small/025.png"
   },
   {
    "id": "main-079-pikachu",
@@ -4605,7 +4687,8 @@
    "verify": [
     "Rarity at Picnic Set: Serebii 2, Pocket Tactics 1"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/pikachu.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/pikachu.shtml",
+   "image": "pokemon/small/025.png"
   },
   {
    "id": "main-080-raichu",
@@ -4652,7 +4735,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/raichu.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/raichu.shtml",
+   "image": "pokemon/small/026.png"
   },
   {
    "id": "main-081-zubat",
@@ -4712,7 +4796,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/zubat.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/zubat.shtml",
+   "image": "pokemon/small/041.png"
   },
   {
    "id": "main-082-golbat",
@@ -4756,7 +4841,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/golbat.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/golbat.shtml",
+   "image": "pokemon/small/042.png"
   },
   {
    "id": "main-083-crobat",
@@ -4817,7 +4903,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/crobat.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/crobat.shtml",
+   "image": "pokemon/small/169.png"
   },
   {
    "id": "main-084-meowth",
@@ -4882,7 +4969,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/meowth.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/meowth.shtml",
+   "image": "pokemon/small/052.png"
   },
   {
    "id": "main-085-persian",
@@ -4929,7 +5017,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/persian.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/persian.shtml",
+   "image": "pokemon/small/053.png"
   },
   {
    "id": "main-086-psyduck",
@@ -4975,7 +5064,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/psyduck.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/psyduck.shtml",
+   "image": "pokemon/small/054.png"
   },
   {
    "id": "main-087-golduck",
@@ -5021,7 +5111,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/golduck.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/golduck.shtml",
+   "image": "pokemon/small/055.png"
   },
   {
    "id": "main-088-growlithe",
@@ -5087,7 +5178,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/growlithe.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/growlithe.shtml",
+   "image": "pokemon/small/058.png"
   },
   {
    "id": "main-089-arcanine",
@@ -5153,7 +5245,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/arcanine.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/arcanine.shtml",
+   "image": "pokemon/small/059.png"
   },
   {
    "id": "main-090-farfetch-d",
@@ -5201,7 +5294,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/farfetch'd.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/farfetch'd.shtml",
+   "image": "pokemon/small/083.png"
   },
   {
    "id": "main-091-grimer",
@@ -5247,7 +5341,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/grimer.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/grimer.shtml",
+   "image": "pokemon/small/088.png"
   },
   {
    "id": "main-092-muk",
@@ -5293,7 +5388,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/muk.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/muk.shtml",
+   "image": "pokemon/small/089.png"
   },
   {
    "id": "main-093-gastly",
@@ -5338,7 +5434,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/gastly.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/gastly.shtml",
+   "image": "pokemon/small/092.png"
   },
   {
    "id": "main-094-haunter",
@@ -5399,7 +5496,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/haunter.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/haunter.shtml",
+   "image": "pokemon/small/093.png"
   },
   {
    "id": "main-095-gengar",
@@ -5444,7 +5542,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/gengar.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/gengar.shtml",
+   "image": "pokemon/small/094.png"
   },
   {
    "id": "main-096-voltorb",
@@ -5510,7 +5609,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/voltorb.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/voltorb.shtml",
+   "image": "pokemon/small/100.png"
   },
   {
    "id": "main-097-electrode",
@@ -5576,7 +5676,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/electrode.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/electrode.shtml",
+   "image": "pokemon/small/101.png"
   },
   {
    "id": "main-098-exeggcute",
@@ -5643,7 +5744,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/exeggcute.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/exeggcute.shtml",
+   "image": "pokemon/small/102.png"
   },
   {
    "id": "main-099-exeggutor",
@@ -5710,7 +5812,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/exeggutor.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/exeggutor.shtml",
+   "image": "pokemon/small/103.png"
   },
   {
    "id": "main-100-happiny",
@@ -5775,7 +5878,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/happiny.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/happiny.shtml",
+   "image": "pokemon/small/440.png"
   },
   {
    "id": "main-101-chansey",
@@ -5821,7 +5925,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/chansey.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/chansey.shtml",
+   "image": "pokemon/small/113.png"
   },
   {
    "id": "main-102-blissey",
@@ -5868,7 +5973,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/blissey.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/blissey.shtml",
+   "image": "pokemon/small/242.png"
   },
   {
    "id": "main-103-elekid",
@@ -5914,7 +6020,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/elekid.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/elekid.shtml",
+   "image": "pokemon/small/239.png"
   },
   {
    "id": "main-104-electabuzz",
@@ -5979,7 +6086,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/electabuzz.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/electabuzz.shtml",
+   "image": "pokemon/small/125.png"
   },
   {
    "id": "main-105-electivire",
@@ -6045,7 +6153,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/electivire.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/electivire.shtml",
+   "image": "pokemon/small/466.png"
   },
   {
    "id": "main-106-lapras",
@@ -6092,7 +6201,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/lapras.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/lapras.shtml",
+   "image": "pokemon/small/131.png"
   },
   {
    "id": "main-107-munchlax",
@@ -6159,7 +6269,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/munchlax.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/munchlax.shtml",
+   "image": "pokemon/small/446.png"
   },
   {
    "id": "main-108-mosslax",
@@ -6205,7 +6316,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/mosslax.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/mosslax.shtml",
+   "image": "pokemon/small/143.png"
   },
   {
    "id": "main-108-snorlax",
@@ -6275,7 +6387,8 @@
    "verify": [
     "Rarity at Tree-shaded snoozing Snorlax: Serebii 1, Pocket Tactics 2"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/snorlax.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/snorlax.shtml",
+   "image": "pokemon/small/143.png"
   },
   {
    "id": "main-109-spinarak",
@@ -6322,7 +6435,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/spinarak.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/spinarak.shtml",
+   "image": "pokemon/small/167.png"
   },
   {
    "id": "main-110-ariados",
@@ -6369,7 +6483,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/ariados.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/ariados.shtml",
+   "image": "pokemon/small/168.png"
   },
   {
    "id": "main-111-mareep",
@@ -6435,7 +6550,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/mareep.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/mareep.shtml",
+   "image": "pokemon/small/179.png"
   },
   {
    "id": "main-112-flaaffy",
@@ -6501,7 +6617,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/flaaffy.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/flaaffy.shtml",
+   "image": "pokemon/small/180.png"
   },
   {
    "id": "main-113-ampharos",
@@ -6548,7 +6665,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/ampharos.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/ampharos.shtml",
+   "image": "pokemon/small/181.png"
   },
   {
    "id": "main-114-azurill",
@@ -6615,7 +6733,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/azurill.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/azurill.shtml",
+   "image": "pokemon/small/298.png"
   },
   {
    "id": "main-115-marill",
@@ -6682,7 +6801,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/marill.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/marill.shtml",
+   "image": "pokemon/small/183.png"
   },
   {
    "id": "main-116-azumarill",
@@ -6728,7 +6848,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/azumarill.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/azumarill.shtml",
+   "image": "pokemon/small/184.png"
   },
   {
    "id": "main-117-paldean-wooper",
@@ -6775,7 +6896,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/paldeanwooper.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/paldeanwooper.shtml",
+   "image": "pokemon/small/194-p.png"
   },
   {
    "id": "main-118-clodsire",
@@ -6842,7 +6964,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/clodsire.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/clodsire.shtml",
+   "image": "pokemon/small/980.png"
   },
   {
    "id": "main-119-smeargle",
@@ -6888,7 +7011,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/smeargle.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/smeargle.shtml",
+   "image": "pokemon/small/235-smearguru.png"
   },
   {
    "id": "main-120-torchic",
@@ -6953,7 +7077,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/torchic.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/torchic.shtml",
+   "image": "pokemon/small/255.png"
   },
   {
    "id": "main-121-combusken",
@@ -7020,7 +7145,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/combusken.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/combusken.shtml",
+   "image": "pokemon/small/256.png"
   },
   {
    "id": "main-122-blaziken",
@@ -7087,7 +7213,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/blaziken.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/blaziken.shtml",
+   "image": "pokemon/small/257.png"
   },
   {
    "id": "main-123-wingull",
@@ -7152,7 +7279,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/wingull.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/wingull.shtml",
+   "image": "pokemon/small/278.png"
   },
   {
    "id": "main-124-pelipper",
@@ -7217,7 +7345,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/pelipper.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/pelipper.shtml",
+   "image": "pokemon/small/279.png"
   },
   {
    "id": "main-125-makuhita",
@@ -7283,7 +7412,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/makuhita.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/makuhita.shtml",
+   "image": "pokemon/small/296.png"
   },
   {
    "id": "main-126-hariyama",
@@ -7349,7 +7479,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/hariyama.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/hariyama.shtml",
+   "image": "pokemon/small/297.png"
   },
   {
    "id": "main-127-absol",
@@ -7395,7 +7526,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/absol.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/absol.shtml",
+   "image": "pokemon/small/359.png"
   },
   {
    "id": "main-128-piplup",
@@ -7441,7 +7573,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/piplup.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/piplup.shtml",
+   "image": "pokemon/small/393.png"
   },
   {
    "id": "main-129-prinplup",
@@ -7507,7 +7640,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/prinplup.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/prinplup.shtml",
+   "image": "pokemon/small/394.png"
   },
   {
    "id": "main-130-empoleon",
@@ -7572,7 +7706,8 @@
    "verify": [
     "Rarity at Tableside delivery cart: Serebii 2, Pocket Tactics 1"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/empoleon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/empoleon.shtml",
+   "image": "pokemon/small/395.png"
   },
   {
    "id": "main-131-audino",
@@ -7618,7 +7753,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/audino.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/audino.shtml",
+   "image": "pokemon/small/531.png"
   },
   {
    "id": "main-132-trubbish",
@@ -7664,7 +7800,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/trubbish.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/trubbish.shtml",
+   "image": "pokemon/small/568.png"
   },
   {
    "id": "main-133-garbodor",
@@ -7711,7 +7848,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/garbodor.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/garbodor.shtml",
+   "image": "pokemon/small/569.png"
   },
   {
    "id": "main-134-zorua",
@@ -7757,7 +7895,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/zorua.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/zorua.shtml",
+   "image": "pokemon/small/570.png"
   },
   {
    "id": "main-135-zoroark",
@@ -7823,7 +7962,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/zoroark.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/zoroark.shtml",
+   "image": "pokemon/small/571.png"
   },
   {
    "id": "main-136-minccino",
@@ -7888,7 +8028,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/minccino.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/minccino.shtml",
+   "image": "pokemon/small/572.png"
   },
   {
    "id": "main-137-cinccino",
@@ -7937,7 +8078,8 @@
    "verify": [
     "Rarity at Private makeup stand: Serebii 2, Pocket Tactics 1"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/cinccino.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/cinccino.shtml",
+   "image": "pokemon/small/573.png"
   },
   {
    "id": "main-138-grubbin",
@@ -8004,7 +8146,8 @@
    "verify": [
     "Rarity at Yellow tall grass taken from Pocket Tactics (Serebii blank)"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/grubbin.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/grubbin.shtml",
+   "image": "pokemon/small/736.png"
   },
   {
    "id": "main-139-charjabug",
@@ -8052,7 +8195,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/charjabug.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/charjabug.shtml",
+   "image": "pokemon/small/737.png"
   },
   {
    "id": "main-140-vikavolt",
@@ -8101,7 +8245,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/vikavolt.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/vikavolt.shtml",
+   "image": "pokemon/small/738.png"
   },
   {
    "id": "main-141-mimikyu",
@@ -8148,7 +8293,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/mimikyu.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/mimikyu.shtml",
+   "image": "pokemon/small/778.png"
   },
   {
    "id": "main-142-pawmi",
@@ -8213,7 +8359,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/pawmi.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/pawmi.shtml",
+   "image": "pokemon/small/921.png"
   },
   {
    "id": "main-143-pawmo",
@@ -8280,7 +8427,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/pawmo.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/pawmo.shtml",
+   "image": "pokemon/small/922.png"
   },
   {
    "id": "main-144-pawmot",
@@ -8328,7 +8476,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/pawmot.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/pawmot.shtml",
+   "image": "pokemon/small/923.png"
   },
   {
    "id": "main-145-tatsugiri-curly-form",
@@ -8375,7 +8524,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/tatsugiricurlyform.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/tatsugiricurlyform.shtml",
+   "image": "pokemon/small/978-tatsugiristretchyform.png"
   },
   {
    "id": "main-145-tatsugiri-droopy-form",
@@ -8422,7 +8572,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/tatsugiridroopyform.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/tatsugiridroopyform.shtml",
+   "image": "pokemon/small/978-tatsugiristretchyform.png"
   },
   {
    "id": "main-145-tatsugiri-stretchy-form",
@@ -8469,7 +8620,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/tatsugiristretchyform.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/tatsugiristretchyform.shtml",
+   "image": "pokemon/small/978-tatsugiristretchyform.png"
   },
   {
    "id": "main-146-ekans",
@@ -8515,7 +8667,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/ekans.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/ekans.shtml",
+   "image": "pokemon/small/023.png"
   },
   {
    "id": "main-147-arbok",
@@ -8561,7 +8714,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/arbok.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/arbok.shtml",
+   "image": "pokemon/small/024.png"
   },
   {
    "id": "main-148-cleffa",
@@ -8604,7 +8758,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/cleffa.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/cleffa.shtml",
+   "image": "pokemon/small/173.png"
   },
   {
    "id": "main-149-clefairy",
@@ -8663,7 +8818,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/clefairy.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/clefairy.shtml",
+   "image": "pokemon/small/035.png"
   },
   {
    "id": "main-150-clefable",
@@ -8723,7 +8879,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/clefable.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/clefable.shtml",
+   "image": "pokemon/small/036.png"
   },
   {
    "id": "main-151-igglybuff",
@@ -8770,7 +8927,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/igglybuff.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/igglybuff.shtml",
+   "image": "pokemon/small/174.png"
   },
   {
    "id": "main-152-jigglypuff",
@@ -8836,7 +8994,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/jigglypuff.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/jigglypuff.shtml",
+   "image": "pokemon/small/039.png"
   },
   {
    "id": "main-153-wigglytuff",
@@ -8884,7 +9043,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/wigglytuff.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/wigglytuff.shtml",
+   "image": "pokemon/small/040.png"
   },
   {
    "id": "main-154-diglett",
@@ -8949,7 +9109,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/diglett.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/diglett.shtml",
+   "image": "pokemon/small/050.png"
   },
   {
    "id": "main-155-dugtrio",
@@ -9015,7 +9176,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/dugtrio.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/dugtrio.shtml",
+   "image": "pokemon/small/051.png"
   },
   {
    "id": "main-156-machop",
@@ -9063,7 +9225,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/machop.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/machop.shtml",
+   "image": "pokemon/small/066.png"
   },
   {
    "id": "main-157-machoke",
@@ -9129,7 +9292,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/machoke.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/machoke.shtml",
+   "image": "pokemon/small/067.png"
   },
   {
    "id": "main-158-machamp",
@@ -9195,7 +9359,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/machamp.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/machamp.shtml",
+   "image": "pokemon/small/068.png"
   },
   {
    "id": "main-159-geodude",
@@ -9243,7 +9408,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/geodude.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/geodude.shtml",
+   "image": "pokemon/small/074.png"
   },
   {
    "id": "main-160-graveler",
@@ -9290,7 +9456,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/graveler.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/graveler.shtml",
+   "image": "pokemon/small/075.png"
   },
   {
    "id": "main-161-golem",
@@ -9338,7 +9505,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/golem.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/golem.shtml",
+   "image": "pokemon/small/076.png"
   },
   {
    "id": "main-162-magby",
@@ -9385,7 +9553,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/magby.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/magby.shtml",
+   "image": "pokemon/small/240.png"
   },
   {
    "id": "main-163-magmar",
@@ -9431,7 +9600,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/magmar.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/magmar.shtml",
+   "image": "pokemon/small/126.png"
   },
   {
    "id": "main-164-magmortar",
@@ -9478,7 +9648,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/magmortar.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/magmortar.shtml",
+   "image": "pokemon/small/467.png"
   },
   {
    "id": "main-165-bonsly",
@@ -9524,7 +9695,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/bonsly.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/bonsly.shtml",
+   "image": "pokemon/small/438.png"
   },
   {
    "id": "main-166-sudowoodo",
@@ -9589,7 +9761,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/sudowoodo.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/sudowoodo.shtml",
+   "image": "pokemon/small/185.png"
   },
   {
    "id": "main-167-murkrow",
@@ -9650,7 +9823,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/murkrow.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/murkrow.shtml",
+   "image": "pokemon/small/198.png"
   },
   {
    "id": "main-168-honchkrow",
@@ -9713,7 +9887,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/honchkrow.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/honchkrow.shtml",
+   "image": "pokemon/small/430.png"
   },
   {
    "id": "main-169-larvitar",
@@ -9761,7 +9936,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/larvitar.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/larvitar.shtml",
+   "image": "pokemon/small/246.png"
   },
   {
    "id": "main-170-pupitar",
@@ -9809,7 +9985,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/pupitar.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/pupitar.shtml",
+   "image": "pokemon/small/247.png"
   },
   {
    "id": "main-171-tyranitar",
@@ -9876,7 +10053,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/tyranitar.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/tyranitar.shtml",
+   "image": "pokemon/small/248.png"
   },
   {
    "id": "main-172-lotad",
@@ -9961,7 +10139,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/lotad.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/lotad.shtml",
+   "image": "pokemon/small/270.png"
   },
   {
    "id": "main-173-lombre",
@@ -10027,7 +10206,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/lombre.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/lombre.shtml",
+   "image": "pokemon/small/271.png"
   },
   {
    "id": "main-174-ludicolo",
@@ -10075,7 +10255,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/ludicolo.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/ludicolo.shtml",
+   "image": "pokemon/small/272.png"
   },
   {
    "id": "main-175-mawile",
@@ -10124,7 +10305,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/mawile.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/mawile.shtml",
+   "image": "pokemon/small/303.png"
   },
   {
    "id": "main-176-torkoal",
@@ -10170,7 +10352,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/torkoal.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/torkoal.shtml",
+   "image": "pokemon/small/324.png"
   },
   {
    "id": "main-177-kricketot",
@@ -10235,7 +10418,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/kricketot.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/kricketot.shtml",
+   "image": "pokemon/small/401.png"
   },
   {
    "id": "main-178-kricketune",
@@ -10300,7 +10484,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/kricketune.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/kricketune.shtml",
+   "image": "pokemon/small/402.png"
   },
   {
    "id": "main-179-chatot",
@@ -10365,7 +10550,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/chatot.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/chatot.shtml",
+   "image": "pokemon/small/441.png"
   },
   {
    "id": "main-180-riolu",
@@ -10430,7 +10616,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/riolu.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/riolu.shtml",
+   "image": "pokemon/small/447.png"
   },
   {
    "id": "main-181-lucario",
@@ -10477,7 +10664,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/lucario.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/lucario.shtml",
+   "image": "pokemon/small/448.png"
   },
   {
    "id": "main-182-stereo-rotom",
@@ -10524,7 +10712,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/stereorotom.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/stereorotom.shtml",
+   "image": "pokemon/small/479-stereorotom.png"
   },
   {
    "id": "main-183-larvesta",
@@ -10572,7 +10761,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/larvesta.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/larvesta.shtml",
+   "image": "pokemon/small/636.png"
   },
   {
    "id": "main-184-volcarona",
@@ -10641,7 +10831,8 @@
    "verify": [
     "Rarity at Tree-shaded graceful flower bed: Serebii 3, Pocket Tactics 2"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/volcarona.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/volcarona.shtml",
+   "image": "pokemon/small/637.png"
   },
   {
    "id": "main-185-rowlet",
@@ -10689,7 +10880,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/rowlet.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/rowlet.shtml",
+   "image": "pokemon/small/722.png"
   },
   {
    "id": "main-186-dartrix",
@@ -10737,7 +10929,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/dartrix.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/dartrix.shtml",
+   "image": "pokemon/small/723.png"
   },
   {
    "id": "main-187-decidueye",
@@ -10804,7 +10997,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/decidueye.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/decidueye.shtml",
+   "image": "pokemon/small/724.png"
   },
   {
    "id": "main-188-scorbunny",
@@ -10850,7 +11044,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/scorbunny.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/scorbunny.shtml",
+   "image": "pokemon/small/813.png"
   },
   {
    "id": "main-189-raboot",
@@ -10915,7 +11110,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/raboot.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/raboot.shtml",
+   "image": "pokemon/small/814.png"
   },
   {
    "id": "main-190-cinderace",
@@ -10981,7 +11177,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/cinderace.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/cinderace.shtml",
+   "image": "pokemon/small/815.png"
   },
   {
    "id": "main-191-skwovet",
@@ -11029,7 +11226,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/skwovet.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/skwovet.shtml",
+   "image": "pokemon/small/819.png"
   },
   {
    "id": "main-192-greedent",
@@ -11075,7 +11273,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/greedent.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/greedent.shtml",
+   "image": "pokemon/small/820-cook.png"
   },
   {
    "id": "main-193-rolycoly",
@@ -11122,7 +11321,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/rolycoly.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/rolycoly.shtml",
+   "image": "pokemon/small/837.png"
   },
   {
    "id": "main-194-carkol",
@@ -11170,7 +11370,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/carkol.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/carkol.shtml",
+   "image": "pokemon/small/838.png"
   },
   {
    "id": "main-195-coalossal",
@@ -11237,7 +11438,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/coalossal.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/coalossal.shtml",
+   "image": "pokemon/small/839.png"
   },
   {
    "id": "main-196-toxel",
@@ -11285,7 +11487,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/toxel.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/toxel.shtml",
+   "image": "pokemon/small/848.png"
   },
   {
    "id": "main-197-toxtricity-amped-form",
@@ -11333,7 +11536,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/toxtricityampedform.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/toxtricityampedform.shtml",
+   "image": "pokemon/small/849-toxtricitylowkeyform.png"
   },
   {
    "id": "main-197-toxtricity-low-key-form",
@@ -11383,7 +11587,8 @@
    "verify": [
     "Rarity at Low-key rock stage: Serebii 2, Pocket Tactics 1"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/toxtricitylowkeyform.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/toxtricitylowkeyform.shtml",
+   "image": "pokemon/small/849-toxtricitylowkeyform.png"
   },
   {
    "id": "main-198-fidough",
@@ -11446,7 +11651,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/fidough.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/fidough.shtml",
+   "image": "pokemon/small/926.png"
   },
   {
    "id": "main-199-dachsbun",
@@ -11510,7 +11716,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/dachsbun.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/dachsbun.shtml",
+   "image": "pokemon/small/927.png"
   },
   {
    "id": "main-200-charcadet",
@@ -11556,7 +11763,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/charcadet.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/charcadet.shtml",
+   "image": "pokemon/small/935.png"
   },
   {
    "id": "main-201-armarouge",
@@ -11604,7 +11812,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/armarouge.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/armarouge.shtml",
+   "image": "pokemon/small/936.png"
   },
   {
    "id": "main-202-ceruledge",
@@ -11652,7 +11861,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/ceruledge.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/ceruledge.shtml",
+   "image": "pokemon/small/937.png"
   },
   {
    "id": "main-203-glimmet",
@@ -11718,7 +11928,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/glimmet.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/glimmet.shtml",
+   "image": "pokemon/small/969.png"
   },
   {
    "id": "main-204-glimmora",
@@ -11786,7 +11997,8 @@
    "verify": [
     "Rarity at Container snacking: Serebii 1, Pocket Tactics 2"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/glimmora.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/glimmora.shtml",
+   "image": "pokemon/small/970.png"
   },
   {
    "id": "main-205-gimmighoul",
@@ -11832,7 +12044,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/gimmighoul.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/gimmighoul.shtml",
+   "image": "pokemon/small/999.png"
   },
   {
    "id": "main-206-gholdengo",
@@ -11879,7 +12092,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/gholdengo.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/gholdengo.shtml",
+   "image": "pokemon/small/1000.png"
   },
   {
    "id": "main-207-vulpix",
@@ -11925,7 +12139,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/vulpix.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/vulpix.shtml",
+   "image": "pokemon/small/037.png"
   },
   {
    "id": "main-208-ninetales",
@@ -11990,7 +12205,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/ninetales.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/ninetales.shtml",
+   "image": "pokemon/small/038.png"
   },
   {
    "id": "main-209-poliwag",
@@ -12036,7 +12252,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/poliwag.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/poliwag.shtml",
+   "image": "pokemon/small/060.png"
   },
   {
    "id": "main-210-poliwhirl",
@@ -12082,7 +12299,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/poliwhirl.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/poliwhirl.shtml",
+   "image": "pokemon/small/061.png"
   },
   {
    "id": "main-211-poliwrath",
@@ -12151,7 +12369,8 @@
    "verify": [
     "Rarity at Sewer hole inspection taken from Pocket Tactics (Serebii blank)"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/poliwrath.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/poliwrath.shtml",
+   "image": "pokemon/small/062.png"
   },
   {
    "id": "main-212-politoed",
@@ -12236,7 +12455,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/politoed.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/politoed.shtml",
+   "image": "pokemon/small/186.png"
   },
   {
    "id": "main-213-abra",
@@ -12301,7 +12521,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/abra.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/abra.shtml",
+   "image": "pokemon/small/063.png"
   },
   {
    "id": "main-214-kadabra",
@@ -12347,7 +12568,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/kadabra.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/kadabra.shtml",
+   "image": "pokemon/small/064.png"
   },
   {
    "id": "main-215-alakazam",
@@ -12415,7 +12637,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/alakazam.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/alakazam.shtml",
+   "image": "pokemon/small/065.png"
   },
   {
    "id": "main-216-mime-jr",
@@ -12481,7 +12704,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/mimejr..shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/mimejr..shtml",
+   "image": "pokemon/small/439.png"
   },
   {
    "id": "main-217-mr-mime",
@@ -12529,7 +12753,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/mr.mime.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/mr.mime.shtml",
+   "image": "pokemon/small/122.png"
   },
   {
    "id": "main-218-porygon",
@@ -12575,7 +12800,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/porygon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/porygon.shtml",
+   "image": "pokemon/small/137.png"
   },
   {
    "id": "main-219-porygon2",
@@ -12621,7 +12847,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/porygon2.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/porygon2.shtml",
+   "image": "pokemon/small/233.png"
   },
   {
    "id": "main-220-porygon-z",
@@ -12667,7 +12894,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/porygon-z.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/porygon-z.shtml",
+   "image": "pokemon/small/474.png"
   },
   {
    "id": "main-221-dratini",
@@ -12732,7 +12960,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/dratini.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/dratini.shtml",
+   "image": "pokemon/small/147.png"
   },
   {
    "id": "main-222-dragonair",
@@ -12797,7 +13026,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/dragonair.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/dragonair.shtml",
+   "image": "pokemon/small/148.png"
   },
   {
    "id": "main-223-dragonite",
@@ -12845,7 +13075,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/dragonite.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/dragonite.shtml",
+   "image": "pokemon/small/149.png"
   },
   {
    "id": "main-224-cyndaquil",
@@ -12891,7 +13122,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/cyndaquil.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/cyndaquil.shtml",
+   "image": "pokemon/small/155.png"
   },
   {
    "id": "main-225-quilava",
@@ -12958,7 +13190,8 @@
    "verify": [
     "Rarity at Concrete pipe secret base: Serebii 1, Pocket Tactics 2"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/quilava.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/quilava.shtml",
+   "image": "pokemon/small/156.png"
   },
   {
    "id": "main-226-typhlosion",
@@ -13024,7 +13257,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/typhlosion.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/typhlosion.shtml",
+   "image": "pokemon/small/157.png"
   },
   {
    "id": "main-227-misdreavus",
@@ -13083,7 +13317,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/misdreavus.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/misdreavus.shtml",
+   "image": "pokemon/small/200.png"
   },
   {
    "id": "main-228-mismagius",
@@ -13159,7 +13394,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/mismagius.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/mismagius.shtml",
+   "image": "pokemon/small/429.png"
   },
   {
    "id": "main-229-girafarig",
@@ -13206,7 +13442,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/girafarig.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/girafarig.shtml",
+   "image": "pokemon/small/203.png"
   },
   {
    "id": "main-230-farigiraf",
@@ -13254,7 +13491,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/farigiraf.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/farigiraf.shtml",
+   "image": "pokemon/small/981.png"
   },
   {
    "id": "main-231-ralts",
@@ -13301,7 +13539,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/ralts.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/ralts.shtml",
+   "image": "pokemon/small/280.png"
   },
   {
    "id": "main-232-kirlia",
@@ -13367,7 +13606,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/kirlia.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/kirlia.shtml",
+   "image": "pokemon/small/281.png"
   },
   {
    "id": "main-233-gardevoir",
@@ -13434,7 +13674,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/gardevoir.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/gardevoir.shtml",
+   "image": "pokemon/small/282.png"
   },
   {
    "id": "main-234-gallade",
@@ -13482,7 +13723,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/gallade.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/gallade.shtml",
+   "image": "pokemon/small/475.png"
   },
   {
    "id": "main-235-plusle",
@@ -13528,7 +13770,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/plusle.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/plusle.shtml",
+   "image": "pokemon/small/311.png"
   },
   {
    "id": "main-236-minun",
@@ -13574,7 +13817,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/minun.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/minun.shtml",
+   "image": "pokemon/small/312.png"
   },
   {
    "id": "main-237-trapinch",
@@ -13621,7 +13865,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/trapinch.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/trapinch.shtml",
+   "image": "pokemon/small/328.png"
   },
   {
    "id": "main-238-vibrava",
@@ -13669,7 +13914,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/vibrava.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/vibrava.shtml",
+   "image": "pokemon/small/329.png"
   },
   {
    "id": "main-239-flygon",
@@ -13717,7 +13963,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/flygon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/flygon.shtml",
+   "image": "pokemon/small/330.png"
   },
   {
    "id": "main-240-swablu",
@@ -13764,7 +14011,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/swablu.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/swablu.shtml",
+   "image": "pokemon/small/333.png"
   },
   {
    "id": "main-241-altaria",
@@ -13812,7 +14060,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/altaria.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/altaria.shtml",
+   "image": "pokemon/small/334.png"
   },
   {
    "id": "main-242-duskull",
@@ -13855,7 +14104,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/duskull.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/duskull.shtml",
+   "image": "pokemon/small/355.png"
   },
   {
    "id": "main-243-dusclops",
@@ -13898,7 +14148,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/dusclops.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/dusclops.shtml",
+   "image": "pokemon/small/356.png"
   },
   {
    "id": "main-244-dusknoir",
@@ -13942,7 +14193,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/dusknoir.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/dusknoir.shtml",
+   "image": "pokemon/small/477.png"
   },
   {
    "id": "main-245-beldum",
@@ -13989,7 +14241,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/beldum.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/beldum.shtml",
+   "image": "pokemon/small/374.png"
   },
   {
    "id": "main-246-metang",
@@ -14036,7 +14289,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/metang.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/metang.shtml",
+   "image": "pokemon/small/375.png"
   },
   {
    "id": "main-247-metagross",
@@ -14084,7 +14338,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/metagross.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/metagross.shtml",
+   "image": "pokemon/small/376.png"
   },
   {
    "id": "main-248-snivy",
@@ -14131,7 +14386,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/snivy.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/snivy.shtml",
+   "image": "pokemon/small/495.png"
   },
   {
    "id": "main-249-servine",
@@ -14178,7 +14434,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/servine.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/servine.shtml",
+   "image": "pokemon/small/496.png"
   },
   {
    "id": "main-250-serperior",
@@ -14244,7 +14501,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/serperior.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/serperior.shtml",
+   "image": "pokemon/small/497.png"
   },
   {
    "id": "main-251-froakie",
@@ -14290,7 +14548,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/froakie.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/froakie.shtml",
+   "image": "pokemon/small/656.png"
   },
   {
    "id": "main-252-frogadier",
@@ -14357,7 +14616,8 @@
    "verify": [
     "Rarity at Hydrated pink tall grass: Serebii 1, Pocket Tactics 2"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/frogadier.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/frogadier.shtml",
+   "image": "pokemon/small/657.png"
   },
   {
    "id": "main-253-greninja",
@@ -14426,7 +14686,8 @@
    "verify": [
     "Rarity at Hydrated pink tall grass: Serebii 2, Pocket Tactics 3"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/greninja.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/greninja.shtml",
+   "image": "pokemon/small/658.png"
   },
   {
    "id": "main-254-dedenne",
@@ -14474,7 +14735,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/dedenne.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/dedenne.shtml",
+   "image": "pokemon/small/702.png"
   },
   {
    "id": "main-255-noibat",
@@ -14521,7 +14783,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/noibat.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/noibat.shtml",
+   "image": "pokemon/small/714.png"
   },
   {
    "id": "main-256-noivern",
@@ -14569,7 +14832,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/noivern.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/noivern.shtml",
+   "image": "pokemon/small/715.png"
   },
   {
    "id": "main-257-rookidee",
@@ -14615,7 +14879,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/rookidee.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/rookidee.shtml",
+   "image": "pokemon/small/821.png"
   },
   {
    "id": "main-258-corvisquire",
@@ -14661,7 +14926,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/corvisquire.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/corvisquire.shtml",
+   "image": "pokemon/small/822.png"
   },
   {
    "id": "main-259-corviknight",
@@ -14730,7 +14996,8 @@
    "verify": [
     "Rarity at Sewer hole inspection taken from Pocket Tactics (Serebii blank)"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/corviknight.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/corviknight.shtml",
+   "image": "pokemon/small/823.png"
   },
   {
    "id": "main-260-dreepy",
@@ -14778,7 +15045,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/dreepy.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/dreepy.shtml",
+   "image": "pokemon/small/885.png"
   },
   {
    "id": "main-261-drakloak",
@@ -14845,7 +15113,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/drakloak.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/drakloak.shtml",
+   "image": "pokemon/small/886.png"
   },
   {
    "id": "main-262-dragapult",
@@ -14895,7 +15164,8 @@
    "verify": [
     "Rarity at Office storeroom: Serebii 2, Pocket Tactics 3"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/dragapult.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/dragapult.shtml",
+   "image": "pokemon/small/887.png"
   },
   {
    "id": "main-263-sprigatito",
@@ -14960,7 +15230,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/sprigatito.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/sprigatito.shtml",
+   "image": "pokemon/small/906.png"
   },
   {
    "id": "main-264-floragato",
@@ -15006,7 +15277,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/floragato.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/floragato.shtml",
+   "image": "pokemon/small/907.png"
   },
   {
    "id": "main-265-meowscarada",
@@ -15054,7 +15326,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/meowscarada.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/meowscarada.shtml",
+   "image": "pokemon/small/908.png"
   },
   {
    "id": "main-266-wattrel",
@@ -15101,7 +15374,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/wattrel.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/wattrel.shtml",
+   "image": "pokemon/small/940.png"
   },
   {
    "id": "main-267-kilowattrel",
@@ -15149,7 +15423,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/kilowattrel.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/kilowattrel.shtml",
+   "image": "pokemon/small/941.png"
   },
   {
    "id": "main-268-tinkatink",
@@ -15217,7 +15492,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/tinkatink.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/tinkatink.shtml",
+   "image": "pokemon/small/957.png"
   },
   {
    "id": "main-269-tinkatuff",
@@ -15286,7 +15562,8 @@
    "verify": [
     "Rarity at Sewer hole inspection unknown"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/tinkatuff.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/tinkatuff.shtml",
+   "image": "pokemon/small/958.png"
   },
   {
    "id": "main-270-tinkaton",
@@ -15333,7 +15610,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/tinkaton.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/tinkaton.shtml",
+   "image": "pokemon/small/959-tinkmeister.png"
   },
   {
    "id": "main-271-aerodactyl",
@@ -15380,7 +15658,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/aerodactyl.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/aerodactyl.shtml",
+   "image": "pokemon/small/142.png"
   },
   {
    "id": "main-272-cranidos",
@@ -15426,7 +15705,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/cranidos.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/cranidos.shtml",
+   "image": "pokemon/small/408.png"
   },
   {
    "id": "main-273-rampardos",
@@ -15473,7 +15753,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/rampardos.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/rampardos.shtml",
+   "image": "pokemon/small/409.png"
   },
   {
    "id": "main-274-shieldon",
@@ -15520,7 +15801,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/shieldon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/shieldon.shtml",
+   "image": "pokemon/small/410.png"
   },
   {
    "id": "main-275-bastiodon",
@@ -15568,7 +15850,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/bastiodon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/bastiodon.shtml",
+   "image": "pokemon/small/411.png"
   },
   {
    "id": "main-276-tyrunt",
@@ -15615,7 +15898,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/tyrunt.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/tyrunt.shtml",
+   "image": "pokemon/small/696.png"
   },
   {
    "id": "main-277-tyrantrum",
@@ -15663,7 +15947,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/tyrantrum.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/tyrantrum.shtml",
+   "image": "pokemon/small/697.png"
   },
   {
    "id": "main-278-amaura",
@@ -15710,7 +15995,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/amaura.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/amaura.shtml",
+   "image": "pokemon/small/698.png"
   },
   {
    "id": "main-279-aurorus",
@@ -15758,7 +16044,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/aurorus.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/aurorus.shtml",
+   "image": "pokemon/small/699.png"
   },
   {
    "id": "main-280-eevee",
@@ -15804,7 +16091,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/eevee.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/eevee.shtml",
+   "image": "pokemon/small/133.png"
   },
   {
    "id": "main-281-vaporeon",
@@ -15851,7 +16139,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/vaporeon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/vaporeon.shtml",
+   "image": "pokemon/small/134.png"
   },
   {
    "id": "main-282-jolteon",
@@ -15898,7 +16187,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/jolteon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/jolteon.shtml",
+   "image": "pokemon/small/135.png"
   },
   {
    "id": "main-283-flareon",
@@ -15945,7 +16235,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/flareon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/flareon.shtml",
+   "image": "pokemon/small/136.png"
   },
   {
    "id": "main-284-espeon",
@@ -15992,7 +16283,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/espeon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/espeon.shtml",
+   "image": "pokemon/small/196.png"
   },
   {
    "id": "main-285-umbreon",
@@ -16039,7 +16331,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/umbreon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/umbreon.shtml",
+   "image": "pokemon/small/197.png"
   },
   {
    "id": "main-286-leafeon",
@@ -16086,7 +16379,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/leafeon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/leafeon.shtml",
+   "image": "pokemon/small/470.png"
   },
   {
    "id": "main-287-glaceon",
@@ -16133,7 +16427,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/glaceon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/glaceon.shtml",
+   "image": "pokemon/small/471.png"
   },
   {
    "id": "main-288-sylveon",
@@ -16180,7 +16475,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/sylveon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/sylveon.shtml",
+   "image": "pokemon/small/700.png"
   },
   {
    "id": "main-289-kyogre",
@@ -16206,7 +16502,8 @@
    "habitats": [],
    "obtain": "Story",
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/kyogre.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/kyogre.shtml",
+   "image": "pokemon/small/382.png"
   },
   {
    "id": "main-290-raikou",
@@ -16232,7 +16529,8 @@
    "habitats": [],
    "obtain": "Dream Island (Pikachu Doll)",
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/raikou.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/raikou.shtml",
+   "image": "pokemon/small/243.png"
   },
   {
    "id": "main-291-entei",
@@ -16258,7 +16556,8 @@
    "habitats": [],
    "obtain": "Dream Island (Arcanine Doll)",
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/entei.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/entei.shtml",
+   "image": "pokemon/small/244.png"
   },
   {
    "id": "main-292-suicune",
@@ -16284,7 +16583,8 @@
    "habitats": [],
    "obtain": "Dream Island (Eevee Doll)",
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/suicune.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/suicune.shtml",
+   "image": "pokemon/small/245.png"
   },
   {
    "id": "main-293-volcanion",
@@ -16311,7 +16611,8 @@
    "habitats": [],
    "obtain": "Second party in Rocky Ridges after finishing it, then cannon + fireworks",
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/volcanion.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/volcanion.shtml",
+   "image": "pokemon/small/721.png"
   },
   {
    "id": "main-294-articuno",
@@ -16338,7 +16639,8 @@
    "habitats": [],
    "obtain": "Palette Town kit: Freezing Chambers",
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/articuno.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/articuno.shtml",
+   "image": "pokemon/small/144.png"
   },
   {
    "id": "main-295-zapdos",
@@ -16365,7 +16667,8 @@
    "habitats": [],
    "obtain": "Palette Town kit: Abandoned Power Plant",
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/zapdos.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/zapdos.shtml",
+   "image": "pokemon/small/145.png"
   },
   {
    "id": "main-296-moltres",
@@ -16392,7 +16695,8 @@
    "habitats": [],
    "obtain": "Palette Town kit: Altar of the Flame",
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/moltres.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/moltres.shtml",
+   "image": "pokemon/small/146.png"
   },
   {
    "id": "main-297-lugia",
@@ -16419,7 +16723,8 @@
    "habitats": [],
    "obtain": "Tidal Bell (5 Rare PokéMetal + 5 Silver Feather) when Lugia flies over",
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/lugia.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/lugia.shtml",
+   "image": "pokemon/small/249.png"
   },
   {
    "id": "main-298-ho-oh",
@@ -16446,7 +16751,8 @@
    "habitats": [],
    "obtain": "Clear Bell (5 Rare PokéMetal + 5 Rainbow Feather) when Ho-Oh flies over",
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/ho-oh.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/ho-oh.shtml",
+   "image": "pokemon/small/250.png"
   },
   {
    "id": "main-299-mewtwo",
@@ -16472,7 +16778,8 @@
    "habitats": [],
    "obtain": "Dream Island (Dragonite Doll)",
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/mewtwo.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/mewtwo.shtml",
+   "image": "pokemon/small/150.png"
   },
   {
    "id": "main-300-mew",
@@ -16498,7 +16805,8 @@
    "habitats": [],
    "obtain": "Collect 27 Mysterious Slates, place them at the Withered Wastelands ruins",
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/mew.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/mew.shtml",
+   "image": "pokemon/small/151.png"
   },
   {
    "id": "event-001-hoppip",
@@ -16545,7 +16853,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/hoppip.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/hoppip.shtml",
+   "image": "pokemon/small/187.png"
   },
   {
    "id": "event-002-skiploom",
@@ -16611,7 +16920,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/skiploom.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/skiploom.shtml",
+   "image": "pokemon/small/188.png"
   },
   {
    "id": "event-003-jumpluff",
@@ -16681,7 +16991,8 @@
     "Rarity at Yellow carpet: Serebii 3, Pocket Tactics 2",
     "Rarity at Dandelion lunchtime: Serebii 2, Pocket Tactics 1"
    ],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/jumpluff.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/jumpluff.shtml",
+   "image": "pokemon/small/189.png"
   },
   {
    "id": "event-004-sableye",
@@ -16728,7 +17039,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/sableye.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/sableye.shtml",
+   "image": "pokemon/small/302.png"
   },
   {
    "id": "event-005-jirachi",
@@ -16775,7 +17087,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/jirachi.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/jirachi.shtml",
+   "image": "pokemon/small/385.png"
   },
   {
    "id": "event-006-feebas",
@@ -16822,7 +17135,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/feebas.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/feebas.shtml",
+   "image": "pokemon/small/349.png"
   },
   {
    "id": "event-007-milotic",
@@ -16870,7 +17184,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/milotic.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/milotic.shtml",
+   "image": "pokemon/small/350.png"
   },
   {
    "id": "event-008-pumpkaboo",
@@ -16918,7 +17233,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/pumpkaboo.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/pumpkaboo.shtml",
+   "image": "pokemon/small/710.png"
   },
   {
    "id": "event-009-gourgeist",
@@ -16967,7 +17283,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/gourgeist.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/gourgeist.shtml",
+   "image": "pokemon/small/711.png"
   },
   {
    "id": "basin-001-shellder",
@@ -17035,7 +17352,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/shellder.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/shellder.shtml",
+   "image": "pokemon/small/090.png"
   },
   {
    "id": "basin-002-cloyster",
@@ -17084,7 +17402,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/cloyster.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/cloyster.shtml",
+   "image": "pokemon/small/091.png"
   },
   {
    "id": "basin-003-horsea",
@@ -17131,7 +17450,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/horsea.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/horsea.shtml",
+   "image": "pokemon/small/116.png"
   },
   {
    "id": "basin-004-seadra",
@@ -17179,7 +17499,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/seadra.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/seadra.shtml",
+   "image": "pokemon/small/117.png"
   },
   {
    "id": "basin-005-kingdra",
@@ -17248,7 +17569,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/kingdra.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/kingdra.shtml",
+   "image": "pokemon/small/230.png"
   },
   {
    "id": "basin-006-staryu",
@@ -17292,7 +17614,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/staryu.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/staryu.shtml",
+   "image": "pokemon/small/120.png"
   },
   {
    "id": "basin-007-starmie",
@@ -17341,7 +17664,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/starmie.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/starmie.shtml",
+   "image": "pokemon/small/121.png"
   },
   {
    "id": "basin-008-totodile",
@@ -17428,7 +17752,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/totodile.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/totodile.shtml",
+   "image": "pokemon/small/158.png"
   },
   {
    "id": "basin-009-croconaw",
@@ -17496,7 +17821,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/croconaw.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/croconaw.shtml",
+   "image": "pokemon/small/159.png"
   },
   {
    "id": "basin-010-feraligatr",
@@ -17564,7 +17890,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/feraligatr.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/feraligatr.shtml",
+   "image": "pokemon/small/160.png"
   },
   {
    "id": "basin-011-chinchou",
@@ -17612,7 +17939,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/chinchou.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/chinchou.shtml",
+   "image": "pokemon/small/170.png"
   },
   {
    "id": "basin-012-lanturn",
@@ -17661,7 +17989,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/lanturn.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/lanturn.shtml",
+   "image": "pokemon/small/171.png"
   },
   {
    "id": "basin-013-corsola",
@@ -17729,7 +18058,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/corsola.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/corsola.shtml",
+   "image": "pokemon/small/222.png"
   },
   {
    "id": "basin-014-mudkip",
@@ -17796,7 +18126,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/mudkip.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/mudkip.shtml",
+   "image": "pokemon/small/258.png"
   },
   {
    "id": "basin-015-marshtomp",
@@ -17865,7 +18196,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/marshtomp.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/marshtomp.shtml",
+   "image": "pokemon/small/259.png"
   },
   {
    "id": "basin-016-swampert",
@@ -17934,7 +18266,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/swampert.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/swampert.shtml",
+   "image": "pokemon/small/260.png"
   },
   {
    "id": "basin-017-carvanha",
@@ -17982,7 +18315,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/carvanha.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/carvanha.shtml",
+   "image": "pokemon/small/318.png"
   },
   {
    "id": "basin-018-sharpedo",
@@ -18031,7 +18365,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/sharpedo.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/sharpedo.shtml",
+   "image": "pokemon/small/319.png"
   },
   {
    "id": "basin-019-barboach",
@@ -18119,7 +18454,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/barboach.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/barboach.shtml",
+   "image": "pokemon/small/339.png"
   },
   {
    "id": "basin-020-whiscash",
@@ -18168,7 +18504,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/whiscash.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/whiscash.shtml",
+   "image": "pokemon/small/340.png"
   },
   {
    "id": "basin-021-corphish",
@@ -18235,7 +18572,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/corphish.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/corphish.shtml",
+   "image": "pokemon/small/341.png"
   },
   {
    "id": "basin-022-crawdaunt",
@@ -18284,7 +18622,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/crawdaunt.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/crawdaunt.shtml",
+   "image": "pokemon/small/342.png"
   },
   {
    "id": "basin-023-luvdisc",
@@ -18371,7 +18710,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/luvdisc.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/luvdisc.shtml",
+   "image": "pokemon/small/370.png"
   },
   {
    "id": "basin-024-buizel",
@@ -18439,7 +18779,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/buizel.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/buizel.shtml",
+   "image": "pokemon/small/418.png"
   },
   {
    "id": "basin-025-floatzel",
@@ -18487,7 +18828,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/floatzel.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/floatzel.shtml",
+   "image": "pokemon/small/419.png"
   },
   {
    "id": "basin-026-finneon",
@@ -18554,7 +18896,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/finneon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/finneon.shtml",
+   "image": "pokemon/small/456.png"
   },
   {
    "id": "basin-027-lumineon",
@@ -18622,7 +18965,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/lumineon.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/lumineon.shtml",
+   "image": "pokemon/small/457.png"
   },
   {
    "id": "basin-028-frillish-male-form",
@@ -18691,7 +19035,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/frillishmaleform.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/frillishmaleform.shtml",
+   "image": "pokemon/small/592-frillishfemaleform.png"
   },
   {
    "id": "basin-028-frillish-female-form",
@@ -18760,7 +19105,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/frillishfemaleform.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/frillishfemaleform.shtml",
+   "image": "pokemon/small/592-frillishfemaleform.png"
   },
   {
    "id": "basin-029-jellicent-male-form",
@@ -18809,7 +19155,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/jellicentmaleform.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/jellicentmaleform.shtml",
+   "image": "pokemon/small/593-jellicentfemaleform.png"
   },
   {
    "id": "basin-029-jellicent-female-form",
@@ -18858,7 +19205,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/jellicentfemaleform.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/jellicentfemaleform.shtml",
+   "image": "pokemon/small/593-jellicentfemaleform.png"
   },
   {
    "id": "basin-030-alomomola",
@@ -18906,7 +19254,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/alomomola.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/alomomola.shtml",
+   "image": "pokemon/small/594.png"
   },
   {
    "id": "basin-031-stunfisk",
@@ -18975,7 +19324,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/stunfisk.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/stunfisk.shtml",
+   "image": "pokemon/small/618.png"
   },
   {
    "id": "basin-032-inkay",
@@ -19024,7 +19374,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/inkay.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/inkay.shtml",
+   "image": "pokemon/small/686.png"
   },
   {
    "id": "basin-033-malamar",
@@ -19073,7 +19424,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/malamar.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/malamar.shtml",
+   "image": "pokemon/small/687.png"
   },
   {
    "id": "basin-034-popplio",
@@ -19141,7 +19493,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/popplio.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/popplio.shtml",
+   "image": "pokemon/small/728.png"
   },
   {
    "id": "basin-035-brionne",
@@ -19189,7 +19542,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/brionne.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/brionne.shtml",
+   "image": "pokemon/small/729.png"
   },
   {
    "id": "basin-036-primarina",
@@ -19238,7 +19592,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/primarina.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/primarina.shtml",
+   "image": "pokemon/small/730.png"
   },
   {
    "id": "basin-037-mareanie",
@@ -19286,7 +19641,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/mareanie.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/mareanie.shtml",
+   "image": "pokemon/small/747.png"
   },
   {
    "id": "basin-038-toxapex",
@@ -19335,7 +19691,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/toxapex.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/toxapex.shtml",
+   "image": "pokemon/small/748.png"
   },
   {
    "id": "basin-039-wimpod",
@@ -19383,7 +19740,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/wimpod.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/wimpod.shtml",
+   "image": "pokemon/small/767.png"
   },
   {
    "id": "basin-040-golisopod",
@@ -19452,7 +19810,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/golisopod.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/golisopod.shtml",
+   "image": "pokemon/small/768.png"
   },
   {
    "id": "basin-041-bruxish",
@@ -19501,7 +19860,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/bruxish.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/bruxish.shtml",
+   "image": "pokemon/small/779.png"
   },
   {
    "id": "basin-042-dhelmise",
@@ -19550,7 +19910,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/dhelmise.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/dhelmise.shtml",
+   "image": "pokemon/small/781.png"
   },
   {
    "id": "basin-043-chewtle",
@@ -19596,7 +19957,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/chewtle.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/chewtle.shtml",
+   "image": "pokemon/small/833.png"
   },
   {
    "id": "basin-044-drednaw",
@@ -19644,7 +20006,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/drednaw.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/drednaw.shtml",
+   "image": "pokemon/small/834.png"
   },
   {
    "id": "basin-045-pincurchin",
@@ -19691,7 +20054,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/pincurchin.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/pincurchin.shtml",
+   "image": "pokemon/small/871.png"
   },
   {
    "id": "basin-046-wiglett",
@@ -19738,7 +20102,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/wiglett.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/wiglett.shtml",
+   "image": "pokemon/small/960.png"
   },
   {
    "id": "basin-047-wugtrio",
@@ -19786,7 +20151,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/wugtrio.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/wugtrio.shtml",
+   "image": "pokemon/small/961.png"
   },
   {
    "id": "basin-048-veluza",
@@ -19834,7 +20200,8 @@
    ],
    "obtain": null,
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/veluza.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/veluza.shtml",
+   "image": "pokemon/small/976.png"
   },
   {
    "id": "basin-049-phione",
@@ -19860,7 +20227,8 @@
    "habitats": [],
    "obtain": "Dream Island (Starmie Doll)",
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/phione.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/phione.shtml",
+   "image": "pokemon/small/489.png"
   },
   {
    "id": "basin-050-manaphy",
@@ -19887,7 +20255,8 @@
    "habitats": [],
    "obtain": "Special (Bubbly Basin) - check in game",
    "verify": [],
-   "source": "https://serebii.net/pokemonpokopia/pokedex/manaphy.shtml"
+   "source": "https://serebii.net/pokemonpokopia/pokedex/manaphy.shtml",
+   "image": "pokemon/small/490.png"
   }
  ]
 }

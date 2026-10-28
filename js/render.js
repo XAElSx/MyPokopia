@@ -32,6 +32,7 @@
       id: pokemon.id,
       dex: pokemon.dex,
       dexNo: pokemon.dexNo,
+      image: pokemon.image,
       label: label(pokemon),
       name: pokemon.name,
       specialties: pokemon.specialties || [],
@@ -64,6 +65,8 @@
 
       var main = el("button", "card-main");
       main.type = "button";
+      var pic = PokopiaData.pokemonPic(p, 48);
+      if (pic) { main.classList.add("has-pic"); main.appendChild(pic); }
       main.appendChild(el("span", "num", p.label));
       main.appendChild(el("span", "name", p.name));
       var where = p.area || (p.habitats[0] && p.habitats[0].name) || "";
@@ -81,7 +84,7 @@
 
   // Fill the edit panel with one Pokémon's values.
   function fillPanel(p) {
-    document.getElementById("panel-title").textContent = p.label + " " + p.name;
+    PokopiaData.setTitle(document.getElementById("panel-title"), p.label + " " + p.name, PokopiaData.pokemonPic(p, 56));
     document.getElementById("f-moved").checked = p.movedIn;
     document.getElementById("f-specialty").textContent = p.specialties.join(", ") || "None";
 
