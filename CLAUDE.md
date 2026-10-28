@@ -37,3 +37,4 @@ Personal website for Pokémon Pokopia. Only I use it.
 - [x] Phase 3: Habitat guide (`habitats.html`). Search, area/dex/built filters, requirements, Pokémon with rarity/time/weather, built marks in progress. Links both ways with the tracker (`habitats.html#slug`, `index.html#pokemon-id`).
 - [x] Phase 4: Crafting/recipes. `data/pokopia-recipes.json/.js` (884 recipes, 1710 items with where to find them), `recipes.html`. Habitat requirements link to their recipe. Rebuild: `python tools/build.py recipes`.
 - [x] Phase 5: Pairings (`pairings.html`). Best matches per Pokémon (same ideal habitat + shared favorites), house builder (max 4, score, best additions), "only moved in" option. Houses saved in progress and synced.
+- [x] Phase 6: Building blocks. `data/pokopia-favorites.json/.js` (43 favorites, 2367 item entries) and a "Blocks" mode on the pairings page: favorite -> matching items (grouped, Blocks first, linked to recipes). Rebuild: `python tools/build.py favorites`.

@@ -41,3 +41,7 @@ Jumpluff | Rarity at Dandelion lunchtime: Serebii 2, Pocket Tactics 1
 [recipe] Carved light-brown rock | Material Light-brown rock (light-brownrock) is not in the items list
 [recipe] Overlapping waves print | Listed twice (Blocks and Other); both kept
 [recipe] C | No materials parsed
+[favorite] Group activities | Pokémon list differs from pokopia-pokemon.json; only on favorite page: -; only in Pokémon data: brionne, buizel, carvanha, feebas, gourgeist, horsea, lumineon, luvdisc, pumpkaboo, totodile, wiglett, wimpod, wugtrio
+[favorite] Looks like food | No items listed
+[favorite] Lots of water | Pokémon list differs from pokopia-pokemon.json; only on favorite page: -; only in Pokémon data: horsea
+[favorite] Slender objects | Pokémon list differs from pokopia-pokemon.json; only on favorite page: -; only in Pokémon data: tatsugiricurlyform

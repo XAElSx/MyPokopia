@@ -3,6 +3,7 @@
   var db = window.POKOPIA_DB || { pokemon: [], meta: {} };
   var hdb = window.POKOPIA_HABITATS || { habitats: [] };
   var rdb = window.POKOPIA_RECIPES || { recipes: [], items: [] };
+  var fdb = window.POKOPIA_FAVORITES || { favorites: [] };
   var RARITY = { 1: "common", 2: "rare", 3: "very rare" };
   var ALL_AREAS = ["Withered Wastelands", "Bleak Beach", "Rocky Ridges", "Sparkling Skylands", "Palette Town", "Cloud Island"];
 
@@ -57,7 +58,13 @@
     return ({ main: "#", event: "E", basin: "B" }[p.dex] || "#") + n;
   }
 
+  // Favorites -> items (Phase 6): favoriteByName is keyed by lower-case name, as used in Pokémon `favorites`.
+  var favoriteBySlug = {};
+  var favoriteByName = {};
+  fdb.favorites.forEach(function (f) { favoriteBySlug[f.slug] = f; favoriteByName[f.name.toLowerCase()] = f; });
+
   window.PokopiaData = {
+    favorites: fdb.favorites, favoriteBySlug: favoriteBySlug, favoriteByName: favoriteByName,
     pokemon: db.pokemon, meta: db.meta, habitats: hdb.habitats,
     pokemonById: pokemonById, habitatBySlug: habitatBySlug, pokemonByHabitat: pokemonByHabitat,
     recipes: rdb.recipes, items: rdb.items, recipeBySlug: recipeBySlug, itemBySlug: itemBySlug,

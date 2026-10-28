@@ -14,6 +14,7 @@
   var panel = document.getElementById("panel");
   var backdrop = document.getElementById("backdrop");
   var housesEl = document.getElementById("houses");
+  var fpanel = document.getElementById("fpanel");
 
   function el(tag, className, text) {
     var n = document.createElement(tag);
@@ -86,7 +87,20 @@
     openId = id;
     document.getElementById("panel-title").textContent = D.dexLabel(p) + " " + p.name;
     document.getElementById("f-ideal").textContent = p.idealHabitat || "Unknown";
-    document.getElementById("f-favs").textContent = p.favorites.join(", ") || "None listed";
+    var favBox = document.getElementById("f-favs");
+    favBox.textContent = "";
+    if (!p.favorites.length) favBox.textContent = "None listed";
+    p.favorites.forEach(function (f, i) {
+      if (i) favBox.appendChild(document.createTextNode(", "));
+      var fav = D.favoriteByName[f.toLowerCase()];
+      if (fav) {
+        var a = el("a", null, f);
+        a.href = "#fav-" + fav.slug;
+        favBox.appendChild(a);
+      } else {
+        favBox.appendChild(document.createTextNode(f));
+      }
+    });
     var ul = document.getElementById("f-matches");
     ul.textContent = "";
     var list = candidates(p);
@@ -108,8 +122,10 @@
   function closePanel() {
     openId = null;
     panel.hidden = true;
+    fpanel.hidden = true;
     backdrop.hidden = true;
     document.body.classList.remove("panel-open");
+    if (location.hash) history.replaceState(null, "", location.pathname + location.search);
   }
 
   // ---- house builder ----
@@ -184,6 +200,19 @@
     if (res.mixed && members.length > 1) note += " · mixed ideal habitats";
     score.appendChild(el("span", "sub", " · " + note));
     card.appendChild(score);
+    var common = members.length > 1 ? members[0].favorites.filter(function (f) {
+      return members.every(function (m) { return m.favorites.indexOf(f) !== -1; });
+    }) : [];
+    if (common.length && !res.mixed) {
+      var build = el("div", "sub", "Everyone likes: ");
+      common.forEach(function (f, i) {
+        if (i) build.appendChild(document.createTextNode(", "));
+        var fav = D.favoriteByName[f.toLowerCase()];
+        if (fav) { var a = el("a", null, f); a.href = "#fav-" + fav.slug; build.appendChild(a); }
+        else build.appendChild(document.createTextNode(f));
+      });
+      card.appendChild(build);
+    }
     if (res.pairs.length) {
       var ul = el("ul", "habitats");
       res.pairs.forEach(function (p) {
@@ -263,12 +292,97 @@
     renderHouses();
   }
 
+  // ---- blocks view: favorite -> items ----
+  var openFav = null;
+
+  function itemCategory(it) {
+    var full = D.itemBySlug[it.slug];
+    return (full && full.categories[0]) || it.category || "Other";
+  }
+
+  function renderFavorites() {
+    var q = query.trim().toLowerCase();
+    var shown = D.favorites.filter(function (f) { return !q || f.name.toLowerCase().indexOf(q) !== -1; });
+    counterEl.textContent = shown.length + " favorites";
+    var ul = document.getElementById("favlist");
+    ul.textContent = "";
+    if (!shown.length) ul.appendChild(el("li", "empty", "No favorites match."));
+    shown.forEach(function (f) {
+      var li = el("li", "card");
+      var main = el("button", "card-main wide");
+      main.type = "button";
+      main.appendChild(el("span", "name", f.name));
+      main.appendChild(el("span", "num", f.items.length + " items"));
+      main.appendChild(el("span", "meta", f.pokemon.length + " Pokémon like it"));
+      main.addEventListener("click", function () { openFavorite(f.slug); });
+      li.appendChild(main);
+      ul.appendChild(li);
+    });
+  }
+
+  function fillFavoriteItems() {
+    var f = D.favoriteBySlug[openFav];
+    var cat = document.getElementById("fcat").value;
+    var ul = document.getElementById("f-items");
+    ul.textContent = "";
+    var groups = {};
+    f.items.forEach(function (it) {
+      var c = itemCategory(it);
+      if (cat !== "all" && c !== cat) return;
+      (groups[c] = groups[c] || []).push(it);
+    });
+    var names = Object.keys(groups).sort(function (a, b) {
+      return (b === "Blocks") - (a === "Blocks") || a.localeCompare(b);
+    });
+    if (!names.length) ul.appendChild(el("li", null, f.items.length ? "No items in this category." : "Serebii lists no items for this favorite."));
+    names.forEach(function (c) {
+      ul.appendChild(el("li", "grp", c + " (" + groups[c].length + ")"));
+      groups[c].forEach(function (it) {
+        var li = el("li");
+        var a = el("a", null, it.name);
+        a.href = "recipes.html#" + encodeURIComponent(it.slug);
+        li.appendChild(a);
+        if (D.recipeBySlug[it.slug]) li.appendChild(el("span", "sub", " · craftable"));
+        ul.appendChild(li);
+      });
+    });
+  }
+
+  function openFavorite(slug) {
+    var f = D.favoriteBySlug[slug];
+    if (!f) return;
+    openFav = slug;
+    document.getElementById("fpanel-title").textContent = f.name;
+    var counts = {};
+    f.items.forEach(function (it) { var c = itemCategory(it); counts[c] = (counts[c] || 0) + 1; });
+    var sel = document.getElementById("fcat");
+    sel.textContent = "";
+    [["all", "All (" + f.items.length + ")"]].concat(Object.keys(counts).sort().map(function (c) {
+      return [c, c + " (" + counts[c] + ")"];
+    })).forEach(function (o) { var opt = el("option", null, o[1]); opt.value = o[0]; sel.appendChild(opt); });
+    sel.value = counts.Blocks ? "Blocks" : "all";
+    fillFavoriteItems();
+
+    var likers = document.getElementById("f-likers");
+    var names = D.pokemon.filter(function (p) {
+      return p.favorites.some(function (x) { return x.toLowerCase() === f.name.toLowerCase(); });
+    });
+    likers.textContent = names.length ? names.map(function (p) { return p.name; }).join(", ") : "None listed";
+
+    panel.hidden = true;
+    fpanel.hidden = false;
+    backdrop.hidden = false;
+    document.body.classList.add("panel-open");
+  }
+
   // ---- wiring ----
   function setMode(m) {
     mode = m;
     document.getElementById("matches-view").hidden = m !== "matches";
     document.getElementById("houses-view").hidden = m !== "houses";
-    document.getElementById("search").hidden = m !== "matches";
+    document.getElementById("blocks-view").hidden = m !== "blocks";
+    document.getElementById("search").hidden = m === "houses";
+    document.getElementById("search").placeholder = m === "blocks" ? "Search favorites" : "Search Pokémon";
     Array.prototype.forEach.call(document.querySelectorAll("[data-mode]"), function (b) {
       b.classList.toggle("active", b.getAttribute("data-mode") === m);
     });
@@ -276,7 +390,11 @@
     render();
   }
 
-  function render() { if (mode === "matches") refreshList(); else renderHouses(); }
+  function render() {
+    if (mode === "matches") refreshList();
+    else if (mode === "blocks") renderFavorites();
+    else renderHouses();
+  }
 
   Array.prototype.forEach.call(document.querySelectorAll("[data-mode]"), function (b) {
     b.addEventListener("click", function () { setMode(b.getAttribute("data-mode")); });
@@ -288,15 +406,25 @@
     if (openId) openPanel(openId);
     render();
   });
-  document.getElementById("search").addEventListener("input", function (e) { query = e.target.value; refreshList(); });
+  document.getElementById("search").addEventListener("input", function (e) { query = e.target.value; render(); });
   document.getElementById("new-house").addEventListener("click", function () { addHouse([]); renderHouses(); });
   document.getElementById("start-house").addEventListener("click", function () {
     if (openId) { addHouse([openId]); setMode("houses"); }
   });
   document.getElementById("panel-close").addEventListener("click", closePanel);
+  document.getElementById("fpanel-close").addEventListener("click", closePanel);
+  document.getElementById("fcat").addEventListener("change", fillFavoriteItems);
   backdrop.addEventListener("click", closePanel);
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && openId) closePanel(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && (openId || !fpanel.hidden)) closePanel(); });
   document.addEventListener("pokopia-synced", function () { progress = PokopiaStorage.load(); closePanel(); render(); });
 
+  // pairings.html#fav-<slug> opens that favorite in the Blocks view.
+  function fromHash() {
+    var m = /^#fav-(.+)$/.exec(decodeURIComponent(location.hash));
+    if (m && D.favoriteBySlug[m[1]]) { setMode("blocks"); openFavorite(m[1]); }
+  }
+  window.addEventListener("hashchange", fromHash);
+
   render();
+  fromHash();
 })();

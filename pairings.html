@@ -17,6 +17,7 @@
     <div class="filters">
       <button type="button" class="chip active" data-mode="matches">Best matches</button>
       <button type="button" class="chip" data-mode="houses">House builder</button>
+      <button type="button" class="chip" data-mode="blocks">Blocks</button>
       <button type="button" class="chip" id="moved-only" aria-pressed="false">Only moved in</button>
     </div>
     <input id="search" type="search" placeholder="Search Pokémon" autocomplete="off">
@@ -25,6 +26,9 @@
   <main>
     <section id="matches-view">
       <ul id="list" class="list"></ul>
+    </section>
+    <section id="blocks-view" hidden>
+      <ul id="favlist" class="list"></ul>
     </section>
     <section id="houses-view" hidden>
       <div class="backup"><button type="button" id="new-house" class="link-btn">+ New house</button></div>
@@ -48,7 +52,28 @@
     <div class="field"><button type="button" id="start-house" class="sync-btn">Start a house with this Pokémon</button></div>
   </aside>
 
+  <aside id="fpanel" class="panel" hidden>
+    <div class="panel-head">
+      <h2 id="fpanel-title"></h2>
+      <button type="button" id="fpanel-close" class="close" aria-label="Close">&times;</button>
+    </div>
+    <div class="field">
+      <span class="label">Show</span>
+      <select id="fcat" aria-label="Item category"></select>
+    </div>
+    <div class="field">
+      <span class="label">Items that match</span>
+      <ul id="f-items" class="habitats"></ul>
+    </div>
+    <div class="field">
+      <span class="label">Pokémon that like it</span>
+      <span id="f-likers"></span>
+    </div>
+  </aside>
+
   <script src="data/pokopia-pokemon.js"></script>
+  <script src="data/pokopia-recipes.js"></script>
+  <script src="data/pokopia-favorites.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/sync.js"></script>
