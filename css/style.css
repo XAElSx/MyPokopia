@@ -777,3 +777,18 @@ input[type="checkbox"]:checked { background-color: var(--accent); background-ima
 .warn-chip.active { background: var(--warn-line); border-color: var(--warn-line); color: #fff; }
 .backup { flex-wrap: wrap; gap: 4px 16px; }
 .backup .link-btn { white-space: nowrap; }
+
+/* ---- Houses: town + planned, confirmation box ---- */
+.house-section { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 18px 0 8px; }
+.house-section:first-child { margin-top: 0; }
+.house-section .sub-h { margin: 0; }
+.house-actions { display: flex; gap: 6px; flex: none; }
+.chip.danger, .sync-row button.danger { color: var(--warn-line); border-color: var(--warn-line); }
+.chip.danger:hover, .sync-row button.danger:hover { background: var(--warn-bg); }
+.moves { margin-top: 16px; padding: 12px 14px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+.moves .sub-h { margin-top: 0; }
+.ask .ask-text { margin: 0 0 14px; }
+.houses { grid-template-columns: minmax(0, 1fr); }
+.houses > .house { min-width: 0; }
+.house-head { flex-wrap: wrap; }
+.house-head .house-name { min-width: 120px; }

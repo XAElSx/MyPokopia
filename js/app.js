@@ -509,23 +509,27 @@
           pokemon.forEach(function (p) { known[p.id] = true; });
           var ids = Object.keys(data.entries).filter(function (id) { return known[id]; });
           var added = ids.filter(function (id) { return data.entries[id].movedIn && !(progress.entries[id] && progress.entries[id].movedIn); });
-          if (!confirm("Add " + added.length + " registered marks from this file (" + ids.length + " Pokémon in it)? Nothing is removed.")) return;
-          ids.forEach(function (id) {
-            var src = data.entries[id];
-            var e = entryFor(id);
-            if (src.movedIn) e.movedIn = true;
-            if (src.area && !e.area) e.area = src.area;
-            if (src.region && !e.region) e.region = src.region;
+          PokopiaUI.ask("Add " + added.length + " registered marks from this file (" + ids.length + " Pokémon in it)? Nothing is removed.", "Add").then(function (yes) {
+            if (!yes) return;
+            ids.forEach(function (id) {
+              var src = data.entries[id];
+              var e = entryFor(id);
+              if (src.movedIn) e.movedIn = true;
+              if (src.area && !e.area) e.area = src.area;
+              if (src.region && !e.region) e.region = src.region;
+            });
+            persist();
+            closePanel();
+            refresh();
           });
-          persist();
-          closePanel();
-          refresh();
           return;
         }
-        if (!confirm("Replace your current progress with this file?")) return;
-        progress = PokopiaStorage.replace(data) || progress;
-        closePanel();
-        refresh();
+        PokopiaUI.ask("Replace your current progress with this file? The current copy is kept as a backup.", "Replace", true).then(function (yes) {
+          if (!yes) return;
+          progress = PokopiaStorage.replace(data) || progress;
+          closePanel();
+          refresh();
+        });
       } catch (e) {
         alert("That file isn't a valid progress export.");
       }
@@ -560,11 +564,13 @@
       b.className = "chip small";
       b.textContent = "Restore";
       b.addEventListener("click", function () {
-        if (!confirm("Go back to this copy? What you have now is kept as the last backup.")) return;
-        progress = PokopiaStorage.replace(s.data) || progress;
-        snapsEl.hidden = true;
-        closePanel();
-        refresh();
+        PokopiaUI.ask("Go back to this copy? What you have now is kept as the last backup.", "Restore").then(function (yes) {
+          if (!yes) return;
+          progress = PokopiaStorage.replace(s.data) || progress;
+          snapsEl.hidden = true;
+          closePanel();
+          refresh();
+        });
       });
       li.appendChild(b);
       snapsEl.appendChild(li);

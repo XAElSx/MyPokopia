@@ -382,11 +382,13 @@
 
   document.getElementById("raw").addEventListener("change", renderShop);
   document.getElementById("shop-clear").addEventListener("click", function () {
-    if (!confirm("Clear the whole shopping list? Amounts you marked as owned are kept.")) return;
-    progress.shop.habitats = {};
-    progress.shop.recipes = {};
-    persist();
-    renderAll();
+    PokopiaUI.ask("Clear the whole shopping list? Amounts you marked as owned are kept.", "Clear", true).then(function (yes) {
+      if (!yes) return;
+      progress.shop.habitats = {};
+      progress.shop.recipes = {};
+      persist();
+      renderAll();
+    });
   });
   document.addEventListener("pokopia-synced", function () { progress = PokopiaStorage.load(); renderAll(); });
 

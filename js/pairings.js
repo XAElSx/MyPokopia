@@ -137,12 +137,32 @@
   // ---- house builder ----
   function newId() { return "house-" + Date.now().toString(36) + Math.random().toString(36).slice(2, 5); }
 
-  function addHouse(members) {
-    var n = Object.keys(progress.houses).length + 1;
+  function isPlan(id) { return !!(progress.houses[id] && progress.houses[id].planned); }
+  function idsOf(planned) { return Object.keys(progress.houses).filter(function (id) { return isPlan(id) === planned; }); }
+
+  function addHouse(members, planned) {
+    var n = idsOf(!!planned).length + 1;
     var id = newId();
-    progress.houses[id] = { name: "House " + n, members: members || [] };
+    progress.houses[id] = { name: (planned ? "Plan " : "House ") + n, members: members || [] };
+    if (planned) progress.houses[id].planned = true;
     persist();
     return id;
+  }
+
+  // A Pokémon lives in one house: adding it to a house takes it out of the other houses of the same kind
+  // (town houses and planned houses are kept apart).
+  function takeFromOthers(id, keepId) {
+    var planned = isPlan(keepId);
+    idsOf(planned).forEach(function (hid) {
+      if (hid === keepId) return;
+      var h = progress.houses[hid];
+      h.members = h.members.filter(function (m) { return m !== id; });
+    });
+  }
+
+  // Which house (in town) a Pokémon is in now.
+  function currentHouseOf(pid) {
+    return idsOf(false).filter(function (hid) { return progress.houses[hid].members.indexOf(pid) !== -1; })[0] || null;
   }
 
   function membersOf(house) {
@@ -150,11 +170,42 @@
   }
 
   function renderHouses() {
+    var town = idsOf(false);
+    var plans = idsOf(true);
+    counterEl.textContent = town.length + " house" + (town.length === 1 ? "" : "s") + (plans.length ? " · " + plans.length + " planned" : "");
     housesEl.textContent = "";
-    var ids = Object.keys(progress.houses);
-    counterEl.textContent = ids.length + " house" + (ids.length === 1 ? "" : "s");
-    if (!ids.length) housesEl.appendChild(el("p", "empty", "No houses yet. Add one to start."));
-    ids.forEach(function (id) { housesEl.appendChild(houseCard(id)); });
+    if (!town.length) housesEl.appendChild(el("p", "empty", "No houses yet. Add the houses you have in town."));
+    town.forEach(function (id) { housesEl.appendChild(houseCard(id)); });
+    var plansEl = document.getElementById("plans");
+    plansEl.textContent = "";
+    if (!plans.length) plansEl.appendChild(el("p", "empty", "No plans yet. Start one, or use \"Copy to plan\" on a house."));
+    plans.forEach(function (id) { plansEl.appendChild(houseCard(id)); });
+    renderMoves(plans);
+  }
+
+  // What you would have to change in town to get to the plan.
+  function renderMoves(plans) {
+    var box = document.getElementById("moves");
+    box.textContent = "";
+    var moves = [];
+    plans.forEach(function (pid) {
+      var plan = progress.houses[pid];
+      plan.members.forEach(function (m) {
+        var p = D.pokemonById[m];
+        if (!p) return;
+        var now = currentHouseOf(m);
+        var mates = plan.members.filter(function (x) { return x !== m; });
+        var sameMates = now && mates.every(function (x) { return progress.houses[now].members.indexOf(x) !== -1; });
+        if (now && sameMates) return; // already living together like this
+        moves.push(p.name + ": " + (now ? progress.houses[now].name : "no house yet") + " → " + plan.name);
+      });
+    });
+    box.hidden = !moves.length;
+    if (!moves.length) return;
+    box.appendChild(el("h3", "sub-h", "Moves to make (" + moves.length + ")"));
+    var ul = el("ul", "habitats");
+    moves.forEach(function (t) { ul.appendChild(el("li", null, t)); });
+    box.appendChild(ul);
   }
 
   function houseCard(id) {
@@ -170,16 +221,40 @@
     name.value = house.name;
     name.setAttribute("aria-label", "House name");
     name.addEventListener("change", function () { house.name = name.value; persist(); });
-    var del = el("button", "link-btn", "Delete");
+    var actions = el("div", "house-actions");
+    var swap = el("button", "chip small", house.planned ? "Make current" : "Copy to plan");
+    swap.type = "button";
+    swap.addEventListener("click", function () {
+      if (!house.planned) {
+        addHouse(house.members.slice(), true);
+        var copy = idsOf(true).pop();
+        progress.houses[copy].name = (house.name || "House") + " (plan)";
+        persist();
+        renderHouses();
+        return;
+      }
+      PokopiaUI.ask("Make \"" + (house.name || "this plan") + "\" a house in your town? Its Pokémon leave their other town houses.", "Make current").then(function (yes) {
+        if (!yes) return;
+        delete house.planned;
+        house.members.forEach(function (m) { takeFromOthers(m, id); });
+        persist();
+        renderHouses();
+      });
+    });
+    var del = el("button", "chip small danger", "Delete");
     del.type = "button";
     del.addEventListener("click", function () {
-      if (!confirm("Delete " + (house.name || "this house") + "?")) return;
-      delete progress.houses[id];
-      persist();
-      renderHouses();
+      PokopiaUI.ask("Delete " + (house.name || "this house") + "?", "Delete", true).then(function (yes) {
+        if (!yes) return;
+        delete progress.houses[id];
+        persist();
+        renderHouses();
+      });
     });
+    actions.appendChild(swap);
+    actions.appendChild(del);
     head.appendChild(name);
-    head.appendChild(del);
+    head.appendChild(actions);
     card.appendChild(head);
 
     var chips = el("div", "chips");
@@ -299,6 +374,8 @@
 
   function addMember(house, id) {
     if (house.members.length >= MAX || house.members.indexOf(id) !== -1) return;
+    var hid = Object.keys(progress.houses).filter(function (k) { return progress.houses[k] === house; })[0];
+    if (hid) takeFromOthers(id, hid);
     house.members.push(id);
     persist();
     renderHouses();
@@ -422,6 +499,7 @@
   });
   document.getElementById("search").addEventListener("input", function (e) { query = e.target.value; render(); });
   document.getElementById("new-house").addEventListener("click", function () { addHouse([]); renderHouses(); });
+  document.getElementById("new-plan").addEventListener("click", function () { addHouse([], true); renderHouses(); });
   document.getElementById("start-house").addEventListener("click", function () {
     if (openId) { addHouse([openId]); setMode("houses"); }
   });

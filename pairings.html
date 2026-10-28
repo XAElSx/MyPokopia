@@ -35,8 +35,18 @@
       <ul id="favlist" class="list"></ul>
     </section>
     <section id="houses-view" hidden>
-      <div class="backup"><button type="button" id="new-house" class="link-btn">+ New house</button></div>
+      <div class="house-section">
+        <h3 class="sub-h">In your town</h3>
+        <button type="button" id="new-house" class="chip small">+ New house</button>
+      </div>
       <div id="houses" class="houses"></div>
+      <div class="house-section">
+        <h3 class="sub-h">Planned</h3>
+        <button type="button" id="new-plan" class="chip small">+ New planned house</button>
+      </div>
+      <p class="note">Try a better setup here without touching your current houses. "Make current" moves a plan into town.</p>
+      <div id="plans" class="houses"></div>
+      <div id="moves" class="moves" hidden></div>
     </section>
     <p class="note">Rule used: housemates need the same ideal habitat; every shared favorite adds a point. A house holds at most 4.</p>
   </main>

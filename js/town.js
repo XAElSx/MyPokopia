@@ -40,7 +40,7 @@
   function describe(cell) {
     if (cell.kind === "house") {
       var house = progress.houses[cell.ref];
-      return { kind: "house", label: house ? house.name : "?", short: house ? initials(house.name) : "?", missing: !house, mixed: !!house && mixed(house) };
+      return { kind: "house", label: house ? house.name + (house.planned ? " (plan)" : "") : "?", short: house ? initials(house.name) : "?", missing: !house, mixed: !!house && mixed(house) };
     }
     var h = D.habitatBySlug[cell.ref];
     return { kind: "habitat", label: h ? h.name : "?", short: h ? initials(h.name) : "?", missing: !h, built: h && isBuilt(h.slug) };
@@ -159,7 +159,7 @@
       var ids = Object.keys(progress.houses);
       if (!ids.length) sel.appendChild(el("option", null, "No houses yet (build one in Pairings)"));
       ids.forEach(function (id) {
-        var o = el("option", null, progress.houses[id].name + " (" + progress.houses[id].members.length + ")");
+        var o = el("option", null, progress.houses[id].name + (progress.houses[id].planned ? " · plan" : "") + " (" + progress.houses[id].members.length + ")");
         o.value = id;
         sel.appendChild(o);
       });
@@ -370,12 +370,15 @@
   });
   document.getElementById("clear-area").addEventListener("click", function () {
     var n = Object.keys(areaData().cells).length;
-    if (!n || !confirm("Remove all " + n + " placed items from " + area + "? You can undo this.")) return;
-    remember();
-    areaData().cells = {};
-    persist();
-    selected = null;
-    renderGrid();
+    if (!n) return;
+    PokopiaUI.ask("Remove all " + n + " placed items from " + area + "? You can undo this.", "Clear area", true).then(function (yes) {
+      if (!yes) return;
+      remember();
+      areaData().cells = {};
+      persist();
+      selected = null;
+      renderGrid();
+    });
   });
 
   var areaSel = document.getElementById("area");

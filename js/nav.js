@@ -88,6 +88,32 @@
     }
   });
 
+  // Our own "are you sure?" box. window.confirm() is blocked in some browsers (it silently answers "no"),
+  // so every page asks through this instead. Resolves true for the main button, false otherwise.
+  var askBox = null;
+  function ask(message, okLabel, danger) {
+    if (!askBox) {
+      askBox = document.createElement("dialog");
+      askBox.className = "sync-dialog ask";
+      askBox.innerHTML = '<p class="ask-text"></p><div class="sync-row">' +
+        '<button type="button" class="ask-ok"></button><button type="button" class="ask-cancel">Cancel</button></div>';
+      document.body.appendChild(askBox);
+    }
+    askBox.querySelector(".ask-text").textContent = message;
+    var ok = askBox.querySelector(".ask-ok");
+    ok.textContent = okLabel || "OK";
+    ok.classList.toggle("danger", !!danger);
+    return new Promise(function (resolve) {
+      function done(v) { askBox.close(); resolve(v); }
+      ok.onclick = function () { done(true); };
+      askBox.querySelector(".ask-cancel").onclick = function () { done(false); };
+      askBox.oncancel = function () { resolve(false); };
+      askBox.showModal();
+      ok.focus();
+    });
+  }
+  window.PokopiaUI = { ask: ask };
+
   // Offline use: the worker caches pages, data and every picture you have looked at.
   var link = document.createElement("link");
   link.rel = "manifest";
