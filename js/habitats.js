@@ -123,6 +123,10 @@
       reqs.appendChild(li);
     });
 
+    var conds = h.conditions || [];
+    document.getElementById("f-cond").textContent = conds.join(", ");
+    document.getElementById("sec-cond").hidden = !conds.length;
+
     var mons = document.getElementById("f-pokemon");
     mons.textContent = "";
     var users = (D.pokemonByHabitat[slug] || []).slice().sort(function (a, b) {

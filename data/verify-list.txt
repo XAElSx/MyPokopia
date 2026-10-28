@@ -24,14 +24,15 @@ Dragapult | Rarity at Office storeroom: Serebii 2, Pocket Tactics 3
 Tinkatuff | Rarity at Sewer hole inspection unknown
 Jumpluff | Rarity at Yellow carpet: Serebii 3, Pocket Tactics 2
 Jumpluff | Rarity at Dandelion lunchtime: Serebii 2, Pocket Tactics 1
-[habitat] Tall Grass | Pokémon list differs from pokopia-pokemon.json; only in Pokémon data: charizard, oddish
-[habitat] Tree-shaded  tall grass | Pokémon list differs from pokopia-pokemon.json; only in Pokémon data: heracross, skwovet
-[habitat] Hydrated tall grass | Pokémon list differs from pokopia-pokemon.json; only in Pokémon data: wartortle
-[habitat] Pretty flower bed | Pokémon list differs from pokopia-pokemon.json; only in Pokémon data: magby, pidgeotto
-[habitat] Red tall grass | Pokémon list differs from pokopia-pokemon.json; only in Pokémon data: kricketune
-[habitat] Graceful flower bed | Pokémon list differs from pokopia-pokemon.json; only in Pokémon data: dachsbun
-[habitat] Pink tall grass | Pokémon list differs from pokopia-pokemon.json; only in Pokémon data: flygon
-[habitat] Fluffy flower bed | Pokémon list differs from pokopia-pokemon.json; only in Pokémon data: ninetales
+[habitat] Illuminated tall grass | Lighting amount: Serebii says 10, corrected to 1 (Pocket Tactics: one lighting)
+[habitat] Hydrated flower bed | Requirement Water x2 added: missing on Serebii, Pocket Tactics lists two water
+[habitat] Creepy grave offering | Amount of Plated food blank on Serebii, taken from Pocket Tactics (1)
+[habitat] Tree-shaded snoozing Snorlax | Amount of Naptime bed blank on Serebii, taken from Pocket Tactics (1)
+[habitat] Researcher's desk | Amount of Science Experiment blank on Serebii, taken from Pocket Tactics (1)
+[habitat] Top pop | Amount of Pop art table blank on Serebii, taken from Pocket Tactics (1)
+[habitat] Hot-spring Fishing Spot | Amount of Hot-spring water blank on Serebii, taken from Pocket Tactics (1)
+[habitat] Lovely ribbon cake | Amount of Ribbon Cake blank on Serebii, taken from Pocket Tactics (1)
+[habitat] Basin tall grass | Amount of Seabed tall grass blank on Serebii, not found on Pocket Tactics
 [recipe] Luxury chair | Material Linestone (linestone) is not in the items list
 [recipe] Fan | Material Iron ignot (ironignot) is not in the items list
 [recipe] Decorative Poké Ball | Material Poké (poké) is not in the items list

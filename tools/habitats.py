@@ -92,16 +92,86 @@ def parse_page(path):
     names, areas = [], []
     for t in soup.select("table.dextable"):
         first = t.find("tr")
-        links = [a for a in first.find_all("a") if "/pokedex/" in a.get("href", "")]
-        if not links:
+        if not [a for a in first.find_all("a") if "/pokedex/" in a.get("href", "")]:
             continue
-        names = [{"slug": a["href"].split("/")[-1][:-6], "name": a.get_text(strip=True)} for a in links]
+        # The table repeats one block per 4 Pokémon: a header row of names, then picture, location, rarity, time rows.
+        for tr in t.find_all("tr", recursive=False):
+            cells = tr.find_all("td", recursive=False)
+            links = [c.find("a", href=re.compile("/pokedex/")) for c in cells if "fooevo" in c.get("class", [])]
+            for a in links:
+                if a and a["href"].split("/")[-1][:-6] not in [n["slug"] for n in names]:
+                    names.append({"slug": a["href"].split("/")[-1][:-6], "name": a.get_text(strip=True)})
         for a in t.find_all("a", href=re.compile("/locations/")):
             name = a.get_text(strip=True)
             if name not in areas:
                 areas.append(name)
         break
     return {"flavor": flavor, "requirements": reqs, "pokemonNames": names, "areas": areas}
+
+
+# Serebii errors, checked against https://www.pockettactics.com/pokemon-pokopia/habitats
+# (habitat slug, item name in lower case) -> (amount, note)
+AMOUNT_FIXES = {
+    ("illuminatedtallgrass", "lighting"): (1, "Lighting amount: Serebii says 10, corrected to 1 (Pocket Tactics: one lighting)"),
+}
+BLANK_FROM_PT = {  # Serebii leaves the amount blank; Pocket Tactics says one
+    ("tree-shadedsnoozingsnorlax", "naptime bed"): 1,
+    ("researcher'sdesk", "science experiment"): 1,
+    ("toppop", "pop art table"): 1,
+    ("lovelyribboncake", "ribbon cake"): 1,
+    ("creepygraveoffering", "plated food"): 1,
+    ("hot-springfishingspot", "hot-spring water"): 1,
+}
+MISSING_REQUIREMENTS = {  # Serebii omits the row; Pocket Tactics lists it
+    "hydratedflowerbed": {"item": "Water", "itemSlug": None, "amount": 2,
+                          "note": "Requirement Water x2 added: missing on Serebii, Pocket Tactics lists two water"},
+}
+# Placement conditions, not items: kept as habitat.conditions instead of requirements.
+CONDITIONS = {"high-up location"}
+
+
+def unify_spellings(habitats):
+    """Item names that differ only in capitals get the most common spelling (ties: the one with more lower-case letters)."""
+    counts = {}
+    for h in habitats:
+        for r in h["requirements"]:
+            counts.setdefault(r["item"].lower(), {}).setdefault(r["item"], 0)
+            counts[r["item"].lower()][r["item"]] += 1
+    best = {}
+    for key, variants in counts.items():
+        pick = max(variants, key=lambda v: (variants[v], sum(c.islower() for c in v)))
+        best[key] = pick[0].upper() + pick[1:]   # never start an item name with a lower-case letter
+    changed = 0
+    for h in habitats:
+        for r in h["requirements"]:
+            if r["item"] != best[r["item"].lower()]:
+                r["item"] = best[r["item"].lower()]
+                changed += 1
+    return changed
+
+
+def apply_corrections(habitats):
+    for h in habitats:
+        reqs = h["requirements"]
+        if h["slug"] in MISSING_REQUIREMENTS:
+            m = dict(MISSING_REQUIREMENTS[h["slug"]])
+            h["verify"].append(m.pop("note"))
+            reqs.append(m)
+        h["conditions"] = []
+        for r in list(reqs):
+            key = (h["slug"], r["item"].lower())
+            if key in AMOUNT_FIXES:
+                r["amount"], note = AMOUNT_FIXES[key]
+                h["verify"].append(note)
+            elif key in BLANK_FROM_PT and not r["amount"]:
+                r["amount"] = BLANK_FROM_PT[key]
+                h["verify"].append(f"Amount of {r['item']} blank on Serebii, taken from Pocket Tactics ({r['amount']})")
+            if r["item"].lower() in CONDITIONS:
+                reqs.remove(r)
+                if r["item"] not in h["conditions"]:
+                    h["conditions"].append(r["item"])
+            elif not r["amount"]:
+                h["verify"].append(f"Amount of {r['item']} blank on Serebii, not found on Pocket Tactics")
 
 
 def cross_check(habitats, pokemon_db, report_path):
@@ -151,11 +221,13 @@ def main(raw, out):
         p = parse_page(os.path.join(raw, "habitats", r["slug"] + ".html"))
         h = {"slug": r["slug"], "no": r["no"], "dex": r["dex"], "name": r["name"],
              "description": r["description"], "flavor": p["flavor"], "requirements": p["requirements"],
-             "areas": p["areas"], "pokemon": p["pokemonNames"],
+             "conditions": [], "areas": p["areas"], "pokemon": p["pokemonNames"],
              "source": f"{BASE}habitatdex/{r['slug']}.shtml", "verify": []}
         if not h["requirements"]:
             h["verify"].append("No requirements found")
         habitats.append(h)
+    print("item spellings unified:", unify_spellings(habitats))
+    apply_corrections(habitats)
     pokemon_db = os.path.join(os.path.dirname(out), "pokopia-pokemon.json")
     if os.path.exists(pokemon_db):
         cross_check(habitats, pokemon_db, os.path.join(os.path.dirname(os.path.dirname(out)), "docs", "habitat-slug-report.md"))
