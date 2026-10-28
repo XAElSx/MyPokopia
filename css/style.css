@@ -621,3 +621,32 @@ input[type="checkbox"]:checked { background-color: var(--accent); background-ima
 .warn { color: #c0662a; font-weight: 600; }
 @media (prefers-color-scheme: dark) { .warn { color: #f0a060; } }
 .field .warn { display: block; margin-top: 6px; font-size: 0.85rem; }
+
+/* ---- Today, coverage, compare, cooking ---- */
+.checks { list-style: none; margin: 6px 0 10px; padding: 0; display: grid; gap: 2px; max-width: 560px; }
+.checks li { display: flex; align-items: center; justify-content: space-between; }
+.checks label { display: flex; align-items: center; gap: 12px; min-height: 40px; cursor: pointer; flex: 1; }
+.checks li.done span { color: var(--muted); text-decoration: line-through; }
+.plan h2 .sub { font-weight: 500; margin-left: 6px; }
+.plan .sync-row { max-width: 560px; }
+.sub-h { margin: 18px 0 4px; font-size: 0.95rem; }
+.cov-wrap { overflow-x: auto; margin: 0 -16px; padding: 0 16px; }
+.cov { border-collapse: collapse; font-size: 0.85rem; min-width: 100%; }
+.cov th, .cov td { padding: 4px 6px; border-bottom: 1px solid var(--line); text-align: center; white-space: nowrap; }
+.cov th:first-child { text-align: left; position: sticky; left: 0; background: var(--bg); }
+.cov tr:first-child th { font-weight: 600; color: var(--muted); font-size: 0.78rem; white-space: normal; min-width: 64px; }
+.cov th .pic { vertical-align: middle; margin-right: 6px; }
+.cov td.has { background: var(--accent-soft); }
+.cov td.tot { font-weight: 700; }
+.cov tr.gap th { color: var(--muted); }
+.cov-n { font: inherit; font-weight: 600; color: var(--accent-strong); background: none; border: 0; cursor: pointer; padding: 2px 6px; }
+.plan .card select.chip { margin-right: 12px; }
+.specs { list-style: none; padding: 0; }
+.specs .pic { margin: 0 6px 0 0; }
+.compare { width: min(720px, calc(100vw - 24px)); max-width: none; }
+.cmp { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+.cmp th, .cmp td { padding: 6px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.cmp tr:first-child th { text-align: center; }
+.cmp tr:first-child th .pic { display: block; margin: 0 auto 4px; }
+.cmp td b { color: var(--accent-strong); }
+.compare { color: var(--text); }

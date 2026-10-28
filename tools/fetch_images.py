@@ -1,7 +1,7 @@
 """Download every picture used by the site into images/ so it works offline.
 
 Usage: python tools/fetch_images.py
-Reads the `image` paths from data/pokopia-{pokemon,recipes}.json (relative to
+Reads the `image` paths from data/pokopia-{pokemon,recipes,cooking}.json (relative to
 https://serebii.net/pokemonpokopia/) and saves each one to images/<same path>.
 Skips files that already exist, so it can be stopped and run again. One request at a time, with a short pause.
 """
@@ -14,7 +14,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def paths():
     out = set()
-    for name, keys in (("pokemon", ["pokemon"]), ("recipes", ["recipes", "items"])):
+    for name, keys in (("pokemon", ["pokemon"]), ("recipes", ["recipes", "items"]),
+                       ("cooking", ["meals", "foods", "specialties"])):
         data = json.load(open(os.path.join(ROOT, "data", f"pokopia-{name}.json"), encoding="utf-8"))
         for key in keys:
             for row in data[key]:

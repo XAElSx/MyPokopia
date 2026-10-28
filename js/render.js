@@ -36,6 +36,9 @@
       label: label(pokemon),
       name: pokemon.name,
       specialties: pokemon.specialties || [],
+      idealHabitat: pokemon.idealHabitat || "",
+      favorites: pokemon.favorites || [],
+      flavor: pokemon.flavor || "",
       habitats: pokemon.habitats || [],
       obtain: pokemon.obtain || "",
       movedIn: !!entry.movedIn,
@@ -99,7 +102,22 @@
     var star = document.getElementById("f-star");
     star.textContent = p.wish ? "★" : "☆";
     star.classList.toggle("on", p.wish);
-    document.getElementById("f-specialty").textContent = p.specialties.join(", ") || "None";
+    // Each specialty with its picture and what it does (from the Serebii specialty page).
+    var specEl = document.getElementById("f-specialty");
+    specEl.textContent = "";
+    if (!p.specialties.length) specEl.appendChild(el("li", null, "None"));
+    p.specialties.forEach(function (name) {
+      var li = el("li");
+      var pic = PokopiaData.specialtyPic(name, 24);
+      if (pic) li.appendChild(pic);
+      li.appendChild(el("b", null, name));
+      var sp = PokopiaData.specialtyByName[name.toLowerCase()];
+      if (sp && sp.description) li.appendChild(el("span", "sub", " · " + sp.description));
+      specEl.appendChild(li);
+    });
+    var likes = [p.idealHabitat ? "Ideal habitat: " + p.idealHabitat : "", p.flavor ? p.flavor + " flavors" : "",
+      p.favorites.join(", ")].filter(Boolean).join(" · ");
+    document.getElementById("f-likes").textContent = likes || "Unknown";
 
     var habitatEl = document.getElementById("f-habitat");
     habitatEl.textContent = "";

@@ -8,6 +8,10 @@
   var dex = prefs.dex || "all";
   var query = prefs.query || "";
   var now = { on: !!prefs.nowOn, time: prefs.nowTime || "day", weather: prefs.nowWeather || "sun" };
+  // Extra filters ("More filters"); "" means any.
+  var MORE = ["ideal", "spec", "fav", "flavor", "where", "lives"];
+  var more = prefs.more || {};
+  var moreOpen = !!prefs.moreOpen;
   var openId = null;
   var selecting = false;
   var selected = {};
@@ -24,7 +28,7 @@
   function savePrefs() {
     PokopiaStorage.pref("index", Object.assign(PokopiaStorage.pref("index"), {
       filter: filter, dex: dex, query: query,
-      nowOn: now.on, nowTime: now.time, nowWeather: now.weather
+      nowOn: now.on, nowTime: now.time, nowWeather: now.weather, more: more, moreOpen: moreOpen
     }));
   }
 
@@ -65,6 +69,7 @@
       if (filter === "out" && p.movedIn) return false;
       if (filter === "wish" && !p.wish) return false;
       if (now.on && (p.movedIn || !appearsNow(p))) return false;
+      if (!passesMore(p)) return false;
       if (!q) return true;
       var habitats = p.habitats.map(function (h) { return h.name; });
       return [p.label, p.name, p.specialties.join(" "), habitats.join(" "), p.area, p.region, p.notes]
@@ -77,6 +82,79 @@
     renderBulk();
     renderDash(all);
   }
+
+  function passesMore(p) {
+    if (more.ideal && p.idealHabitat !== more.ideal) return false;
+    if (more.spec && p.specialties.indexOf(more.spec) === -1) return false;
+    if (more.fav && p.favorites.indexOf(more.fav) === -1) return false;
+    if (more.flavor && p.flavor !== more.flavor) return false;
+    if (more.where && !p.habitats.some(function (h) {
+      return h.areas && (h.areas.indexOf(more.where) !== -1 || h.areas.indexOf("any") !== -1);
+    })) return false;
+    if (more.lives === "__none" && p.area) return false;
+    if (more.lives && more.lives !== "__none" && p.area.toLowerCase() !== more.lives.toLowerCase()) return false;
+    return true;
+  }
+
+  // Fill the extra filter dropdowns from the data.
+  (function fillMore() {
+    function uniq(list) {
+      var seen = {};
+      list.forEach(function (v) { if (v) seen[v] = true; });
+      return Object.keys(seen).sort(function (a, b) { return a.localeCompare(b); });
+    }
+    var opts = {
+      ideal: ["Any ideal habitat", uniq(pokemon.map(function (p) { return p.idealHabitat; }))],
+      spec: ["Any specialty", uniq([].concat.apply([], pokemon.map(function (p) { return p.specialties || []; }))).filter(function (s) { return s !== "???"; })],
+      fav: ["Any favorite", uniq([].concat.apply([], pokemon.map(function (p) { return p.favorites || []; })))],
+      flavor: ["Any flavor", uniq(pokemon.map(function (p) { return p.flavor; }))],
+      where: ["Can appear anywhere", D.TOWN_AREAS],
+      lives: ["Lives anywhere", D.TOWN_AREAS.concat(["__none"])]
+    };
+    MORE.forEach(function (k) {
+      var sel = document.getElementById("f-" + k);
+      var first = document.createElement("option");
+      first.value = "";
+      first.textContent = opts[k][0];
+      sel.appendChild(first);
+      opts[k][1].forEach(function (v) {
+        var o = document.createElement("option");
+        o.value = v;
+        o.textContent = v === "__none" ? "No area set" : (k === "flavor" ? v + " flavors" : (k === "lives" ? "Lives in " + v : (k === "where" ? "Can appear in " + v : v)));
+        sel.appendChild(o);
+      });
+      sel.value = more[k] || "";
+      sel.addEventListener("change", function () {
+        if (sel.value) more[k] = sel.value; else delete more[k];
+        showMore();
+        savePrefs();
+        refresh();
+      });
+    });
+    var list = document.getElementById("area-list");
+    D.TOWN_AREAS.forEach(function (a) {
+      var o = document.createElement("option");
+      o.value = a;
+      list.appendChild(o);
+    });
+  })();
+
+  var moreToggle = document.getElementById("more-toggle");
+  function showMore() {
+    var n = MORE.filter(function (k) { return more[k]; }).length;
+    moreToggle.textContent = n ? "More filters (" + n + ")" : "More filters";
+    moreToggle.classList.toggle("active", moreOpen || n > 0);
+    moreToggle.setAttribute("aria-pressed", String(moreOpen));
+    document.getElementById("more").hidden = !moreOpen;
+  }
+  moreToggle.addEventListener("click", function () { moreOpen = !moreOpen; showMore(); savePrefs(); });
+  document.getElementById("more-reset").addEventListener("click", function () {
+    more = {};
+    MORE.forEach(function (k) { document.getElementById("f-" + k).value = ""; });
+    showMore();
+    savePrefs();
+    refresh();
+  });
 
   function toggle(id, value) {
     entryFor(id).movedIn = value;
@@ -127,6 +205,25 @@
     var wished = every.filter(function (p) { return p.wish && !p.movedIn; }).length;
     body.appendChild(grid);
 
+    // Where your moved-in Pokémon live (the Area field), with how many specialties each area has.
+    var moved = every.filter(function (p) { return p.movedIn; });
+    if (moved.length) {
+      var h = document.createElement("h3");
+      h.textContent = "By area";
+      body.appendChild(h);
+      var areas = document.createElement("ul");
+      D.TOWN_AREAS.concat([""]).forEach(function (a) {
+        var here = moved.filter(function (p) { return a ? p.area.toLowerCase() === a.toLowerCase() : !p.area; });
+        if (!here.length) return;
+        var specs = {};
+        here.forEach(function (p) { p.specialties.forEach(function (x) { specs[x] = true; }); });
+        var li = document.createElement("li");
+        li.textContent = (a || "No area set") + ": " + here.length + " Pokémon" + (a ? ", " + Object.keys(specs).length + " specialties" : "");
+        areas.appendChild(li);
+      });
+      body.appendChild(areas);
+    }
+
     if (window.PokopiaShop && D.habitats.length) {
       var next = PokopiaShop.suggestions(progress).slice(0, 3);
       if (next.length) {
@@ -168,6 +265,7 @@
     document.getElementById("bulk").hidden = !selecting;
     document.getElementById("bulk-count").textContent = n + " selected";
     ["bulk-in", "bulk-out", "bulk-star"].forEach(function (id) { document.getElementById(id).disabled = !n; });
+    document.getElementById("bulk-compare").disabled = n < 2 || n > 3;
   }
 
   function setSelecting(on) {
@@ -200,6 +298,78 @@
     var allStarred = ids.every(function (id) { return entryFor(id).wish; });
     bulk(function (id) { if (allStarred) delete entryFor(id).wish; else entryFor(id).wish = true; });
   });
+  // ---- compare 2-3 Pokémon ----
+  var compareDialog = document.getElementById("compare");
+  document.getElementById("bulk-compare").addEventListener("click", function () {
+    var mons = Object.keys(selected).map(function (id) { return D.pokemonById[id]; }).filter(Boolean);
+    if (mons.length < 2) return;
+    var body = document.getElementById("compare-body");
+    body.textContent = "";
+    function areasOf(p) {
+      var out = {};
+      p.habitats.forEach(function (h) { (h.areas || []).forEach(function (a) { out[a === "any" ? "All areas" : a] = true; }); });
+      return Object.keys(out);
+    }
+    var rows = [
+      ["Ideal habitat", function (p) { return p.idealHabitat ? [p.idealHabitat] : []; }],
+      ["Flavor", function (p) { return p.flavor ? [p.flavor] : []; }],
+      ["Specialty", function (p) { return p.specialties || []; }],
+      ["Favorites", function (p) { return p.favorites || []; }],
+      ["Habitats", function (p) { return p.habitats.map(function (h) { return h.name; }); }],
+      ["Can appear in", areasOf]
+    ];
+    var table = document.createElement("table");
+    table.className = "cmp";
+    var head = document.createElement("tr");
+    head.appendChild(document.createElement("th"));
+    mons.forEach(function (p) {
+      var th = document.createElement("th");
+      var pic = D.pokemonPic(p, 40);
+      if (pic) th.appendChild(pic);
+      var a = document.createElement("a");
+      a.href = "index.html#" + encodeURIComponent(p.id);
+      a.textContent = p.name;
+      a.addEventListener("click", function () { compareDialog.close(); });
+      th.appendChild(a);
+      head.appendChild(th);
+    });
+    table.appendChild(head);
+    rows.forEach(function (r) {
+      var lists = mons.map(r[1]);
+      var tr = document.createElement("tr");
+      var th = document.createElement("th");
+      th.textContent = r[0];
+      tr.appendChild(th);
+      lists.forEach(function (vals) {
+        var td = document.createElement("td");
+        if (!vals.length) td.textContent = "–";
+        vals.forEach(function (v, i) {
+          // Shared by every Pokémon in the comparison: shown in bold.
+          var common = lists.every(function (l) { return l.indexOf(v) !== -1; });
+          if (i) td.appendChild(document.createTextNode(", "));
+          var span = document.createElement(common ? "b" : "span");
+          span.textContent = v;
+          td.appendChild(span);
+        });
+        tr.appendChild(td);
+      });
+      table.appendChild(tr);
+    });
+    body.appendChild(table);
+    var scores = [];
+    for (var i = 0; i < mons.length; i++) {
+      for (var j = i + 1; j < mons.length; j++) {
+        scores.push(mons[i].name + " + " + mons[j].name + ": " + D.matchScore(mons[i], mons[j]) + "%");
+      }
+    }
+    var p = document.createElement("p");
+    p.className = "sub";
+    p.textContent = "Roommate match: " + scores.join(" · ") + ". Bold = shared by all.";
+    body.appendChild(p);
+    compareDialog.showModal();
+  });
+  document.getElementById("compare-close").addEventListener("click", function () { compareDialog.close(); });
+
   document.getElementById("bulk-visible").addEventListener("click", function () {
     shown.forEach(function (p) { selected[p.id] = true; });
     refresh();
@@ -409,6 +579,7 @@
   document.getElementById("now-weather").value = now.weather;
   markFilterButtons();
   showNow();
+  showMore();
   document.getElementById("dash").open = !!prefs.dashOpen;
 
   refresh();

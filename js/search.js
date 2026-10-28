@@ -4,7 +4,8 @@
   var FILES = [
     ["POKOPIA_DB", "data/pokopia-pokemon.js"],
     ["POKOPIA_HABITATS", "data/pokopia-habitats.js"],
-    ["POKOPIA_RECIPES", "data/pokopia-recipes.js"]
+    ["POKOPIA_RECIPES", "data/pokopia-recipes.js"],
+    ["POKOPIA_COOKING", "data/pokopia-cooking.js"]
   ];
   var index = null;
   var dialog, input, results;
@@ -44,9 +45,14 @@
       recipeSlugs[r.slug] = true;
       rows.push({ kind: "Recipe", name: r.name, extra: r.category, href: "recipes.html#" + encodeURIComponent(r.slug) });
     });
+    var meals = (window.POKOPIA_COOKING || {}).meals || [];
+    meals.forEach(function (m) { recipeSlugs[m.slug] = true; }); // meals are listed once, as a Meal
     (rdb.items || []).forEach(function (i) {
       if (recipeSlugs[i.slug]) return;
       rows.push({ kind: "Item", name: i.name, extra: (i.categories || []).join(", "), href: "recipes.html#" + encodeURIComponent(i.slug) });
+    });
+    meals.forEach(function (m) {
+      rows.push({ kind: "Meal", name: m.name, extra: m.category + (m.flavor ? ", " + m.flavor : ""), href: "recipes.html#cook-" + encodeURIComponent(m.slug) });
     });
     rows.forEach(function (r) { r.key = r.name.toLowerCase(); });
     return rows;

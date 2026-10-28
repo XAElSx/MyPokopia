@@ -4,7 +4,7 @@
   var D = window.PokopiaData;
   var W = 12;
   var H = 12;
-  var AREAS = D.ALL_AREAS.concat(["Bubbly Basin"]);
+  var AREAS = D.TOWN_AREAS;
   var progress = PokopiaStorage.load();
   var area = AREAS[0];
   var tool = "select";

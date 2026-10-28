@@ -1,20 +1,25 @@
 // Reads and writes progress in localStorage. Never touches game data.
-// Shape (version 3): { version, updatedAt, entries, habitats, houses, town, shop }
+// Shape (version 4): { version, updatedAt, entries, habitats, houses, town, shop, dailies }
 //   entries  - by Pokémon id   { movedIn, area, region (should live in), notes, wish }
 //   habitats - by habitat slug { built, wish }
 //   houses   - by house id     { name, members: [pokémon ids] }
 //   town     - by area name    { w, h, cells: { "x,y": { kind, ref } } }
 //   shop     - { habitats: { slug: true }, recipes: { slug: amount }, have: { itemSlug: amount } }
+//   dailies  - { day: "YYYY-MM-DD", done: { id: true }, custom: [{ id, name }], hidden: { id: true } }
 // The sync token is stored under its own key and is never part of this object.
 (function () {
   var KEY = "pokopia.collection";
-  var VERSION = 3;
+  var VERSION = 4;
   var SNAP_KEY = "pokopia.snapshots"; // last few older copies, newest first: [{ t, raw }]
   var SNAP_EVERY = 30 * 60 * 1000;
   var SNAP_KEEP = 3;
 
   function empty() {
-    return { version: VERSION, updatedAt: null, entries: {}, habitats: {}, houses: {}, town: {}, shop: emptyShop() };
+    return { version: VERSION, updatedAt: null, entries: {}, habitats: {}, houses: {}, town: {}, shop: emptyShop(), dailies: emptyDailies() };
+  }
+
+  function emptyDailies() {
+    return { day: "", done: {}, custom: [], hidden: {} };
   }
 
   function emptyShop() {
@@ -33,6 +38,11 @@
     ["habitats", "recipes", "have"].forEach(function (k) {
       if (!data.shop[k] || typeof data.shop[k] !== "object") data.shop[k] = {};
     });
+    if (!data.dailies || typeof data.dailies !== "object") data.dailies = emptyDailies();
+    ["done", "hidden"].forEach(function (k) {
+      if (!data.dailies[k] || typeof data.dailies[k] !== "object") data.dailies[k] = {};
+    });
+    if (!Array.isArray(data.dailies.custom)) data.dailies.custom = [];
     if (!data.version || data.version < VERSION) data.version = VERSION;
     if (data.updatedAt === undefined) data.updatedAt = null;
     return data;

@@ -1,5 +1,7 @@
 // Pairings: best housemates per Pokémon, and a house builder (up to 4 Pokémon) with a score.
 // Rule: housemates need the same ideal habitat; every shared favorite is one point.
+// Next to it, a 0-100 "match" (D.matchScore: habitat 20%, flavor 20%, favorites overlap 60%) and, for a house,
+// the average match of every pair.
 (function () {
   var D = window.PokopiaData;
   var MAX = 4;
@@ -115,7 +117,7 @@
       a.href = "index.html#" + c.pokemon.id;
       li.appendChild(a);
       if (movedIn(c.pokemon.id)) li.appendChild(el("span", "tick", " ✓"));
-      li.appendChild(el("span", "sub", " · " + c.shared.length + ": " + c.shared.join(", ")));
+      li.appendChild(el("span", "sub", " · " + D.matchScore(p, c.pokemon) + "% · " + c.shared.length + ": " + c.shared.join(", ")));
       ul.appendChild(li);
     });
     panel.hidden = false;
@@ -203,6 +205,10 @@
     var score = el("div", "score");
     score.appendChild(el("b", null, "Score " + res.score));
     var note = members.length + " / " + MAX + " Pokémon";
+    if (res.pairs.length) {
+      var avg = Math.round(res.pairs.reduce(function (n, x) { return n + D.matchScore(x.a, x.b); }, 0) / res.pairs.length);
+      note += " · match " + avg + "%";
+    }
     if (res.mixed && members.length > 1) note += " · mixed ideal habitats";
     score.appendChild(el("span", "sub", " · " + note));
     card.appendChild(score);
@@ -222,7 +228,7 @@
     if (res.pairs.length) {
       var ul = el("ul", "habitats");
       res.pairs.forEach(function (p) {
-        var t = p.a.name + " + " + p.b.name + ": ";
+        var t = p.a.name + " + " + p.b.name + " (" + D.matchScore(p.a, p.b) + "%): ";
         t += p.ok ? (p.shared.length ? p.shared.join(", ") : "no shared favorites") : "different ideal habitat";
         ul.appendChild(el("li", p.ok && p.shared.length ? null : "weak", t));
       });

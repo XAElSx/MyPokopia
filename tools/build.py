@@ -1,12 +1,14 @@
 """Rebuild game data.
 
 Usage (from the repo folder):  python tools/build.py [target ...]
-Targets: pokemon (default), habitats, recipes, favorites, images (add picture paths to the Pokémon data only)   e.g.  python tools/build.py habitats
+Targets: pokemon (default), habitats, recipes, favorites, cooking, dailies, images (add picture paths to the Pokémon data only)   e.g.  python tools/build.py habitats
 Needs: pip install beautifulsoup4
 
 pokemon : download pages -> list index -> parse -> compare with Pocket Tactics -> verify flags -> .js
 habitats: download Serebii habitat pages -> parse -> .js
 recipes : download Serebii recipe pages -> parse -> .js
+cooking : download Serebii cooking, flavors and specialty pages -> parse -> .js
+dailies : data/pokopia-dailies.json is hand-written; this only regenerates the .js
 After any target, data/verify-list.txt is rewritten from the flags of every data file.
 
 Downloaded pages are cached in ../pokopia-raw (next to the repo, so they never get committed).
@@ -65,10 +67,24 @@ def favorites():
     build_js.main(db, os.path.join(DATA, "pokopia-favorites.js"), "POKOPIA_FAVORITES")
 
 
-TARGETS = {"pokemon": pokemon, "images": images, "habitats": habitats, "recipes": recipes, "favorites": favorites}
+def cooking():
+    import cooking as c
+    db = os.path.join(DATA, "pokopia-cooking.json")
+    c.main(RAW, db)
+    build_js.main(db, os.path.join(DATA, "pokopia-cooking.js"), "POKOPIA_COOKING")
+
+
+def dailies():
+    db = os.path.join(DATA, "pokopia-dailies.json")
+    build_js.main(db, os.path.join(DATA, "pokopia-dailies.js"), "POKOPIA_DAILIES")
+
+
+TARGETS = {"pokemon": pokemon, "images": images, "habitats": habitats, "recipes": recipes, "favorites": favorites,
+           "cooking": cooking, "dailies": dailies}
 # (file, list key, label shown before each flag)
 VERIFY_SOURCES = [("pokopia-pokemon.json", "pokemon", ""), ("pokopia-habitats.json", "habitats", "[habitat] "),
-                  ("pokopia-recipes.json", "recipes", "[recipe] "), ("pokopia-favorites.json", "favorites", "[favorite] ")]
+                  ("pokopia-recipes.json", "recipes", "[recipe] "), ("pokopia-favorites.json", "favorites", "[favorite] "),
+                  ("pokopia-cooking.json", "meals", "[meal] ")]
 
 
 def write_verify_list():

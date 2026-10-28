@@ -18,6 +18,16 @@
 
   <main class="plan">
     <section>
+      <h2>Today <span class="sub" id="today-count"></span></h2>
+      <ul id="today" class="checks"></ul>
+      <form id="today-add" class="sync-row">
+        <input id="today-new" type="text" placeholder="Add your own daily task" aria-label="New daily task" autocomplete="off">
+        <button type="submit">Add</button>
+      </form>
+      <button type="button" id="today-edit" class="link-btn">Hide or show tasks</button>
+    </section>
+
+    <section>
       <h2>Shopping list</h2>
       <p class="note" id="shop-empty">Nothing on the list yet. Add habitats or recipes from the guide, the recipes page or the suggestions below.</p>
       <div id="shop" hidden>
@@ -38,6 +48,15 @@
     </section>
 
     <section>
+      <h2>Specialty coverage</h2>
+      <p class="note">What your moved-in Pokémon can do in each area, using the Area you set on each Pokémon. Empty squares are gaps. Tap a number to see who.</p>
+      <div class="cov-wrap"><table id="coverage" class="cov"></table></div>
+      <p class="sub" id="cov-detail"></p>
+      <h3 class="sub-h">Moved in without an area <span class="sub" id="unplaced-count"></span></h3>
+      <ul id="unplaced" class="list"></ul>
+    </section>
+
+    <section>
       <h2>Wishlist</h2>
       <ul id="wish" class="list"></ul>
     </section>
@@ -46,6 +65,8 @@
   <script src="data/pokopia-pokemon.js"></script>
   <script src="data/pokopia-habitats.js"></script>
   <script src="data/pokopia-recipes.js"></script>
+  <script src="data/pokopia-cooking.js"></script>
+  <script src="data/pokopia-dailies.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/sync.js"></script>

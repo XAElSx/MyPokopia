@@ -16,7 +16,11 @@
     <div id="sync-mount"></div>
     <input id="search" type="search" placeholder="Search recipe or material" autocomplete="off">
     <div class="filters">
+      <button type="button" class="chip active" data-mode="craft">Crafting</button>
+      <button type="button" class="chip" data-mode="cook">Cooking</button>
       <select id="category" class="chip" aria-label="Category"></select>
+      <select id="cook-type" class="chip" aria-label="Meal type" hidden></select>
+      <select id="cook-flavor" class="chip" aria-label="Flavor" hidden></select>
       <button type="button" id="habitat-only" class="chip">Habitat items only</button>
       <button type="button" id="list-only" class="chip">On my list</button>
     </div>
@@ -35,6 +39,25 @@
     </div>
     <button type="button" id="f-cart" class="cart" hidden>Add to shopping list</button>
     <p id="f-verify" class="flavor" hidden></p>
+    <div id="meal" hidden>
+      <p id="m-desc" class="flavor"></p>
+      <div class="field">
+        <span class="label">Type</span>
+        <span id="m-type"></span>
+      </div>
+      <div class="field">
+        <span class="label">Ingredients</span>
+        <ul id="m-ingredients" class="habitats"></ul>
+      </div>
+      <div class="field" id="sec-m-helper">
+        <span class="label">Helper Pokémon specialty</span>
+        <div id="m-helper"></div>
+      </div>
+      <div class="field" id="sec-m-likers">
+        <span class="label">Pokémon who love this flavor</span>
+        <div id="m-likers"></div>
+      </div>
+    </div>
     <div class="field" id="sec-category">
       <span class="label">Category</span>
       <span id="f-category"></span>
@@ -60,6 +83,7 @@
   <script src="data/pokopia-pokemon.js"></script>
   <script src="data/pokopia-habitats.js"></script>
   <script src="data/pokopia-recipes.js"></script>
+  <script src="data/pokopia-cooking.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/sync.js"></script>

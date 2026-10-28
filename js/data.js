@@ -1,11 +1,14 @@
-// Shared lookups and labels over the generated data files (POKOPIA_DB, POKOPIA_HABITATS, POKOPIA_RECIPES).
+// Shared lookups and labels over the generated data files (POKOPIA_DB, POKOPIA_HABITATS, POKOPIA_RECIPES,
+// POKOPIA_FAVORITES, POKOPIA_COOKING). A page only needs to load the files it uses.
 (function () {
   var db = window.POKOPIA_DB || { pokemon: [], meta: {} };
   var hdb = window.POKOPIA_HABITATS || { habitats: [] };
   var rdb = window.POKOPIA_RECIPES || { recipes: [], items: [] };
   var fdb = window.POKOPIA_FAVORITES || { favorites: [] };
+  var cdb = window.POKOPIA_COOKING || { meals: [], foods: [], specialties: [], categories: [] };
   var RARITY = { 1: "common", 2: "rare", 3: "very rare" };
   var ALL_AREAS = ["Withered Wastelands", "Bleak Beach", "Rocky Ridges", "Sparkling Skylands", "Palette Town", "Cloud Island"];
+  var TOWN_AREAS = ALL_AREAS.concat(["Bubbly Basin"]); // areas you can live in (town planner, "Area" field)
 
   var pokemonById = {};
   var habitatBySlug = {};
@@ -87,6 +90,32 @@
     return img;
   }
 
+  // Cooking (meals), foods with their flavor, and what each specialty does.
+  var mealBySlug = {};
+  var foodBySlug = {};
+  var specialtyByName = {}; // lower-case name -> { name, description, image }
+  cdb.meals.forEach(function (m) { mealBySlug[m.slug] = m; });
+  cdb.foods.forEach(function (f) { foodBySlug[f.slug] = f; });
+  cdb.specialties.forEach(function (sp) { specialtyByName[sp.name.toLowerCase()] = sp; });
+
+  function specialtyPic(name, size) {
+    var sp = specialtyByName[String(name).toLowerCase()];
+    return sp ? picture(sp.image, size) : null;
+  }
+
+  // Roommate match 0-100, the formula pokopiawiki.com uses: same ideal habitat 20%, same flavor 20%,
+  // favorites overlap (shared / all different favorites of both) 60%.
+  function matchScore(a, b) {
+    var fa = a.favorites || [], fb = b.favorites || [];
+    var union = {};
+    fa.concat(fb).forEach(function (f) { union[f] = true; });
+    var both = fa.filter(function (f) { return fb.indexOf(f) !== -1; }).length;
+    var jaccard = Object.keys(union).length ? both / Object.keys(union).length : 0;
+    var hab = a.idealHabitat && a.idealHabitat === b.idealHabitat ? 1 : 0;
+    var flav = a.flavor && a.flavor === b.flavor ? 1 : 0;
+    return Math.round((0.2 * hab + 0.2 * flav + 0.6 * jaccard) * 100);
+  }
+
   function pokemonPic(p, size) { return p ? picture(p.image, size) : null; }
 
   function itemPic(slug, size) {
@@ -108,6 +137,8 @@
     pokemonById: pokemonById, habitatBySlug: habitatBySlug, pokemonByHabitat: pokemonByHabitat,
     recipes: rdb.recipes, items: rdb.items, recipeBySlug: recipeBySlug, itemBySlug: itemBySlug,
     recipesUsing: recipesUsing, habitatsNeeding: habitatsNeeding,
-    RARITY: RARITY, ALL_AREAS: ALL_AREAS, when: when, areaLabel: areaLabel, dexLabel: dexLabel
+    meals: cdb.meals, foods: cdb.foods, specialties: cdb.specialties, cookCategories: cdb.categories,
+    pic: picture, matchScore: matchScore, mealBySlug: mealBySlug, foodBySlug: foodBySlug, specialtyByName: specialtyByName, specialtyPic: specialtyPic,
+    RARITY: RARITY, ALL_AREAS: ALL_AREAS, TOWN_AREAS: TOWN_AREAS, when: when, areaLabel: areaLabel, dexLabel: dexLabel
   };
 })();

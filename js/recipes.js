@@ -1,4 +1,5 @@
 // Crafting list: what each item needs, where to get the materials, and what uses it.
+// Cooking mode: the meals from Serebii's cooking page, with flavor, helper specialty and who loves the flavor.
 (function () {
   var D = window.PokopiaData;
   var progress = PokopiaStorage.load();
@@ -7,6 +8,10 @@
   var habitatOnly = !!prefs.habitatOnly;
   var listOnly = !!prefs.listOnly;
   var query = prefs.query || "";
+  var mode = prefs.mode || "craft";
+  var cookType = prefs.cookType || "all";
+  var cookFlavor = prefs.cookFlavor || "all";
+  var CRAFT_SECTIONS = ["sec-category", "sec-obtain", "sec-reqs", "sec-where", "sec-used"];
   var openSlug = null;
 
   var listEl = document.getElementById("list");
@@ -29,7 +34,8 @@
 
   function savePrefs() {
     PokopiaStorage.pref("recipes", Object.assign(PokopiaStorage.pref("recipes"), {
-      category: category, habitatOnly: habitatOnly, listOnly: listOnly, query: query
+      category: category, habitatOnly: habitatOnly, listOnly: listOnly, query: query,
+      mode: mode, cookType: cookType, cookFlavor: cookFlavor
     }));
   }
 
@@ -73,7 +79,138 @@
     return (r.name + " " + r.requirements.map(function (m) { return m.item; }).join(" ")).toLowerCase().indexOf(q) !== -1;
   }
 
+  function movedIn(id) { return !!(progress.entries[id] && progress.entries[id].movedIn); }
+
+  // ---- cooking ----
+  (function fillCooking() {
+    var t = document.getElementById("cook-type");
+    [["all", "All meals"]].concat(D.cookCategories.map(function (c) { return [c.name, c.name + " · " + c.move]; })).forEach(function (o) {
+      var opt = el("option", null, o[1]);
+      opt.value = o[0];
+      t.appendChild(opt);
+    });
+    var f = document.getElementById("cook-flavor");
+    [["all", "Any flavor"], ["none", "No flavor"]].concat(["Bitter", "Dry", "Sour", "Spicy", "Sweet"].map(function (x) { return [x, x]; })).forEach(function (o) {
+      var opt = el("option", null, o[1]);
+      opt.value = o[0];
+      f.appendChild(opt);
+    });
+  })();
+
+  function mealMatches(m) {
+    if (cookType !== "all" && m.category !== cookType) return false;
+    if (cookFlavor === "none" && m.flavor) return false;
+    if (cookFlavor !== "all" && cookFlavor !== "none" && m.flavor !== cookFlavor) return false;
+    var q = query.trim().toLowerCase();
+    if (!q) return true;
+    var words = [m.name, m.category, m.flavor, m.specialty, m.main && m.main.name].concat(m.secondary.map(function (s) { return s.name; }));
+    return words.join(" ").toLowerCase().indexOf(q) !== -1;
+  }
+
+  function ingredientsText(m) {
+    return [m.main].concat(m.secondary).filter(Boolean).map(function (i) { return i.name; }).join(" + ");
+  }
+
+  function lovers(flavor) {
+    return D.pokemon.filter(function (p) { return flavor && p.flavor === flavor; });
+  }
+
+  function refreshCooking() {
+    var shown = D.meals.filter(mealMatches);
+    counterEl.textContent = shown.length + " / " + D.meals.length + " meals";
+    listEl.textContent = "";
+    if (!shown.length) { listEl.appendChild(el("li", "empty", "No meals match.")); return; }
+    shown.forEach(function (m) {
+      var li = el("li", "card");
+      var main = el("button", "card-main wide");
+      main.type = "button";
+      var pic = D.pic(m.image, 48);
+      if (pic) { main.classList.add("has-pic"); main.appendChild(pic); }
+      main.appendChild(el("span", "name", m.name));
+      main.appendChild(el("span", "num", m.flavor || "No flavor"));
+      var bits = [m.category + " · " + m.move, ingredientsText(m)];
+      if (m.specialty) bits.push("helper: " + m.specialty);
+      main.appendChild(el("span", "meta", bits.join(" · ")));
+      main.addEventListener("click", function () { openMeal(m.slug); });
+      li.appendChild(main);
+      listEl.appendChild(li);
+    });
+  }
+
+  function showSections(meal) {
+    document.getElementById("meal").hidden = !meal;
+    CRAFT_SECTIONS.forEach(function (id) { document.getElementById(id).hidden = meal; });
+    document.getElementById("f-cart").hidden = true;
+    document.getElementById("f-verify").hidden = true;
+  }
+
+  function openMeal(slug) {
+    var m = D.mealBySlug[slug];
+    if (!m) return;
+    openSlug = "cook-" + slug;
+    showSections(true);
+    D.setTitle(document.getElementById("panel-title"), m.name, D.pic(m.image, 56));
+    document.getElementById("m-desc").textContent = m.description;
+    var cat = D.cookCategories.filter(function (c) { return c.name === m.category; })[0];
+    document.getElementById("m-type").textContent = [m.category, m.move ? "powers up " + m.move : "",
+      m.flavor ? m.flavor + " flavor" : "no flavor", m.pp ? m.pp + " PP" : ""].filter(Boolean).join(" · ") +
+      (cat && cat.effects.length ? " (" + cat.effects.join("; ") + ")" : "");
+
+    var ul = document.getElementById("m-ingredients");
+    ul.textContent = "";
+    [m.main].concat(m.secondary).filter(Boolean).forEach(function (i, n) {
+      var li = el("li");
+      var ipic = D.itemPic(i.slug, 24) || (D.mealBySlug[i.slug] && D.pic(D.mealBySlug[i.slug].image, 24));
+      if (ipic) li.appendChild(ipic);
+      if (D.itemBySlug[i.slug] || D.recipeBySlug[i.slug]) li.appendChild(link(i.name, itemHref(i.slug)));
+      else if (D.mealBySlug[i.slug]) li.appendChild(link(i.name, "recipes.html#cook-" + encodeURIComponent(i.slug)));
+      else li.appendChild(el("span", null, i.name));
+      li.appendChild(el("span", "sub", n ? " · extra" : " · main"));
+      ul.appendChild(li);
+    });
+
+    var helper = document.getElementById("m-helper");
+    helper.textContent = "";
+    document.getElementById("sec-m-helper").hidden = !m.specialty;
+    if (m.specialty) {
+      var hpic = D.specialtyPic(m.specialty, 24);
+      if (hpic) helper.appendChild(hpic);
+      helper.appendChild(el("b", null, m.specialty));
+      var yours = D.pokemon.filter(function (p) { return movedIn(p.id) && p.specialties.indexOf(m.specialty) !== -1; });
+      helper.appendChild(el("div", "sub", yours.length ? "You have: " + yours.map(function (p) { return p.name; }).join(", ")
+        : "None of your moved-in Pokémon has it yet."));
+    }
+
+    var likers = document.getElementById("m-likers");
+    likers.textContent = "";
+    var all = lovers(m.flavor);
+    document.getElementById("sec-m-likers").hidden = !m.flavor;
+    if (m.flavor) {
+      var mine = all.filter(function (p) { return movedIn(p.id); });
+      likers.appendChild(el("div", null, mine.length ? "In your town: " + mine.map(function (p) { return p.name; }).join(", ") : "None of your moved-in Pokémon."));
+      likers.appendChild(el("div", "sub", all.length + " Pokémon in total like " + m.flavor.toLowerCase() + " food."));
+    }
+
+    panel.hidden = false;
+    backdrop.hidden = false;
+    document.body.classList.add("panel-open");
+  }
+
+  function setMode(next) {
+    mode = next;
+    Array.prototype.forEach.call(document.querySelectorAll("[data-mode]"), function (b) {
+      b.classList.toggle("active", b.getAttribute("data-mode") === mode);
+    });
+    var cook = mode === "cook";
+    ["category", "habitat-only", "list-only"].forEach(function (id) { document.getElementById(id).hidden = cook; });
+    ["cook-type", "cook-flavor"].forEach(function (id) { document.getElementById(id).hidden = !cook; });
+    document.getElementById("search").placeholder = cook ? "Search meal, ingredient, flavor" : "Search recipe or material";
+    savePrefs();
+    refresh();
+  }
+
   function refresh() {
+    if (mode === "cook") { refreshCooking(); return; }
     var shown = D.recipes.filter(matches);
     counterEl.textContent = shown.length + " / " + D.recipes.length + " recipes";
     listEl.textContent = "";
@@ -117,6 +254,7 @@
     var item = D.itemBySlug[slug];
     if (!recipe && !item) return;
     openSlug = slug;
+    showSections(false);
     D.setTitle(document.getElementById("panel-title"), (recipe || item).name, D.itemPic(slug, 56));
     var cat = recipe ? recipe.category : item.categories.join(", ");
     document.getElementById("f-category").textContent = cat;
@@ -199,6 +337,12 @@
     savePrefs();
     refresh();
   });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-mode]"), function (b) {
+    b.addEventListener("click", function () { setMode(b.getAttribute("data-mode")); });
+  });
+  document.getElementById("cook-type").addEventListener("change", function (e) { cookType = e.target.value; savePrefs(); refresh(); });
+  document.getElementById("cook-flavor").addEventListener("change", function (e) { cookFlavor = e.target.value; savePrefs(); refresh(); });
+
   document.getElementById("list-only").addEventListener("click", function (e) {
     listOnly = !listOnly;
     e.currentTarget.classList.toggle("active", listOnly);
@@ -209,7 +353,10 @@
   // recipes.html#slug opens a recipe, or just the item when it has no recipe.
   function fromHash() {
     var slug = decodeURIComponent(location.hash.slice(1));
-    if (slug) openPanel(slug);
+    if (slug.indexOf("cook-") === 0) {
+      if (mode !== "cook") setMode("cook");
+      openMeal(slug.slice(5));
+    } else if (slug) openPanel(slug);
   }
   window.addEventListener("hashchange", fromHash);
 
@@ -218,8 +365,10 @@
   document.getElementById("category").value = category;
   document.getElementById("habitat-only").classList.toggle("active", habitatOnly);
   document.getElementById("list-only").classList.toggle("active", listOnly);
+  document.getElementById("cook-type").value = cookType;
+  document.getElementById("cook-flavor").value = cookFlavor;
 
-  refresh();
+  setMode(mode);
   fromHash();
   PokopiaStorage.keepScroll("recipes");
 })();

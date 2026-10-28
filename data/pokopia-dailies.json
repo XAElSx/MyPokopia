@@ -1,0 +1,20 @@
+{
+ "count": 11,
+ "meta": {
+  "source": "https://www.pokopiawiki.com/dailies (task names); hand-written, edit freely",
+  "note": "The ticks reset every local calendar day. Your own extra tasks are saved in your progress, not here."
+ },
+ "dailies": [
+  {"id": "stamp", "name": "Daily Stamp"},
+  {"id": "shop", "name": "Check the Daily Shop"},
+  {"id": "challenges", "name": "Complete Daily Challenges"},
+  {"id": "mosslax", "name": "Feed Mosslax"},
+  {"id": "dreamisland", "name": "Visit Dream Island"},
+  {"id": "vespiquen", "name": "Give Vespiquen honey"},
+  {"id": "vending", "name": "Check vending machines"},
+  {"id": "crops", "name": "Harvest crops"},
+  {"id": "sparklingwater", "name": "Collect Sparkling Water"},
+  {"id": "shiningblocks", "name": "Look for shining blocks"},
+  {"id": "shinies", "name": "Look for water and rock shinies"}
+ ]
+}

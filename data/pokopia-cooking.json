@@ -1,0 +1,1398 @@
+{
+ "count": 34,
+ "meta": {
+  "source": "https://serebii.net/pokemonpokopia/cooking.shtml",
+  "built": "2026-10-28",
+  "counts": {
+   "meals": 34,
+   "foods": 58,
+   "specialties": 32
+  }
+ },
+ "categories": [
+  {
+   "name": "Salad",
+   "move": "Leafage",
+   "effects": [
+    "Hold down to increase amount of grass unleashed",
+    "Can create Moss on rocks and Duckweed on water"
+   ]
+  },
+  {
+   "name": "Bread",
+   "move": "Cut",
+   "effects": [
+    "Hold down to increase the size of the cut",
+    "Can cut stronger items"
+   ]
+  },
+  {
+   "name": "Steak",
+   "move": "Rock Smash",
+   "effects": [
+    "Works quicker on rocks",
+    "Can break tougher rocks"
+   ]
+  },
+  {
+   "name": "Soup",
+   "move": "Water Gun",
+   "effects": [
+    "Hold down to increase amount of water unleashed"
+   ]
+  },
+  {
+   "name": "Smoothie",
+   "move": "Surf",
+   "effects": [
+    "Allows for Surf underwater",
+    "Break blocks. Hold for more vertical damage"
+   ]
+  }
+ ],
+ "meals": [
+  {
+   "slug": "simplesalad",
+   "name": "Simple salad",
+   "category": "Salad",
+   "move": "Leafage",
+   "description": "An ordinary salad made with leaves. Powers up Leafage when eaten.",
+   "pp": 40,
+   "main": {
+    "slug": "leaf",
+    "name": "Leaf"
+   },
+   "secondary": [],
+   "specialty": null,
+   "flavor": null,
+   "image": "items/simplesalad.png",
+   "verify": []
+  },
+  {
+   "slug": "leppasalad",
+   "name": "Leppa salad",
+   "category": "Salad",
+   "move": "Leafage",
+   "description": "A sweet salad made with Leppa Berries. Powers up Leafage when eaten.",
+   "pp": 20,
+   "main": {
+    "slug": "leaf",
+    "name": "Leaf"
+   },
+   "secondary": [
+    {
+     "slug": "leppaberry",
+     "name": "Leppa Berry"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Sweet",
+   "image": "items/leppasalad.png",
+   "verify": []
+  },
+  {
+   "slug": "seaweedsalad",
+   "name": "Seaweed salad",
+   "category": "Salad",
+   "move": "Leafage",
+   "description": "A bitter-tasting salad made with seaweed. Powers up Leafage when eaten.",
+   "pp": 60,
+   "main": {
+    "slug": "leaf",
+    "name": "Leaf"
+   },
+   "secondary": [
+    {
+     "slug": "seaweed",
+     "name": "Seaweed"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Bitter",
+   "image": "items/seaweedsalad.png",
+   "verify": []
+  },
+  {
+   "slug": "shreddedsalad",
+   "name": "Shredded salad",
+   "category": "Salad",
+   "move": "Leafage",
+   "description": "A sour salad made with finely chopped leaves. Powers up Leafage when eaten.",
+   "pp": 60,
+   "main": {
+    "slug": "leaf",
+    "name": "Leaf"
+   },
+   "secondary": [],
+   "specialty": "Chop",
+   "flavor": "Sour",
+   "image": "items/shreddedsalad.png",
+   "verify": []
+  },
+  {
+   "slug": "crushed-berrysalad",
+   "name": "Crushed-berry salad",
+   "category": "Salad",
+   "move": "Leafage",
+   "description": "A salad with a dry flavor, made with crushed Chesto Berries. Powers up Leafage when eaten.",
+   "pp": 80,
+   "main": {
+    "slug": "leaf",
+    "name": "Leaf"
+   },
+   "secondary": [
+    {
+     "slug": "chestoberry",
+     "name": "Chesto Berry"
+    }
+   ],
+   "specialty": "Crush",
+   "flavor": "Dry",
+   "image": "items/crushed-berrysalad.png",
+   "verify": []
+  },
+  {
+   "slug": "croutonsalad",
+   "name": "Crouton salad",
+   "category": "Salad",
+   "move": "Leafage",
+   "description": "A spicy salad with a delightfully crunchy texture. Powers up Leafage when eaten.",
+   "pp": 80,
+   "main": {
+    "slug": "leaf",
+    "name": "Leaf"
+   },
+   "secondary": [
+    {
+     "slug": "simplebread",
+     "name": "Simple Bread"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Spicy",
+   "image": "items/croutonsalad.png",
+   "verify": []
+  },
+  {
+   "slug": "poppingsalad",
+   "name": "Popping salad",
+   "category": "Salad",
+   "move": "Leafage",
+   "description": "A bitter salad made with plenty of sea grapes. Powers up Leafage when eaten",
+   "pp": 60,
+   "main": {
+    "slug": "leaf",
+    "name": "Leaf"
+   },
+   "secondary": [
+    {
+     "slug": "seagrape",
+     "name": "Sea grape"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Bitter",
+   "image": "items/poppingsalad.png",
+   "verify": []
+  },
+  {
+   "slug": "simplesoup",
+   "name": "Simple soup",
+   "category": "Soup",
+   "move": "Water Gun",
+   "description": "An ordinary soup made with Fresh Water. Powers up Water Gun when eaten.",
+   "pp": 40,
+   "main": {
+    "slug": "freshwater",
+    "name": "Fresh Water"
+   },
+   "secondary": [],
+   "specialty": null,
+   "flavor": null,
+   "image": "items/simplesoup.png",
+   "verify": []
+  },
+  {
+   "slug": "seaweedsoup",
+   "name": "Seaweed soup",
+   "category": "Soup",
+   "move": "Water Gun",
+   "description": "A bitter-tasting soup made with seaweed.. Powers up Water Gun when eaten.",
+   "pp": 20,
+   "main": {
+    "slug": "freshwater",
+    "name": "Fresh Water"
+   },
+   "secondary": [
+    {
+     "slug": "seaweed",
+     "name": "Seaweed"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Bitter",
+   "image": "items/seaweedsoup.png",
+   "verify": []
+  },
+  {
+   "slug": "mushroomsoup",
+   "name": "Mushroom soup",
+   "category": "Soup",
+   "move": "Water Gun",
+   "description": "A soup with a dry flavor made with mushroom broth.. Powers up Water Gun when eaten.",
+   "pp": 60,
+   "main": {
+    "slug": "freshwater",
+    "name": "Fresh Water"
+   },
+   "secondary": [
+    {
+     "slug": "cavemushrooms",
+     "name": "Cave Mushrooms"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Dry",
+   "image": "items/mushroomsoup.png",
+   "verify": []
+  },
+  {
+   "slug": "electrifyingsoup",
+   "name": "Electrifying soup",
+   "category": "Soup",
+   "move": "Water Gun",
+   "description": "A shockingly spicy soup.. Powers up Water Gun when eaten.",
+   "pp": 60,
+   "main": {
+    "slug": "freshwater",
+    "name": "Fresh Water"
+   },
+   "secondary": [],
+   "specialty": "Generate",
+   "flavor": "Spicy",
+   "image": "items/electrifyingsoup.png",
+   "verify": []
+  },
+  {
+   "slug": "healthysoup",
+   "name": "Healthy soup",
+   "category": "Soup",
+   "move": "Water Gun",
+   "description": "A spicy soup with an aromatic bean flavor.. Powers up Water Gun when eaten.",
+   "pp": 80,
+   "main": {
+    "slug": "freshwater",
+    "name": "Fresh Water"
+   },
+   "secondary": [
+    {
+     "slug": "bean",
+     "name": "Bean"
+    },
+    {
+     "slug": "leaf",
+     "name": "Leaf"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Spicy",
+   "image": "items/healthysoup.png",
+   "verify": []
+  },
+  {
+   "slug": "flavorfulsoup",
+   "name": "Flavorful soup",
+   "category": "Soup",
+   "move": "Water Gun",
+   "description": "A sour soup bursting with flavor. Powers up Water Gun when eaten.",
+   "pp": 80,
+   "main": {
+    "slug": "freshwater",
+    "name": "Fresh Water"
+   },
+   "secondary": [
+    {
+     "slug": "aspearberry",
+     "name": "Aspear Berry"
+    },
+    {
+     "slug": "simplehamburgersteak",
+     "name": "Simple Hamburger Steak"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Sour",
+   "image": "items/flavorfulsoup.png",
+   "verify": []
+  },
+  {
+   "slug": "poppingsoup",
+   "name": "Popping soup",
+   "category": "Soup",
+   "move": "Water Gun",
+   "description": "A bitter soup that smells of the sea. Powers up Water Gun when eaten",
+   "pp": 20,
+   "main": {
+    "slug": "freshwater",
+    "name": "Fresh Water"
+   },
+   "secondary": [
+    {
+     "slug": "seagrape",
+     "name": "Sea grape"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Bitter",
+   "image": "items/poppingsoup.png",
+   "verify": []
+  },
+  {
+   "slug": "simplebread",
+   "name": "Simple bread",
+   "category": "Bread",
+   "move": "Cut",
+   "description": "Ordinary wheat bread. Powers up Cut when eaten.",
+   "pp": 60,
+   "main": {
+    "slug": "wheat",
+    "name": "Wheat"
+   },
+   "secondary": [],
+   "specialty": null,
+   "flavor": null,
+   "image": "items/simplebread.png",
+   "verify": []
+  },
+  {
+   "slug": "leppabread",
+   "name": "Leppa bread",
+   "category": "Bread",
+   "move": "Cut",
+   "description": "Sour-tasting bread made with Leppa Berry jam.. Powers up Cut when eaten.",
+   "pp": 20,
+   "main": {
+    "slug": "wheat",
+    "name": "Wheat"
+   },
+   "secondary": [
+    {
+     "slug": "leppaberry",
+     "name": "Leppa Berry"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Sour",
+   "image": "items/leppabread.png",
+   "verify": []
+  },
+  {
+   "slug": "carrotbread",
+   "name": "Carrot bread",
+   "category": "Bread",
+   "move": "Cut",
+   "description": "Spicy bread with an intense carrot flavor. Powers up Cut when eaten.",
+   "pp": 90,
+   "main": {
+    "slug": "wheat",
+    "name": "Wheat"
+   },
+   "secondary": [
+    {
+     "slug": "freshcarrot",
+     "name": "Fresh carrot"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Spicy",
+   "image": "items/carrotbread.png",
+   "verify": []
+  },
+  {
+   "slug": "recycledbread",
+   "name": "Recycled bread",
+   "category": "Bread",
+   "move": "Cut",
+   "description": "Bitter-tasting bread made by reusing other bread. Powers up Cut when eaten",
+   "pp": 90,
+   "main": {
+    "slug": "wheat",
+    "name": "Wheat"
+   },
+   "secondary": [
+    {
+     "slug": "simplebread",
+     "name": "Simple Bread"
+    }
+   ],
+   "specialty": "Recycle",
+   "flavor": "Bitter",
+   "image": "items/recycledbread.png",
+   "verify": []
+  },
+  {
+   "slug": "fluffybread",
+   "name": "Fluffy bread",
+   "category": "Bread",
+   "move": "Cut",
+   "description": "Sweet bread made with Pecha Berries. Powers up cut when eaten.",
+   "pp": 120,
+   "main": {
+    "slug": "wheat",
+    "name": "Wheat"
+   },
+   "secondary": [
+    {
+     "slug": "pechaberry",
+     "name": "Pecha Berry"
+    }
+   ],
+   "specialty": "Water",
+   "flavor": "Sweet",
+   "image": "items/fluffybread.png",
+   "verify": []
+  },
+  {
+   "slug": "breadbowl",
+   "name": "Bread bowl",
+   "category": "Bread",
+   "move": "Cut",
+   "description": "Spicy bread that's delicious even when burnt. Powers up Cut when eaten.",
+   "pp": 120,
+   "main": {
+    "slug": "wheat",
+    "name": "Wheat"
+   },
+   "secondary": [
+    {
+     "slug": "simplesoup",
+     "name": "Simple Soup"
+    }
+   ],
+   "specialty": "Burn",
+   "flavor": "Spicy",
+   "image": "items/breadbowl.png",
+   "verify": []
+  },
+  {
+   "slug": "watermelonbread",
+   "name": "Watermelon bread",
+   "category": "Bread",
+   "move": "Cut",
+   "description": "Sweet bread made with watermelon. Powers up Cut when eaten",
+   "pp": 90,
+   "main": {
+    "slug": "wheat",
+    "name": "Wheat"
+   },
+   "secondary": [
+    {
+     "slug": "watermelonslice",
+     "name": "Watermelon slice"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Sweet",
+   "image": "items/watermelonbread.png",
+   "verify": []
+  },
+  {
+   "slug": "simplehamburgersteak",
+   "name": "Simple hamburger steak",
+   "category": "Steak",
+   "move": "Rock Smash",
+   "description": "An ordinary hamburger steak, made with beans. Powers up Rock Smash when eaten.",
+   "pp": 350,
+   "main": {
+    "slug": "bean",
+    "name": "Bean"
+   },
+   "secondary": [],
+   "specialty": null,
+   "flavor": null,
+   "image": "items/simplehamburgersteak.png",
+   "verify": []
+  },
+  {
+   "slug": "mushroomhamburgersteak",
+   "name": "Mushroom hamburger steak",
+   "category": "Steak",
+   "move": "Rock Smash",
+   "description": "A hamburger steak with an intensely dry, mushroomy flavor. Powers up Rock Smash when eaten.",
+   "pp": 240,
+   "main": {
+    "slug": "bean",
+    "name": "Bean"
+   },
+   "secondary": [
+    {
+     "slug": "cavemushrooms",
+     "name": "Cave Mushrooms"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Dry",
+   "image": "items/mushroomhamburgersteak.png",
+   "verify": []
+  },
+  {
+   "slug": "tomatohamburgersteak",
+   "name": "Tomato hamburger steak",
+   "category": "Steak",
+   "move": "Rock Smash",
+   "description": "A hamburger steak that brings out the sour flavor of its ingredients.. Powers up Rock Smash when eaten.",
+   "pp": 500,
+   "main": {
+    "slug": "bean",
+    "name": "Bean"
+   },
+   "secondary": [
+    {
+     "slug": "tomato",
+     "name": "Tomato"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Sour",
+   "image": "items/tomatohamburgersteak.png",
+   "verify": []
+  },
+  {
+   "slug": "potatohamburgersteak",
+   "name": "Potato hamburger steak",
+   "category": "Steak",
+   "move": "Rock Smash",
+   "description": "A satisfyingly sweet hamburger steak. Powers up Rock Smash a lot when eaten.",
+   "pp": 500,
+   "main": {
+    "slug": "bean",
+    "name": "Bean"
+   },
+   "secondary": [
+    {
+     "slug": "potato",
+     "name": "Potato"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Sweet",
+   "image": "items/potatohamburgersteak.png",
+   "verify": []
+  },
+  {
+   "slug": "bitterhamburgersteak",
+   "name": "Bitter hamburger steak",
+   "category": "Steak",
+   "move": "Rock Smash",
+   "description": "A bitter-tasting hamberuger steak topped with leaves. Powers up Rock Smash when eaten",
+   "pp": 650,
+   "main": {
+    "slug": "bean",
+    "name": "Bean"
+   },
+   "secondary": [
+    {
+     "slug": "rawstberry",
+     "name": "Rawst Berry"
+    },
+    {
+     "slug": "lumberry",
+     "name": "Lum Berry"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Bitter",
+   "image": "items/bitterhamburgersteak.png",
+   "verify": []
+  },
+  {
+   "slug": "vibranthamburgersteak",
+   "name": "Vibrant hamburger steak",
+   "category": "Steak",
+   "move": "Rock Smash",
+   "description": "A hamburger steak made with lots of ingredients. Powers up Rock Smash a lot when eaten",
+   "pp": 650,
+   "main": {
+    "slug": "bean",
+    "name": "Bean"
+   },
+   "secondary": [
+    {
+     "slug": "simplesalad",
+     "name": "Simple Salad"
+    },
+    {
+     "slug": "potato",
+     "name": "Potato"
+    }
+   ],
+   "specialty": null,
+   "flavor": null,
+   "image": "items/vibranthamburgersteak.png",
+   "verify": []
+  },
+  {
+   "slug": "explosivehamburgersteak",
+   "name": "Explosive hamburger steak",
+   "category": "Steak",
+   "move": "Rock Smash",
+   "description": "A hamburger steak so spicy you'll leap out of your seat. Powers up Rock Smash a lot when eaten!",
+   "pp": 650,
+   "main": {
+    "slug": "bean",
+    "name": "Bean"
+   },
+   "secondary": [
+    {
+     "slug": "seagrapes",
+     "name": "Sea grapes"
+    },
+    {
+     "slug": "chilisauce",
+     "name": "Chili sauce"
+    }
+   ],
+   "specialty": "Explode",
+   "flavor": "Spicy",
+   "image": "items/explosivehamburgersteak.png",
+   "verify": []
+  },
+  {
+   "slug": "watermelonsmoothie",
+   "name": "Watermelon smoothie",
+   "category": "Smoothie",
+   "move": "Surf",
+   "description": "A smoothie made with watermelon. Drink one to power up Surf.",
+   "pp": null,
+   "main": {
+    "slug": "watermelonslice",
+    "name": "Watermelon slice"
+   },
+   "secondary": [],
+   "specialty": null,
+   "flavor": "Sweet",
+   "image": "items/watermelonsmoothie.png",
+   "verify": []
+  },
+  {
+   "slug": "seagrapesmoothie",
+   "name": "Sea grape smoothie",
+   "category": "Smoothie",
+   "move": "Surf",
+   "description": "A dry-tasting smoothie with a springy, popping texture. Drink one to power up Surf.",
+   "pp": null,
+   "main": {
+    "slug": "watermelonslice",
+    "name": "Watermelon slice"
+   },
+   "secondary": [
+    {
+     "slug": "seagrape",
+     "name": "Sea grape"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Dry",
+   "image": "items/seagrapesmoothie.png",
+   "verify": []
+  },
+  {
+   "slug": "leppasmoothie",
+   "name": "Leppa smoothie",
+   "category": "Smoothie",
+   "move": "Surf",
+   "description": "A sweet smoothie made with Leppa Berries. Drink one to power up Surf",
+   "pp": null,
+   "main": {
+    "slug": "watermelonslice",
+    "name": "Watermelon slice"
+   },
+   "secondary": [
+    {
+     "slug": "leppaberry",
+     "name": "Leppa Berry"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Sweet",
+   "image": "items/leppasmoothie.png",
+   "verify": []
+  },
+  {
+   "slug": "red-hotsmoothie",
+   "name": "Red-hot smoothie",
+   "category": "Smoothie",
+   "move": "Surf",
+   "description": "A smoothie so spicy it nearly burns your tongue. Drink one to power up Surf.",
+   "pp": null,
+   "main": {
+    "slug": "watermelonslice",
+    "name": "Watermelon slice"
+   },
+   "secondary": [
+    {
+     "slug": "freshcarrot",
+     "name": "Fresh carrot"
+    }
+   ],
+   "specialty": "Burn",
+   "flavor": "Spicy",
+   "image": "items/red-hotsmoothie.png",
+   "verify": []
+  },
+  {
+   "slug": "refreshingsodasmoothie",
+   "name": "Refreshing soda smoothie",
+   "category": "Smoothie",
+   "move": "Surf",
+   "description": "A sour, highly carbonated smoothie. Drink one to power up Surf.",
+   "pp": null,
+   "main": {
+    "slug": "watermelonslice",
+    "name": "Watermelon slice"
+   },
+   "secondary": [
+    {
+     "slug": "aspearberry",
+     "name": "Aspear Berry"
+    },
+    {
+     "slug": "sodapop",
+     "name": "Soda Pop"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Sour",
+   "image": "items/refreshingsodasmoothie.png",
+   "verify": []
+  },
+  {
+   "slug": "coffeeparfaitsmoothie",
+   "name": "Coffee parfait smoothie",
+   "category": "Smoothie",
+   "move": "Surf",
+   "description": "A bitter smoothie with a rich depth of flavor. Drink one to power up Surf.",
+   "pp": null,
+   "main": {
+    "slug": "watermelonslice",
+    "name": "Watermelon slice"
+   },
+   "secondary": [
+    {
+     "slug": "moomoomilkcoffee",
+     "name": "Moomoo Milk Coffee"
+    },
+    {
+     "slug": "simplebread",
+     "name": "Simple bread"
+    }
+   ],
+   "specialty": null,
+   "flavor": "Bitter",
+   "image": "items/coffeeparfaitsmoothie.png",
+   "verify": []
+  }
+ ],
+ "foods": [
+  {
+   "slug": "leppaberry",
+   "name": "Leppa Berry",
+   "flavor": null,
+   "description": "A berry with a rather unremarkable flavor. Restores some PP when eaten.",
+   "image": "items/leppaberry.png"
+  },
+  {
+   "slug": "lumberry",
+   "name": "Lum Berry",
+   "flavor": null,
+   "description": "A berry that has a well-balanced flavor. Restores some PP when eaten.",
+   "image": "items/lumberry.png"
+  },
+  {
+   "slug": "simplesalad",
+   "name": "Simple salad",
+   "flavor": null,
+   "description": "An ordinary salad made with leaves. Powers up Leafage when eaten.",
+   "image": "items/simplesalad.png"
+  },
+  {
+   "slug": "simplesoup",
+   "name": "Simple soup",
+   "flavor": null,
+   "description": "An ordinary soup made with Fresh Water. Powers up Water Gun when eaten.",
+   "image": "items/simplesoup.png"
+  },
+  {
+   "slug": "simplebread",
+   "name": "Simple bread",
+   "flavor": null,
+   "description": "Ordinary wheat bread. Powers up Cut when eaten.",
+   "image": "items/simplebread.png"
+  },
+  {
+   "slug": "simplehamburgersteak",
+   "name": "Simple hamburger steak",
+   "flavor": null,
+   "description": "An ordinary hamburger steak, made with beans. Powers up Rock Smash when eaten.",
+   "image": "items/simplehamburgersteak.png"
+  },
+  {
+   "slug": "vibranthamburgersteak",
+   "name": "Vibrant hamburger steak",
+   "flavor": null,
+   "description": "A hamburger steak made with lots of ingredients. Powers up Rock Smash a lot when eaten",
+   "image": "items/vibranthamburgersteak.png"
+  },
+  {
+   "slug": "freshwater",
+   "name": "Fresh Water",
+   "flavor": null,
+   "description": "Delicious water that's perfect for making soup. Drink some and spit it out to make things wet.",
+   "image": "items/freshwater.png"
+  },
+  {
+   "slug": "bruisedberry",
+   "name": "Bruised berry",
+   "flavor": null,
+   "description": "A bruised berry you got from Chef Dente. Restores a bit of PP when eaten",
+   "image": "items/bruisedberry.png"
+  },
+  {
+   "slug": "curryandrice",
+   "name": "Curry and rice",
+   "flavor": null,
+   "description": "An absolutely essential meal for any party. Enjoy some tasty food alongside other Pokémon!",
+   "image": "items/curryandrice.png"
+  },
+  {
+   "slug": "rawstberry",
+   "name": "Rawst Berry",
+   "flavor": "Bitter",
+   "description": "The longer and more curled the leaves are, the more bitter this berry tastes. Restores some PP when eaten",
+   "image": "items/rawstberry.png"
+  },
+  {
+   "slug": "potato",
+   "name": "Potato",
+   "flavor": "Bitter",
+   "description": "A delicious potato-even with the skin still on! Restores some PP when eaten",
+   "image": "items/potato.png"
+  },
+  {
+   "slug": "seaweed",
+   "name": "Seaweed",
+   "flavor": "Bitter",
+   "description": "Seaweed that has washed ashore. Restores some PP when eaten",
+   "image": "items/seaweed.png"
+  },
+  {
+   "slug": "seaweedsalad",
+   "name": "Seaweed salad",
+   "flavor": "Bitter",
+   "description": "A bitter-tasting salad made with seaweed. Powers up Leafage when eaten.",
+   "image": "items/seaweedsalad.png"
+  },
+  {
+   "slug": "seaweedsoup",
+   "name": "Seaweed soup",
+   "flavor": "Bitter",
+   "description": "A bitter-tasting soup made with seaweed.. Powers up Water Gun when eaten.",
+   "image": "items/seaweedsoup.png"
+  },
+  {
+   "slug": "recycledbread",
+   "name": "Recycled bread",
+   "flavor": "Bitter",
+   "description": "Bitter-tasting bread made by reusing other bread. Powers up Cut when eaten",
+   "image": "items/recycledbread.png"
+  },
+  {
+   "slug": "bitterhamburgersteak",
+   "name": "Bitter hamburger steak",
+   "flavor": "Bitter",
+   "description": "A bitter-tasting hamberuger steak topped with leaves. Powers up Rock Smash when eaten",
+   "image": "items/bitterhamburgersteak.png"
+  },
+  {
+   "slug": "seagrapes",
+   "name": "Sea grapes",
+   "flavor": "Bitter",
+   "description": "A type of faintly bitter sewaeed found in the ocean. Restores some PP when eaten.",
+   "image": "items/seagrapes.png"
+  },
+  {
+   "slug": "poppingsalad",
+   "name": "Popping salad",
+   "flavor": "Bitter",
+   "description": "A bitter salad made with plenty of sea grapes. Powers up Leafage when eaten",
+   "image": "items/poppingsalad.png"
+  },
+  {
+   "slug": "poppingsoup",
+   "name": "Popping soup",
+   "flavor": "Bitter",
+   "description": "A bitter soup that smells of the sea. Powers up Water Gun when eaten",
+   "image": "items/poppingsoup.png"
+  },
+  {
+   "slug": "coffeeparfaitsmoothie",
+   "name": "Coffee parfait smoothie",
+   "flavor": "Bitter",
+   "description": "A bitter smoothie with a rich depth of flavor. Drink one to power up Surf.",
+   "image": "items/coffeeparfaitsmoothie.png"
+  },
+  {
+   "slug": "chestoberry",
+   "name": "Chesto Berry",
+   "flavor": "Dry",
+   "description": "A rock-hard berry with a dry flavor. Restores some PP when eaten",
+   "image": "items/chestoberry.png"
+  },
+  {
+   "slug": "wheat",
+   "name": "Wheat",
+   "flavor": "Dry",
+   "description": "They're actually edible raw! Restores some PP when eaten.",
+   "image": "items/wheat.png"
+  },
+  {
+   "slug": "cavemushrooms",
+   "name": "Cave mushrooms",
+   "flavor": "Dry",
+   "description": "Mushrooms that grow in damp places such as caves or under shady trees. Restores some PP when eaten",
+   "image": "items/cavemushrooms.png"
+  },
+  {
+   "slug": "crushed-berrysalad",
+   "name": "Crushed-berry salad",
+   "flavor": "Dry",
+   "description": "A salad with a dry flavor, made with crushed Chesto Berries. Powers up Leafage when eaten.",
+   "image": "items/crushed-berrysalad.png"
+  },
+  {
+   "slug": "mushroomsoup",
+   "name": "Mushroom soup",
+   "flavor": "Dry",
+   "description": "A soup with a dry flavor made with mushroom broth.. Powers up Water Gun when eaten.",
+   "image": "items/mushroomsoup.png"
+  },
+  {
+   "slug": "mushroomhamburgersteak",
+   "name": "Mushroom hamburger steak",
+   "flavor": "Dry",
+   "description": "A hamburger steak with an intensely dry, mushroomy flavor. Powers up Rock Smash when eaten.",
+   "image": "items/mushroomhamburgersteak.png"
+  },
+  {
+   "slug": "roseradetea",
+   "name": "Roserade Tea",
+   "flavor": "Dry",
+   "description": "Tea with a delicate, elegant aroma. If you take a sip and spit it out, it becomes a hot spring!",
+   "image": "items/roseradetea.png"
+  },
+  {
+   "slug": "seagrapesmoothie",
+   "name": "Sea grape smoothie",
+   "flavor": "Dry",
+   "description": "A dry-tasting smoothie with a springy, popping texture. Drink one to power up Surf.",
+   "image": "items/seagrapesmoothie.png"
+  },
+  {
+   "slug": "aspearberry",
+   "name": "Aspear Berry",
+   "flavor": "Sour",
+   "description": "This berry has a distinctively sharp sour taste. Restores some PP when eaten.",
+   "image": "items/aspearberry.png"
+  },
+  {
+   "slug": "tomato",
+   "name": "Tomato",
+   "flavor": "Sour",
+   "description": "A round, tasty-looking tomato. Restores some PP when eaten",
+   "image": "items/tomato.png"
+  },
+  {
+   "slug": "shreddedsalad",
+   "name": "Shredded salad",
+   "flavor": "Sour",
+   "description": "A sour salad made with finely chopped leaves. Powers up Leafage when eaten.",
+   "image": "items/shreddedsalad.png"
+  },
+  {
+   "slug": "flavorfulsoup",
+   "name": "Flavorful soup",
+   "flavor": "Sour",
+   "description": "A sour soup bursting with flavor. Powers up Water Gun when eaten.",
+   "image": "items/flavorfulsoup.png"
+  },
+  {
+   "slug": "leppabread",
+   "name": "Leppa bread",
+   "flavor": "Sour",
+   "description": "Sour-tasting bread made with Leppa Berry jam.. Powers up Cut when eaten.",
+   "image": "items/leppabread.png"
+  },
+  {
+   "slug": "tomatohamburgersteak",
+   "name": "Tomato hamburger steak",
+   "flavor": "Sour",
+   "description": "A hamburger steak that brings out the sour flavor of its ingredients.. Powers up Rock Smash when eaten.",
+   "image": "items/tomatohamburgersteak.png"
+  },
+  {
+   "slug": "sodapop",
+   "name": "Soda Pop",
+   "flavor": "Sour",
+   "description": "Fizzy, sparkling soda. If you take a sip and spit it out, it becomes seawater",
+   "image": "items/sodapop.png"
+  },
+  {
+   "slug": "refreshingsodasmoothie",
+   "name": "Refreshing soda smoothie",
+   "flavor": "Sour",
+   "description": "A sour, highly carbonated smoothie. Drink one to power up Surf.",
+   "image": "items/refreshingsodasmoothie.png"
+  },
+  {
+   "slug": "freshcarrot",
+   "name": "Fresh carrot",
+   "flavor": "Spicy",
+   "description": "You can harvest these spicy carrots by pulling up on their leaves. Restores some PP when eaten.",
+   "image": "items/freshcarrot.png"
+  },
+  {
+   "slug": "croutonsalad",
+   "name": "Crouton salad",
+   "flavor": "Spicy",
+   "description": "A spicy salad with a delightfully crunchy texture. Powers up Leafage when eaten.",
+   "image": "items/croutonsalad.png"
+  },
+  {
+   "slug": "electrifyingsoup",
+   "name": "Electrifying soup",
+   "flavor": "Spicy",
+   "description": "A shockingly spicy soup.. Powers up Water Gun when eaten.",
+   "image": "items/electrifyingsoup.png"
+  },
+  {
+   "slug": "healthysoup",
+   "name": "Healthy soup",
+   "flavor": "Spicy",
+   "description": "A spicy soup with an aromatic bean flavor.. Powers up Water Gun when eaten.",
+   "image": "items/healthysoup.png"
+  },
+  {
+   "slug": "carrotbread",
+   "name": "Carrot bread",
+   "flavor": "Spicy",
+   "description": "Spicy bread with an intense carrot flavor. Powers up Cut when eaten.",
+   "image": "items/carrotbread.png"
+  },
+  {
+   "slug": "breadbowl",
+   "name": "Bread bowl",
+   "flavor": "Spicy",
+   "description": "Spicy bread that's delicious even when burnt. Powers up Cut when eaten.",
+   "image": "items/breadbowl.png"
+  },
+  {
+   "slug": "chilisauce",
+   "name": "Chili sauce",
+   "flavor": "Spicy",
+   "description": "Sauce with an enticingly spicy flavor. If you take a sip and spit it out, it becomes lava!",
+   "image": "items/chilisauce.png"
+  },
+  {
+   "slug": "explosivehamburgersteak",
+   "name": "Explosive hamburger steak",
+   "flavor": "Spicy",
+   "description": "A hamburger steak so spicy you'll leap out of your seat. Powers up Rock Smash a lot when eaten!",
+   "image": "items/explosivehamburgersteak.png"
+  },
+  {
+   "slug": "red-hotsmoothie",
+   "name": "Red-hot smoothie",
+   "flavor": "Spicy",
+   "description": "A smoothie so spicy it nearly burns your tongue. Drink one to power up Surf.",
+   "image": "items/red-hotsmoothie.png"
+  },
+  {
+   "slug": "pechaberry",
+   "name": "Pecha Berry",
+   "flavor": "Sweet",
+   "description": "A sweet, delicious berry. Restores some PP when eaten.",
+   "image": "items/pechaberry.png"
+  },
+  {
+   "slug": "bean",
+   "name": "Bean",
+   "flavor": "Sweet",
+   "description": "Small beans that are jam-packed with nutrients. Restores some PP when eaten",
+   "image": "items/bean.png"
+  },
+  {
+   "slug": "leppasalad",
+   "name": "Leppa salad",
+   "flavor": "Sweet",
+   "description": "A sweet salad made with Leppa Berries. Powers up Leafage when eaten.",
+   "image": "items/leppasalad.png"
+  },
+  {
+   "slug": "fluffybread",
+   "name": "Fluffy bread",
+   "flavor": "Sweet",
+   "description": "Sweet bread made with Pecha Berries. Powers up cut when eaten.",
+   "image": "items/fluffybread.png"
+  },
+  {
+   "slug": "potatohamburgersteak",
+   "name": "Potato hamburger steak",
+   "flavor": "Sweet",
+   "description": "A satisfyingly sweet hamburger steak. Powers up Rock Smash a lot when eaten.",
+   "image": "items/potatohamburgersteak.png"
+  },
+  {
+   "slug": "moomoomilkcoffee",
+   "name": "Moomoo Milk Coffee",
+   "flavor": "Sweet",
+   "description": "Milky coffee with a comfortingly sweet taste. If you take a sip and spit it out, it becomes muddy water!",
+   "image": "items/moomoomilkcoffee.png"
+  },
+  {
+   "slug": "commoncandy",
+   "name": "Common candy",
+   "flavor": "Sweet",
+   "description": "A piece of candy you got from Chef Dente. Restores some PP when eaten.",
+   "image": "items/commoncandy.png"
+  },
+  {
+   "slug": "watermelonslice",
+   "name": "Watermelon slice",
+   "flavor": "Sweet",
+   "description": "A sweet slice of watermelon. Restores some PP when eaten",
+   "image": "items/watermelonslice.png"
+  },
+  {
+   "slug": "watermelonsmoothie",
+   "name": "Watermelon smoothie",
+   "flavor": "Sweet",
+   "description": "A smoothie made with watermelon. Drink one to power up Surf.",
+   "image": "items/watermelonsmoothie.png"
+  },
+  {
+   "slug": "watermelonbread",
+   "name": "Watermelon bread",
+   "flavor": "Sweet",
+   "description": "Sweet bread made with watermelon. Powers up Cut when eaten",
+   "image": "items/watermelonbread.png"
+  },
+  {
+   "slug": "leppasmoothie",
+   "name": "Leppa smoothie",
+   "flavor": "Sweet",
+   "description": "A sweet smoothie made with Leppa Berries. Drink one to power up Surf",
+   "image": "items/leppasmoothie.png"
+  },
+  {
+   "slug": "pumpkincandy",
+   "name": "Pumpkin candy",
+   "flavor": "Sweet",
+   "description": "A pumpkin-flavored lillipop. Bring it to Pumpkaboo!",
+   "image": "items/pumpkincandy.png"
+  }
+ ],
+ "specialties": [
+  {
+   "slug": "appraise",
+   "name": "Appraise",
+   "description": "You can show lost relics you've found to Professor Tangrowth, who will appraise them for you",
+   "image": "pokedex/specialty/appraise.png"
+  },
+  {
+   "slug": "build",
+   "name": "Build",
+   "description": "Pokémon with the Build specialty will lead your building projects",
+   "image": "pokedex/specialty/build.png"
+  },
+  {
+   "slug": "bulldoze",
+   "name": "Bulldoze",
+   "description": "Pokémon with the Bulldoze specialty can lead your demolition, rebuilding or relocation projects",
+   "image": "pokedex/specialty/bulldoze.png"
+  },
+  {
+   "slug": "burn",
+   "name": "Burn",
+   "description": "Pokémon with the Burn specialty can set fire to Flammable objects. They can also turn Squish clay into Brick",
+   "image": "pokedex/specialty/burn.png"
+  },
+  {
+   "slug": "chop",
+   "name": "Chop",
+   "description": "Pokémon with the Chop specialty can process small logs into lumber",
+   "image": "pokedex/specialty/chop.png"
+  },
+  {
+   "slug": "collect",
+   "name": "Collect",
+   "description": "Pokémon with the Collect specialty will trade you rare things for certain items",
+   "image": "pokedex/specialty/collect.png"
+  },
+  {
+   "slug": "crush",
+   "name": "Crush",
+   "description": "Pokémon with the Crush specialty can mash materials into different things",
+   "image": "pokedex/specialty/crush.png"
+  },
+  {
+   "slug": "dj",
+   "name": "DJ",
+   "description": "DJ Rotom can use the DJ specialty to play music CDs for you",
+   "image": "pokedex/specialty/dj.png"
+  },
+  {
+   "slug": "dreamisland",
+   "name": "Dream Island",
+   "description": "Pokémon with the Dream Island specialty can transport you to a Dream Island",
+   "image": "pokedex/specialty/dreamisland.png"
+  },
+  {
+   "slug": "eat",
+   "name": "Eat",
+   "description": "Mosslax has the Eat specialty. Something good may happen if you offer them food",
+   "image": "pokedex/specialty/eat.png"
+  },
+  {
+   "slug": "engineer",
+   "name": "Engineer",
+   "description": "Tinkmaster has the Engineer specialty and can lead huge building projects",
+   "image": "pokedex/specialty/engineer.png"
+  },
+  {
+   "slug": "explode",
+   "name": "Explode",
+   "description": "Pokémon with the Explode specialty can be fired out of a cannon, destroying everything around them on impact",
+   "image": "pokedex/specialty/explode.png"
+  },
+  {
+   "slug": "fly",
+   "name": "Fly",
+   "description": "Pokémon with the Fly spceialty can fly you to a Pokémon you're searching fo",
+   "image": "pokedex/specialty/fly.png"
+  },
+  {
+   "slug": "gather",
+   "name": "Gather",
+   "description": "Pokémon with the Gather specialty will pick up items on the ground and put them inside a community box",
+   "image": "pokedex/specialty/gather.png"
+  },
+  {
+   "slug": "gatherhoney",
+   "name": "Gather Honey",
+   "description": "Pokémon with the Gather Honey specialty will give you special furniture if you bring them honey",
+   "image": "pokedex/specialty/gatherhoney.png"
+  },
+  {
+   "slug": "generate",
+   "name": "Generate",
+   "description": "Pokémon with the Generate specialty can power machines with electricty",
+   "image": "pokedex/specialty/generate.png"
+  },
+  {
+   "slug": "grow",
+   "name": "Grow",
+   "description": "Pokémon with the Grow specialty can make plants grow faster",
+   "image": "pokedex/specialty/grow.png"
+  },
+  {
+   "slug": "hype",
+   "name": "Hype",
+   "description": "Pokémon with the Hype specialty will start dancing when they hear music, improving the mood",
+   "image": "pokedex/specialty/hype.png"
+  },
+  {
+   "slug": "illuminate",
+   "name": "Illuminate",
+   "description": "Peakychu can use the Illuminate specialty to light up the whole town for you",
+   "image": "pokedex/specialty/illuminate.png"
+  },
+  {
+   "slug": "litter",
+   "name": "Litter",
+   "description": "Pokémon with the Litter specialty will drop useful materials near their homes",
+   "image": "pokedex/specialty/litter.png"
+  },
+  {
+   "slug": "paint",
+   "name": "Paint",
+   "description": "Smearguru has the Paint specialty and can recolor certain items, such as furniture",
+   "image": "pokedex/specialty/paint.png"
+  },
+  {
+   "slug": "party",
+   "name": "Party",
+   "description": "Chef Dente can use the Party specialty to help you prepare food for parties",
+   "image": "pokedex/specialty/party.png"
+  },
+  {
+   "slug": "rarify",
+   "name": "Rarify",
+   "description": "Pokémon with the Rarify specialty can turn Star Pieces into rare Pokémetal",
+   "image": "pokedex/specialty/rarify.png"
+  },
+  {
+   "slug": "recycle",
+   "name": "Recycle",
+   "description": "Pokémon with the Recycle specialty can process nonburnable garbage into iron ore and wastepaper into paper",
+   "image": "pokedex/specialty/recycle.png"
+  },
+  {
+   "slug": "scrub",
+   "name": "Scrub",
+   "description": "Pokémon with the Scrub speciality clean grubby pearls into shiny pearls",
+   "image": "pokedex/specialty/scrub.png"
+  },
+  {
+   "slug": "search",
+   "name": "Search",
+   "description": "Pokémon with the Search specialty can help you find buried items",
+   "image": "pokedex/specialty/search.png"
+  },
+  {
+   "slug": "storage",
+   "name": "Storage",
+   "description": "Pokémon with the Storage specialty can hold on to your items for you",
+   "image": "pokedex/specialty/storage.png"
+  },
+  {
+   "slug": "teleport",
+   "name": "Teleport",
+   "description": "Pokémon with the Teleport specialty can instantly take you to a Pokémon you're searching for",
+   "image": "pokedex/specialty/teleport.png"
+  },
+  {
+   "slug": "trade",
+   "name": "Trade",
+   "description": "Pokémon with the Trade speicalty can exchange items with you at a cash register",
+   "image": "pokedex/specialty/trade.png"
+  },
+  {
+   "slug": "transform",
+   "name": "Transform",
+   "description": "Ditto can improve its moves by using Transform",
+   "image": "pokedex/specialty/transform.png"
+  },
+  {
+   "slug": "water",
+   "name": "Water",
+   "description": "Pokémon with the Water specialty can use a full water basin to spray water on nearby fields and plants",
+   "image": "pokedex/specialty/water.png"
+  },
+  {
+   "slug": "yawn",
+   "name": "Yawn",
+   "description": "Pokémon with the Yawn specialty can tell you how humid it is",
+   "image": "pokedex/specialty/yawn.png"
+  }
+ ]
+}
