@@ -19,6 +19,7 @@
       <button type="button" class="chip active" data-filter="all">All</button>
       <button type="button" class="chip" data-filter="built">Built</button>
       <button type="button" class="chip" data-filter="todo">Not built</button>
+      <button type="button" class="chip" data-filter="wish">★ Wishlist</button>
       <select id="area" class="chip" aria-label="Area"></select>
       <select id="dex" class="chip" aria-label="Habitat dex">
         <option value="all">All dexes</option>
@@ -43,7 +44,9 @@
     <label class="field row">
       <input type="checkbox" id="f-built">
       <span>Built</span>
+      <button type="button" id="f-star" class="star" aria-label="Wishlist" title="Wishlist">☆</button>
     </label>
+    <button type="button" id="f-cart" class="cart">Add to shopping list</button>
     <p id="f-flavor" class="flavor"></p>
     <div class="field">
       <span class="label">Where</span>
@@ -70,6 +73,7 @@
   <script src="js/nav.js"></script>
   <script src="js/sync.js"></script>
   <script src="js/data.js"></script>
+  <script src="js/shop.js"></script>
   <script src="js/habitats.js"></script>
 </body>
 </html>

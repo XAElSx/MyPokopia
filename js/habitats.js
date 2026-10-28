@@ -2,10 +2,11 @@
 (function () {
   var D = window.PokopiaData;
   var progress = PokopiaStorage.load();
-  var filter = "all";
-  var area = "all";
-  var dex = "all";
-  var query = "";
+  var prefs = PokopiaStorage.pref("habitats");
+  var filter = prefs.filter || "all";
+  var area = prefs.area || "all";
+  var dex = prefs.dex || "all";
+  var query = prefs.query || "";
   var openSlug = null;
 
   var listEl = document.getElementById("list");
@@ -18,6 +19,20 @@
     if (className) n.className = className;
     if (text !== undefined) n.textContent = text;
     return n;
+  }
+
+  function savePrefs() {
+    PokopiaStorage.pref("habitats", Object.assign(PokopiaStorage.pref("habitats"), { filter: filter, area: area, dex: dex, query: query }));
+  }
+
+  function isWished(slug) { return !!(progress.habitats[slug] && progress.habitats[slug].wish); }
+
+  function setWish(slug, value) {
+    if (!progress.habitats[slug]) progress.habitats[slug] = {};
+    if (value) progress.habitats[slug].wish = true; else delete progress.habitats[slug].wish;
+    persist();
+    refresh();
+    if (openSlug === slug) openPanel(slug);
   }
 
   function isBuilt(slug) { return !!(progress.habitats[slug] && progress.habitats[slug].built); }
@@ -51,6 +66,7 @@
   function matches(h) {
     if (filter === "built" && !isBuilt(h.slug)) return false;
     if (filter === "todo" && isBuilt(h.slug)) return false;
+    if (filter === "wish" && !isWished(h.slug)) return false;
     if (dex !== "all" && h.dex !== dex) return false;
     if (area !== "all" && h.areas.indexOf(area) === -1 && h.areas.indexOf("any") === -1) return false;
     var q = query.trim().toLowerCase();
@@ -91,8 +107,13 @@
         .filter(Boolean).join(" · ");
       main.appendChild(el("span", "meta", meta));
       main.addEventListener("click", function () { openPanel(h.slug); });
+      var star = el("button", "star" + (isWished(h.slug) ? " on" : ""), isWished(h.slug) ? "★" : "☆");
+      star.type = "button";
+      star.setAttribute("aria-label", (isWished(h.slug) ? "Remove from wishlist: " : "Add to wishlist: ") + h.name);
+      star.addEventListener("click", function () { setWish(h.slug, !isWished(h.slug)); });
       li.appendChild(check);
       li.appendChild(main);
+      li.appendChild(star);
       listEl.appendChild(li);
     });
   }
@@ -103,6 +124,10 @@
     openSlug = slug;
     document.getElementById("panel-title").textContent = "#" + h.no + " " + h.name;
     document.getElementById("f-built").checked = isBuilt(slug);
+    var star = document.getElementById("f-star");
+    star.textContent = isWished(slug) ? "★" : "☆";
+    star.classList.toggle("on", isWished(slug));
+    showCart();
     document.getElementById("f-flavor").textContent = h.flavor || h.description || "";
     document.getElementById("f-areas").textContent = D.areaLabel(h.areas) || "Unknown";
 
@@ -161,21 +186,38 @@
     if (location.hash) history.replaceState(null, "", location.pathname + location.search);
   }
 
+  function showCart() {
+    var on = openSlug && PokopiaShop.inList(progress, "habitat", openSlug);
+    var b = document.getElementById("f-cart");
+    b.classList.toggle("on", !!on);
+    b.textContent = on ? "On the shopping list ✓" : "Add to shopping list";
+  }
+  document.getElementById("f-cart").addEventListener("click", function () {
+    if (!openSlug) return;
+    PokopiaShop.toggle(progress, "habitat", openSlug);
+    persist();
+    showCart();
+  });
+  document.getElementById("f-star").addEventListener("click", function () {
+    if (openSlug) setWish(openSlug, !isWished(openSlug));
+  });
+
   document.getElementById("f-built").addEventListener("change", function (e) {
     if (openSlug) setBuilt(openSlug, e.target.checked);
   });
   document.getElementById("panel-close").addEventListener("click", closePanel);
   backdrop.addEventListener("click", closePanel);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && openSlug) closePanel(); });
-  document.getElementById("search").addEventListener("input", function (e) { query = e.target.value; refresh(); });
-  document.getElementById("area").addEventListener("change", function (e) { area = e.target.value; refresh(); });
-  document.getElementById("dex").addEventListener("change", function (e) { dex = e.target.value; refresh(); });
+  document.getElementById("search").addEventListener("input", function (e) { query = e.target.value; savePrefs(); refresh(); });
+  document.getElementById("area").addEventListener("change", function (e) { area = e.target.value; savePrefs(); refresh(); });
+  document.getElementById("dex").addEventListener("change", function (e) { dex = e.target.value; savePrefs(); refresh(); });
 
   var buttons = document.querySelectorAll("[data-filter]");
   Array.prototype.forEach.call(buttons, function (btn) {
     btn.addEventListener("click", function () {
       filter = btn.getAttribute("data-filter");
       Array.prototype.forEach.call(buttons, function (b) { b.classList.toggle("active", b === btn); });
+      savePrefs();
       refresh();
     });
   });
@@ -193,6 +235,13 @@
   }
   window.addEventListener("hashchange", fromHash);
 
+  // Put the saved view back.
+  document.getElementById("search").value = query;
+  document.getElementById("area").value = area;
+  document.getElementById("dex").value = dex;
+  Array.prototype.forEach.call(buttons, function (b) { b.classList.toggle("active", b.getAttribute("data-filter") === filter); });
+
   refresh();
   fromHash();
+  PokopiaStorage.keepScroll("habitats");
 })();

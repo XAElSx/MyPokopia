@@ -19,22 +19,53 @@
       <button type="button" class="chip active" data-filter="all">All</button>
       <button type="button" class="chip" data-filter="in">Moved in</button>
       <button type="button" class="chip" data-filter="out">Not yet</button>
+      <button type="button" class="chip" data-filter="wish">★ Wishlist</button>
+      <button type="button" class="chip" id="now-toggle" aria-pressed="false">Find now</button>
       <select id="dex" class="chip" aria-label="Pokédex">
         <option value="all">All dexes</option>
         <option value="main">Main</option>
         <option value="event">Event</option>
         <option value="basin">Bubbly Basin</option>
       </select>
+      <button type="button" class="chip" id="select-toggle" aria-pressed="false">Select</button>
+    </div>
+    <div class="now" id="now" hidden>
+      <span class="sub">Can appear:</span>
+      <select id="now-time" class="chip" aria-label="Time of day">
+        <option value="morning">Morning</option>
+        <option value="day">Day</option>
+        <option value="evening">Evening</option>
+        <option value="night">Night</option>
+      </select>
+      <select id="now-weather" class="chip" aria-label="Weather">
+        <option value="sun">Sun</option>
+        <option value="cloud">Cloud</option>
+        <option value="rain">Rain</option>
+      </select>
+      <span class="sub">Only Pokémon you have not moved in yet.</span>
     </div>
   </header>
 
   <main>
+    <details class="dash" id="dash">
+      <summary>Overview</summary>
+      <div id="dash-body"></div>
+    </details>
     <ul id="list" class="list"></ul>
+    <div class="bulk" id="bulk" hidden>
+      <span class="sub" id="bulk-count"></span>
+      <button type="button" class="chip small" id="bulk-in">Mark moved in</button>
+      <button type="button" class="chip small" id="bulk-out">Mark not moved in</button>
+      <button type="button" class="chip small" id="bulk-star">Star</button>
+      <button type="button" class="chip small" id="bulk-visible">Select all shown</button>
+    </div>
     <div class="backup">
       <button type="button" id="export" class="link-btn">Export progress</button>
       <button type="button" id="import" class="link-btn">Import progress</button>
+      <button type="button" id="snaps-toggle" class="link-btn">Restore an older copy</button>
       <input type="file" id="import-file" accept="application/json,.json" hidden>
     </div>
+    <ul id="snaps" class="snaps" hidden></ul>
   </main>
 
   <div id="backdrop" class="backdrop" hidden></div>
@@ -46,6 +77,7 @@
     <label class="field row">
       <input type="checkbox" id="f-moved">
       <span>Moved in</span>
+      <button type="button" id="f-star" class="star" aria-label="Wishlist" title="Wishlist">★</button>
     </label>
     <div class="field">
       <span class="label">Specialty (from game data)</span>
@@ -67,10 +99,12 @@
 
   <!-- Plain scripts (not modules) so this works when opened straight from the folder. -->
   <script src="data/pokopia-pokemon.js"></script>
+  <script src="data/pokopia-habitats.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/data.js"></script>
   <script src="js/sync.js"></script>
+  <script src="js/shop.js"></script>
   <script src="js/render.js"></script>
   <script src="js/app.js"></script>
 </body>

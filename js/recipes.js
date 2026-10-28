@@ -1,9 +1,12 @@
 // Crafting list: what each item needs, where to get the materials, and what uses it.
 (function () {
   var D = window.PokopiaData;
-  var category = "all";
-  var habitatOnly = false;
-  var query = "";
+  var progress = PokopiaStorage.load();
+  var prefs = PokopiaStorage.pref("recipes");
+  var category = prefs.category || "all";
+  var habitatOnly = !!prefs.habitatOnly;
+  var listOnly = !!prefs.listOnly;
+  var query = prefs.query || "";
   var openSlug = null;
 
   var listEl = document.getElementById("list");
@@ -24,6 +27,30 @@
     return a;
   }
 
+  function savePrefs() {
+    PokopiaStorage.pref("recipes", Object.assign(PokopiaStorage.pref("recipes"), {
+      category: category, habitatOnly: habitatOnly, listOnly: listOnly, query: query
+    }));
+  }
+
+  function persist() {
+    if (!PokopiaStorage.save(progress)) alert("Could not save progress. Browser storage may be blocked or full.");
+  }
+
+  // Source problems found while building the data (bad material names, nothing parsed): shown, not guessed.
+  function problems(r) {
+    // "Listed twice" only means a duplicate row on Serebii; the materials are fine.
+    var out = (r.verify || []).filter(function (v) { return v.indexOf("Listed twice") !== 0; });
+    if (!r.requirements.length && !out.length) out.push("No materials listed");
+    r.requirements.forEach(function (m) {
+      if (!D.itemBySlug[m.itemSlug] && !D.recipeBySlug[m.itemSlug]) {
+        var msg = "Unknown material: " + m.item;
+        if (out.indexOf(msg) === -1) out.push(msg);
+      }
+    });
+    return out;
+  }
+
   function itemHref(slug) { return "recipes.html#" + encodeURIComponent(slug); }
 
   (function fillCategories() {
@@ -40,6 +67,7 @@
   function matches(r) {
     if (category !== "all" && r.category !== category) return false;
     if (habitatOnly && !D.habitatsNeeding[r.slug]) return false;
+    if (listOnly && !PokopiaShop.inList(progress, "recipe", r.slug)) return false;
     var q = query.trim().toLowerCase();
     if (!q) return true;
     return (r.name + " " + r.requirements.map(function (m) { return m.item; }).join(" ")).toLowerCase().indexOf(q) !== -1;
@@ -58,6 +86,12 @@
       if (pic) { main.classList.add("has-pic"); main.appendChild(pic); }
       main.appendChild(el("span", "name", r.name));
       main.appendChild(el("span", "num", r.category));
+      var issues = problems(r);
+      if (issues.length) {
+        var badge = el("span", "badge", "unverified");
+        badge.title = issues.join("; ");
+        main.querySelector(".name").appendChild(badge);
+      }
       var needs = r.requirements.map(function (m) { return m.item + " ×" + m.amount; }).join(", ");
       main.appendChild(el("span", "meta", needs || "No materials listed"));
       main.addEventListener("click", function () { openPanel(r.slug); });
@@ -86,6 +120,12 @@
     D.setTitle(document.getElementById("panel-title"), (recipe || item).name, D.itemPic(slug, 56));
     var cat = recipe ? recipe.category : item.categories.join(", ");
     document.getElementById("f-category").textContent = cat;
+    var issues = recipe ? problems(recipe) : [];
+    var ver = document.getElementById("f-verify");
+    ver.hidden = !issues.length;
+    ver.textContent = issues.length ? "Unverified: " + issues.join("; ") + ". Check in the game." : "";
+    document.getElementById("f-cart").hidden = !recipe;
+    showCart();
 
     fillList("f-obtain", recipe ? recipe.obtain.map(function (o) { return el("li", null, o); }) : []);
 
@@ -133,14 +173,36 @@
     if (location.hash) history.replaceState(null, "", location.pathname + location.search);
   }
 
+  function showCart() {
+    var on = openSlug && PokopiaShop.inList(progress, "recipe", openSlug);
+    var b = document.getElementById("f-cart");
+    b.classList.toggle("on", !!on);
+    b.textContent = on ? "On the shopping list ✓" : "Add to shopping list";
+  }
+  document.getElementById("f-cart").addEventListener("click", function () {
+    if (!openSlug || !D.recipeBySlug[openSlug]) return;
+    PokopiaShop.toggle(progress, "recipe", openSlug);
+    persist();
+    showCart();
+    if (listOnly) refresh();
+  });
+  document.addEventListener("pokopia-synced", function () { progress = PokopiaStorage.load(); refresh(); });
+
   document.getElementById("panel-close").addEventListener("click", closePanel);
   backdrop.addEventListener("click", closePanel);
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && openSlug) closePanel(); });
-  document.getElementById("search").addEventListener("input", function (e) { query = e.target.value; refresh(); });
-  document.getElementById("category").addEventListener("change", function (e) { category = e.target.value; refresh(); });
+  document.getElementById("search").addEventListener("input", function (e) { query = e.target.value; savePrefs(); refresh(); });
+  document.getElementById("category").addEventListener("change", function (e) { category = e.target.value; savePrefs(); refresh(); });
   document.getElementById("habitat-only").addEventListener("click", function (e) {
     habitatOnly = !habitatOnly;
     e.currentTarget.classList.toggle("active", habitatOnly);
+    savePrefs();
+    refresh();
+  });
+  document.getElementById("list-only").addEventListener("click", function (e) {
+    listOnly = !listOnly;
+    e.currentTarget.classList.toggle("active", listOnly);
+    savePrefs();
     refresh();
   });
 
@@ -151,6 +213,13 @@
   }
   window.addEventListener("hashchange", fromHash);
 
+  // Put the saved view back.
+  document.getElementById("search").value = query;
+  document.getElementById("category").value = category;
+  document.getElementById("habitat-only").classList.toggle("active", habitatOnly);
+  document.getElementById("list-only").classList.toggle("active", listOnly);
+
   refresh();
   fromHash();
+  PokopiaStorage.keepScroll("recipes");
 })();

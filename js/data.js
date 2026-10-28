@@ -63,21 +63,27 @@
   var favoriteByName = {};
   fdb.favorites.forEach(function (f) { favoriteBySlug[f.slug] = f; favoriteByName[f.name.toLowerCase()] = f; });
 
-  // Pictures are loaded from Serebii (paths in the data are relative to this folder), lazily, and hidden if one fails.
-  var IMG_BASE = "https://serebii.net/pokemonpokopia/";
+  // Pictures come from images/ (a copy made by tools/fetch_images.py, so they work offline). If a file is
+  // missing there, Serebii is tried; if that fails too the picture is hidden.
+  var IMG_LOCAL = "images/";
+  var IMG_REMOTE = "https://serebii.net/pokemonpokopia/";
 
   function picture(path, size) {
     if (!path) return null;
     var img = document.createElement("img");
     img.className = "pic";
-    img.src = IMG_BASE + path;
+    img.src = IMG_LOCAL + path;
     img.alt = "";
     img.width = size;
     img.height = size;
     img.loading = "lazy";
     img.decoding = "async";
     img.referrerPolicy = "no-referrer";
-    img.addEventListener("error", function () { img.style.visibility = "hidden"; });
+    img.addEventListener("error", function () {
+      if (img.getAttribute("data-fallback")) { img.style.visibility = "hidden"; return; }
+      img.setAttribute("data-fallback", "1");
+      img.src = IMG_REMOTE + path;
+    });
     return img;
   }
 

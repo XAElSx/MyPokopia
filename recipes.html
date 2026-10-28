@@ -18,6 +18,7 @@
     <div class="filters">
       <select id="category" class="chip" aria-label="Category"></select>
       <button type="button" id="habitat-only" class="chip">Habitat items only</button>
+      <button type="button" id="list-only" class="chip">On my list</button>
     </div>
   </header>
 
@@ -32,6 +33,8 @@
       <h2 id="panel-title"></h2>
       <button type="button" id="panel-close" class="close" aria-label="Close">&times;</button>
     </div>
+    <button type="button" id="f-cart" class="cart" hidden>Add to shopping list</button>
+    <p id="f-verify" class="flavor" hidden></p>
     <div class="field" id="sec-category">
       <span class="label">Category</span>
       <span id="f-category"></span>
@@ -61,6 +64,7 @@
   <script src="js/nav.js"></script>
   <script src="js/sync.js"></script>
   <script src="js/data.js"></script>
+  <script src="js/shop.js"></script>
   <script src="js/recipes.js"></script>
 </body>
 </html>

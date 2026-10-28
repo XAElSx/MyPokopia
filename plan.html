@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokopia Plan</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-row">
+      <h1>Pokopia</h1>
+      <span id="counter" class="counter"></span>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div id="sync-mount"></div>
+  </header>
+
+  <main class="plan">
+    <section>
+      <h2>Shopping list</h2>
+      <p class="note" id="shop-empty">Nothing on the list yet. Add habitats or recipes from the guide, the recipes page or the suggestions below.</p>
+      <div id="shop" hidden>
+        <ul id="shop-sources" class="chips"></ul>
+        <label class="field row">
+          <input type="checkbox" id="raw">
+          <span>Break crafted parts down into materials</span>
+        </label>
+        <ul id="shop-rows" class="list"></ul>
+        <button type="button" id="shop-clear" class="link-btn">Clear the list</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Build next</h2>
+      <p class="note">Habitats you have not built, ranked by how many Pokémon you still need that appear there (wishlisted ones count double).</p>
+      <ul id="next" class="list"></ul>
+    </section>
+
+    <section>
+      <h2>Wishlist</h2>
+      <ul id="wish" class="list"></ul>
+    </section>
+  </main>
+
+  <script src="data/pokopia-pokemon.js"></script>
+  <script src="data/pokopia-habitats.js"></script>
+  <script src="data/pokopia-recipes.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/sync.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/shop.js"></script>
+  <script src="js/plan.js"></script>
+</body>
+</html>

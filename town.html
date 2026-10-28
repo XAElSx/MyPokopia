@@ -25,6 +25,9 @@
       <button type="button" class="chip small" data-tool="place">Place</button>
       <button type="button" class="chip small" data-tool="erase">Erase</button>
       <button type="button" class="chip small" id="clear-area">Clear area</button>
+      <button type="button" class="chip small" id="undo" disabled>Undo</button>
+      <button type="button" class="chip small" id="redo" disabled>Redo</button>
+      <button type="button" class="chip small" id="png">Save picture</button>
     </div>
     <div class="place" id="place" hidden>
       <select id="place-kind" aria-label="What to place">
@@ -44,7 +47,7 @@
       <h2>In this area</h2>
       <ul id="legend" class="habitats"></ul>
     </section>
-    <p class="note">The grid is a simple sketch board, 12 × 12 squares per area. It is saved with your progress.</p>
+    <p class="note">The grid is a simple sketch board, 12 × 12 squares per area. It is saved with your progress. With Place or Erase you can drag across squares. A "!" marks a house whose Pokémon don't share one ideal habitat.</p>
   </main>
 
   <script src="data/pokopia-pokemon.js"></script>

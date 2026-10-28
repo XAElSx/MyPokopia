@@ -39,6 +39,7 @@
       habitats: pokemon.habitats || [],
       obtain: pokemon.obtain || "",
       movedIn: !!entry.movedIn,
+      wish: !!entry.wish,
       area: entry.area || "",
       notes: entry.notes || ""
     };
@@ -51,7 +52,7 @@
       return;
     }
     items.forEach(function (p) {
-      var li = el("li", "card" + (p.movedIn ? " moved-in" : ""));
+      var li = el("li", "card" + (p.movedIn ? " moved-in" : "") + (handlers.selected && handlers.selected[p.id] ? " selected" : ""));
 
       var check = el("label", "check");
       var box = el("input");
@@ -76,8 +77,14 @@
         handlers.onOpen(p.id);
       });
 
+      var star = el("button", "star" + (p.wish ? " on" : ""), p.wish ? "★" : "☆");
+      star.type = "button";
+      star.setAttribute("aria-label", (p.wish ? "Remove from wishlist: " : "Add to wishlist: ") + p.name);
+      star.addEventListener("click", function () { handlers.onWish(p.id, !p.wish); });
+
       li.appendChild(check);
       li.appendChild(main);
+      li.appendChild(star);
       listEl.appendChild(li);
     });
   }
@@ -86,6 +93,9 @@
   function fillPanel(p) {
     PokopiaData.setTitle(document.getElementById("panel-title"), p.label + " " + p.name, PokopiaData.pokemonPic(p, 56));
     document.getElementById("f-moved").checked = p.movedIn;
+    var star = document.getElementById("f-star");
+    star.textContent = p.wish ? "★" : "☆";
+    star.classList.toggle("on", p.wish);
     document.getElementById("f-specialty").textContent = p.specialties.join(", ") || "None";
 
     var habitatEl = document.getElementById("f-habitat");
