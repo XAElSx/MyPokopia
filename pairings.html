@@ -42,9 +42,12 @@
       <div id="houses" class="houses"></div>
       <div class="house-section">
         <h3 class="sub-h">Planned</h3>
-        <button type="button" id="new-plan" class="chip small">+ New planned house</button>
+        <div class="house-actions">
+          <button type="button" id="auto-plan" class="chip small">Auto-plan from regions</button>
+          <button type="button" id="new-plan" class="chip small">+ New planned house</button>
+        </div>
       </div>
-      <p class="note">Try a better setup here without touching your current houses. "Make current" moves a plan into town.</p>
+      <p class="note">Try a better setup here without touching your current houses. "Auto-plan from regions" puts every Pokémon in a house in its "Should live in" area (same ideal habitat, most shared favorites). "Make current" moves a plan into town.</p>
       <div id="plans" class="houses"></div>
       <div id="moves" class="moves" hidden></div>
     </section>

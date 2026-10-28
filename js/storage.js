@@ -2,7 +2,8 @@
 // Shape (version 4): { version, updatedAt, entries, habitats, houses, town, shop, dailies }
 //   entries  - by Pokémon id   { movedIn, area, region (should live in), notes, wish }
 //   habitats - by habitat slug { built, wish }
-//   houses   - by house id     { name, members: [pokémon ids], planned }  (planned: a plan, not in town yet)
+//   houses   - by house id     { name, members: [pokémon ids], planned, auto, area }
+//              planned: a plan, not in town yet; auto + area: made by "Auto-plan from regions" for that area
 //   town     - by area name    { w, h, cells: { "x,y": { kind, ref } } }
 //   shop     - { habitats: { slug: true }, recipes: { slug: amount }, have: { itemSlug: amount } }
 //   dailies  - { day: "YYYY-MM-DD", done: { id: true }, custom: [{ id, name }], hidden: { id: true } }

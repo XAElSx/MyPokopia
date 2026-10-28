@@ -509,14 +509,24 @@
           pokemon.forEach(function (p) { known[p.id] = true; });
           var ids = Object.keys(data.entries).filter(function (id) { return known[id]; });
           var added = ids.filter(function (id) { return data.entries[id].movedIn && !(progress.entries[id] && progress.entries[id].movedIn); });
-          PokopiaUI.ask("Add " + added.length + " registered marks from this file (" + ids.length + " Pokémon in it)? Nothing is removed.", "Add").then(function (yes) {
+          // regionLeading: the file's "Should live in" wins over what is saved here (e.g. the Notion Region property).
+          var lead = data.regionLeading === true;
+          var regions = ids.filter(function (id) {
+            var r = data.entries[id].region;
+            var now = (progress.entries[id] && progress.entries[id].region) || "";
+            return r && r !== now && (lead || !now);
+          });
+          var msg = lead
+            ? "Set \"Should live in\" for " + regions.length + " Pokémon from this file (" + ids.length + " in it)" + (added.length ? " and add " + added.length + " registered marks" : "") + "?"
+            : "Add " + added.length + " registered marks from this file (" + ids.length + " Pokémon in it)? Nothing is removed.";
+          PokopiaUI.ask(msg, lead ? "Update" : "Add").then(function (yes) {
             if (!yes) return;
             ids.forEach(function (id) {
               var src = data.entries[id];
               var e = entryFor(id);
               if (src.movedIn) e.movedIn = true;
               if (src.area && !e.area) e.area = src.area;
-              if (src.region && !e.region) e.region = src.region;
+              if (src.region && (lead || !e.region)) e.region = src.region;
             });
             persist();
             closePanel();

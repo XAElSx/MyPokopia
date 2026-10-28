@@ -178,9 +178,109 @@
     town.forEach(function (id) { housesEl.appendChild(houseCard(id)); });
     var plansEl = document.getElementById("plans");
     plansEl.textContent = "";
-    if (!plans.length) plansEl.appendChild(el("p", "empty", "No plans yet. Start one, or use \"Copy to plan\" on a house."));
-    plans.forEach(function (id) { plansEl.appendChild(houseCard(id)); });
+    if (!plans.length) plansEl.appendChild(el("p", "empty", "No plans yet. Start one, auto-plan from regions, or use \"Copy to plan\" on a house."));
+    // Planned houses grouped by area (auto plans) with your own plans first.
+    var groups = {};
+    var order = [];
+    plans.forEach(function (id) {
+      var key = progress.houses[id].area || "";
+      if (!groups[key]) { groups[key] = []; order.push(key); }
+      groups[key].push(id);
+    });
+    order.sort(function (a, b) {
+      if (!a || !b) return a ? 1 : -1;
+      var ia = D.TOWN_AREAS.indexOf(a), ib = D.TOWN_AREAS.indexOf(b);
+      return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib) || a.localeCompare(b);
+    });
+    order.forEach(function (key) {
+      if (!key) { groups[key].forEach(function (id) { plansEl.appendChild(houseCard(id)); }); return; }
+      var box = el("details", "plan-group");
+      box.open = !!openGroups[key];
+      box.addEventListener("toggle", function () { openGroups[key] = box.open; });
+      var mons = groups[key].reduce(function (n, id) { return n + progress.houses[id].members.length; }, 0);
+      var sum = el("summary");
+      sum.appendChild(el("b", null, key));
+      sum.appendChild(el("span", "sub", " · " + groups[key].length + " houses · " + mons + " Pokémon"));
+      box.appendChild(sum);
+      var inner = el("div", "houses");
+      groups[key].forEach(function (id) { inner.appendChild(houseCard(id)); });
+      box.appendChild(inner);
+      plansEl.appendChild(box);
+    });
     renderMoves(plans);
+  }
+
+  // ---- auto plan: houses per "Should live in" area ----
+  var openGroups = {};
+
+  function regionOf(p) {
+    var r = ((progress.entries[p.id] || {}).region || "").trim();
+    if (!r || /^any/i.test(r)) return "";
+    var hit = D.TOWN_AREAS.filter(function (a) { return a.toLowerCase() === r.toLowerCase(); })[0];
+    return hit || r;
+  }
+
+  // Fill houses of up to MAX from Pokémon that share one ideal habitat: start from the pair with the most shared
+  // favorites, then keep adding whoever shares the most with the house so far. Leftovers make smaller houses.
+  function pack(list) {
+    var left = list.slice().sort(function (a, b) { return a.name.localeCompare(b.name); });
+    var out = [];
+    while (left.length) {
+      var house;
+      if (left.length === 1) {
+        house = [left.pop()];
+      } else {
+        var bi = 0, bj = 1, best = -1;
+        for (var i = 0; i < left.length; i++) {
+          for (var j = i + 1; j < left.length; j++) {
+            var s = shared(left[i], left[j]).length;
+            if (s > best) { best = s; bi = i; bj = j; }
+          }
+        }
+        house = [left[bi], left[bj]];
+        left.splice(bj, 1);
+        left.splice(bi, 1);
+        while (house.length < MAX && left.length) {
+          var pick = 0, gain = -1;
+          left.forEach(function (c, k) {
+            var g = house.reduce(function (n, m) { return n + shared(m, c).length; }, 0);
+            if (g > gain) { gain = g; pick = k; }
+          });
+          house.push(left.splice(pick, 1)[0]);
+        }
+      }
+      out.push(house);
+    }
+    return out;
+  }
+
+  function autoPlan() {
+    var byArea = {};
+    var skipped = 0;
+    D.pokemon.forEach(function (p) {
+      var area = regionOf(p);
+      if (!area) { skipped++; return; }
+      (byArea[area] = byArea[area] || []).push(p);
+    });
+    Object.keys(progress.houses).forEach(function (id) { if (progress.houses[id].auto) delete progress.houses[id]; });
+    var made = 0;
+    Object.keys(byArea).forEach(function (area) {
+      var byHabitat = {};
+      byArea[area].forEach(function (p) { (byHabitat[p.idealHabitat || "No habitat"] = byHabitat[p.idealHabitat || "No habitat"] || []).push(p); });
+      Object.keys(byHabitat).sort().forEach(function (hab) {
+        pack(byHabitat[hab]).forEach(function (members, n) {
+          progress.houses[newId()] = {
+            name: area + " · " + hab + " " + (n + 1),
+            members: members.map(function (m) { return m.id; }),
+            planned: true, auto: true, area: area
+          };
+          made++;
+        });
+      });
+    });
+    persist();
+    renderHouses();
+    return { made: made, skipped: skipped };
   }
 
   // What you would have to change in town to get to the plan.
@@ -192,7 +292,8 @@
       var plan = progress.houses[pid];
       plan.members.forEach(function (m) {
         var p = D.pokemonById[m];
-        if (!p) return;
+        // Only Pokémon you have can be moved; the rest wait in the plan until they are registered.
+        if (!p || !movedIn(m)) return;
         var now = currentHouseOf(m);
         var mates = plan.members.filter(function (x) { return x !== m; });
         var sameMates = now && mates.every(function (x) { return progress.houses[now].members.indexOf(x) !== -1; });
@@ -202,10 +303,16 @@
     });
     box.hidden = !moves.length;
     if (!moves.length) return;
-    box.appendChild(el("h3", "sub-h", "Moves to make (" + moves.length + ")"));
+    var wrap = el("details");
+    wrap.open = moves.length <= 12;
+    var sum = el("summary");
+    sum.appendChild(el("b", null, "Moves to make (" + moves.length + ")"));
+    sum.appendChild(el("span", "sub", " · registered Pokémon not yet living like the plan"));
+    wrap.appendChild(sum);
     var ul = el("ul", "habitats");
     moves.forEach(function (t) { ul.appendChild(el("li", null, t)); });
-    box.appendChild(ul);
+    wrap.appendChild(ul);
+    box.appendChild(wrap);
   }
 
   function houseCard(id) {
@@ -322,17 +429,7 @@
     var input = el("input");
     input.type = "text";
     input.placeholder = "Add Pokémon (type a name)";
-    var listId = "dl-" + Math.random().toString(36).slice(2, 7);
-    input.setAttribute("list", listId);
-    var dl = el("datalist");
-    dl.id = listId;
-    D.pokemon.forEach(function (p) {
-      if (house.members.indexOf(p.id) !== -1) return;
-      if (movedOnly && !movedIn(p.id)) return;
-      var o = el("option");
-      o.value = p.name + " " + D.dexLabel(p);
-      dl.appendChild(o);
-    });
+    input.setAttribute("list", sharedList().id);
     var btn = el("button", null, "Add");
     btn.type = "button";
     btn.addEventListener("click", function () {
@@ -345,7 +442,6 @@
     row.appendChild(input);
     row.appendChild(btn);
     wrap.appendChild(row);
-    wrap.appendChild(dl);
 
     if (members.length) {
       var suggestions = D.pokemon.filter(function (o) {
@@ -370,6 +466,24 @@
       }
     }
     return wrap;
+  }
+
+  // Name suggestions for every "Add Pokémon" box (rebuilt when "Only registered" changes).
+  var listFor = null;
+  function sharedList() {
+    var dl = document.getElementById("dl-pokemon");
+    if (!dl) { dl = el("datalist"); dl.id = "dl-pokemon"; document.body.appendChild(dl); }
+    if (listFor !== movedOnly) {
+      listFor = movedOnly;
+      dl.textContent = "";
+      D.pokemon.forEach(function (p) {
+        if (movedOnly && !movedIn(p.id)) return;
+        var o = el("option");
+        o.value = p.name + " " + D.dexLabel(p);
+        dl.appendChild(o);
+      });
+    }
+    return dl;
   }
 
   function addMember(house, id) {
@@ -500,6 +614,21 @@
   document.getElementById("search").addEventListener("input", function (e) { query = e.target.value; render(); });
   document.getElementById("new-house").addEventListener("click", function () { addHouse([]); renderHouses(); });
   document.getElementById("new-plan").addEventListener("click", function () { addHouse([], true); renderHouses(); });
+  document.getElementById("auto-plan").addEventListener("click", function () {
+    var withArea = D.pokemon.filter(function (p) { return regionOf(p); }).length;
+    if (!withArea) {
+      PokopiaUI.ask("No Pokémon has a \"Should live in\" area yet. Set it on the Pokédex (or import it), then try again.", "OK");
+      return;
+    }
+    var old = idsOf(true).filter(function (id) { return progress.houses[id].auto; }).length;
+    var without = D.pokemon.length - withArea;
+    PokopiaUI.ask("Plan houses for " + withArea + " Pokémon by their \"Should live in\" area?" +
+      (without ? " " + without + " without an area are left out." : "") +
+      (old ? " This replaces the " + old + " auto-planned houses; your own plans stay." : ""), "Auto-plan").then(function (yes) {
+      if (!yes) return;
+      autoPlan();
+    });
+  });
   document.getElementById("start-house").addEventListener("click", function () {
     if (openId) { addHouse([openId]); setMode("houses"); }
   });

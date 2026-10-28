@@ -792,3 +792,13 @@ input[type="checkbox"]:checked { background-color: var(--accent); background-ima
 .houses > .house { min-width: 0; }
 .house-head { flex-wrap: wrap; }
 .house-head .house-name { min-width: 120px; }
+
+/* ---- Planned houses grouped by area ---- */
+.plan-group { margin: 0 0 10px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+.plan-group > summary { cursor: pointer; padding: 12px 14px; }
+.plan-group[open] > summary { border-bottom: 1px solid var(--line); }
+.plan-group > .houses { padding: 12px; }
+.plan-group .house { box-shadow: none; }
+.moves summary { cursor: pointer; }
+.house-section { flex-wrap: wrap; }
+.house-section .house-actions { flex-wrap: wrap; }
